@@ -33,7 +33,7 @@
 
 	<h1>Welcome to Caleb's Logbook</h1>
     <br>
-    <p><a href="http://142.156.193.130:50000/caleb/week1.php"> Week 1 </a></p>
+    <p><a href="http://142.156.193.130:50000/caleb/Week1.php"> Week 1 </a></p>
 
 
 	<p><a href="http://142.156.193.130:50000/about.html"> Return to Main menu </a></p>
