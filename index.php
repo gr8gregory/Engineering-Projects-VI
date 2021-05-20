@@ -26,8 +26,57 @@
 	}
 ?>
 
-
+<!DOCTYPE html>
 <html>
+<head>
+		<style>
+			body {
+				background-color: white;
+				margin: 20px;}
+
+			h1{
+				color: black;
+				margin-left: 60px;
+				margin-top: 40px;
+				padding-left: 20px;
+				padding-right: 40px;
+				font-family: Arial;
+				font-size: 60px;}
+
+			h1{
+				color: black;
+				margin-left: 60px;
+				margin-top: 40px;
+				padding-left: 20px;
+				padding-right: 40px;
+				font-family: Arial;
+				font-size: 20px;}
+
+			p{
+				color: black;
+				padding-left: 200px;
+				padding-right: 200px;
+                font-family: Arial;
+                font-size: 18px;}
+
+			a{
+                color: blue;
+                padding-left: 80px;
+				padding-right: 100px;
+                font-family: Arial;
+                font-size: 18px;}
+
+			ul{
+                color: black;
+                padding-left: 250px;
+				padding-right: 200px;
+                font-family: Arial;
+                font-size: 18px;}
+		</style>
+	</head>
+
+
+	<body>
 	<h1>ESE Project VI Elevator</h1> 
 	
 		<?php 
@@ -43,9 +92,12 @@
 			<form action="index.php" method="POST">
 				Request floor # <input type="number" style="width:50px; height:40px" name="newfloor" max=3 min=1 required />
 				<input type="submit" value="Go"/>
+				<input type="submit" value=floor1/>
+				<input type="submit" value=floor2/>
+				<input type="submit" value=floor3/>
 			</form>
 		</h2>
-		  
+		</body>
 		
 </html>
  
