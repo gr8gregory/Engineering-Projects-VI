@@ -38,16 +38,18 @@
 	<h1>Video Demonstrations</h1>
 	<ul>
 		<li><a href='#vid1'>Verification of HTTP and SSH to Remote Raspberry Pi</a></li>
-		<li><a href='#vid2'>Title of the video</a></li>
+		<li><a href='#canHalDemo'>Local Verification of CAN Interface</a></li>
 		
 	</ul>
 
 	<h2 id='vid1'>Verification of HTTP and SSH to Remote Raspberry Pi</h2>
 	<iframe src="https://www.youtube.com/embed/KUoalpc8u7M" width="420" height="345" frameborder="0" allowfullscreen ng-show="showvideo"></iframe>
 
-	<h2 id='vid2'>Title of the video</h2>
+	<h2 id='canHalDemo'>Local Verification of CAN Interface</h2>
+	<iframe src="https://www.youtube.com/embed/bmKHAtUCD-Y" height="400" width="220" frameborder=0 allowfullscreen ng-show="showvideo"></iframe>
+	<p>In this video, we set the recieve filter for values between 0x100 and 0x103. First, we send a message with ID 0x104 which is transmitted but not received. Then we send a message with ID 0x103 which is transmitted and received (hits a breakpoint between transmit and receive so the LED cycles are distinct).</p>
 
-	<p><a href="/about.html"> Return to About Us Page</a></p>
+	<p><a href="../about.html"> Return to About Us Page</a></p>
 
 	</body>
 </html>
