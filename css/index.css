@@ -1,0 +1,80 @@
+li.h_menu, li.h_menu_i, ul.h_menu {
+    
+    color: black;
+    padding: 0px;
+    font-family: Arial;
+    font-size: 18px;
+    
+}
+a.menu{
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+}
+
+li.h_menu_i {
+    display:inline;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+li.h_menu {
+    display:inline;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a:link.menu {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    transition: all 0.5s;
+}
+a:visited.menu {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    transition: all 0.5s;
+}
+a:hover.menu {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(148, 148, 148);
+    transition: all 0.5s;
+}
+a:active.menu {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(148, 148, 148);
+}
+
+
+body {
+    background-color: white;
+    margin-left: 25px;
+    margin-top: 35px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+h1{
+    color: black;
+    font-family: Arial;
+    font-size: 30px;
+}
+h2{
+    color: black;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+
+p{
+    color: black;
+    font-family: Arial;
+    font-size: 18px;
+}

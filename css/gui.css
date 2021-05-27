@@ -1,0 +1,46 @@
+body {
+    background-color: white;
+    margin-left: 25px;
+    margin-top: 35px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+h1{
+    color: black;
+    font-family: Arial;
+    font-size: 30px;
+}
+
+p{
+    color: black;
+    font-family: Arial;
+    font-size: 18px;
+}
+
+a{
+    color: blue;
+    font-family: Arial;
+    font-size: 18px;
+}
+
+a:hover{
+    color: rgb(154, 154, 255);
+    transition: all 0.25s;
+}
+
+a:active{
+    color: rgb(0, 0, 90);
+    transition: all 0.25s;
+}
+
+ul{
+    color: black;
+    font-family: Arial;
+    font-size: 18px;
+}
+img{
+    padding-left: 1%;
+    width: 300px;
+    height: 386px;
+}
