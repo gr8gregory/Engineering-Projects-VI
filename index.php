@@ -97,6 +97,8 @@
 				<input type="submit" value=floor3/>
 			</form>
 		</h2>
+
+		<p><a href="/about.html"> About Us </a></p>
 		</body>
 		
 </html>
