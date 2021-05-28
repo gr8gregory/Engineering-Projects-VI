@@ -6,6 +6,9 @@ li.h_menu, li.h_menu_i, ul.h_menu {
     font-size: 18px;
     
 }
+h1.meme, IMG.meme {
+	display:inline-block;
+}
 a.menu{
     padding-left: 3px;
     padding-right: 3px;
