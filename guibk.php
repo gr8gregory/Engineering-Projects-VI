@@ -49,7 +49,11 @@
 		
 		<h2> 	
 			<form action="gui.php" method="POST">
-				<img src="/gui.png" width="961" height="687">
+				Request floor # <input type="number" style="width:50px; height:40px" name="newfloor" max=3 min=1 required />
+				<input type="submit" value="Go"/>
+				<input type="submit" value=floor1/>
+				<input type="submit" value=floor2/>
+				<input type="submit" value=floor3/>
 			</form>
 		</h2>
 
