@@ -31,11 +31,22 @@
 <html>
 	<head>
 		<link href='css/gui.css' type='text/css' rel='stylesheet'/> 
+		<link href='css/menu.css' type='text/css' rel='stylesheet'/> 
 		<title>Graphical User Interface</title>
 	</head>
 
 	<body>
-	<h1>ESE Project VI Elevator GUI</h1> 
+	
+		<div class='div1'>
+			<ul class='h_menu'>
+                <li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
+				<li class='gui'><a class='menu' href="/gui.php"><b>Elevator Control</b></a></li>
+				<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
+				<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
+				<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
+			</ul class='h_menu'>
+		</div>
+
 		<?php 
 			// When the "GO" button is pressed, it sends the value of the new floor the user want to the elevator network. 
 			// and it then refreshes the page and re-loads.

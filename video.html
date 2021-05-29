@@ -8,30 +8,41 @@
         <meta http-equiv='pragma' content='no-cache'/>
 
 		<link href='css/video.css' type='text/css' rel='stylesheet'/>
+		<link href='css/menu.css' type='text/css' rel='stylesheet'/>
 	</head>
 	<body>
-
-	<h1>Video Demonstrations</h1>
-	<ul>
-		<li><a href='#vid1'>Verification of HTTP and SSH to Remote Raspberry Pi</a></li>
-		<li><a href='#greg2'>Greg's Demo of CAN working on STM32F303</a></li>
-		<li><a href='#canHalDemo'>Local Verification of CAN Interface</a></li>
-	</ul>
-
-	<h2 id='vid1'>Project Demo's</h2>
-	<iframe src="https://www.youtube.com/embed/KUoalpc8u7M" width="420" height="345" frameborder="0" allowfullscreen ng-show="showvideo"></iframe>
-
-	<h2 id='greg1'>Greg's Demo's</h2>
-	<iframe src="https://www.youtube.com/embed/2-BFUyI3QGg" width="420" height="345" frameborder="0" allowfullscreen ng-show="showvideo"></iframe>
 	
-	<h2 id='canHalDemo'>Local Verification of CAN Interface</h2>
-	<iframe src="https://www.youtube.com/embed/bmKHAtUCD-Y" height="400" width="220" frameborder=0 allowfullscreen ng-show="showvideo"></iframe>
-	<p>In this video, we set the recieve filter for values between 0x100 and 0x103. First, we send a message with ID 0x104 which is transmitted but not received. Then we send a message with ID 0x103 which is transmitted and received (hits a breakpoint between transmit and receive so the LED cycles are distinct).</p>
+		<div class='div1'>
+			<ul class='h_menu'>
+                <li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
+				<li class='gui'><a class='menu' href="/gui.php"><b>Elevator Control</b></a></li>
+				<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
+				<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
+				<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
+			</ul class='h_menu'>
+		</div>
+
+		<h1>Video Demonstrations</h1>
+		<ul>
+			<li><a href='#vid1'>Verification of HTTP and SSH to Remote Raspberry Pi</a></li>
+			<li><a href='#greg2'>Greg's Demo of CAN working on STM32F303</a></li>
+			<li><a href='#canHalDemo'>Local Verification of CAN Interface</a></li>
+		</ul>
+
+		<h2 id='vid1'>Project Demo's</h2>
+		<iframe src="https://www.youtube.com/embed/KUoalpc8u7M" width="420" height="345" frameborder="0" allowfullscreen ng-show="showvideo"></iframe>
+
+		<h2 id='greg1'>Greg's Demo's</h2>
+		<iframe src="https://www.youtube.com/embed/2-BFUyI3QGg" width="420" height="345" frameborder="0" allowfullscreen ng-show="showvideo"></iframe>
+		
+		<h2 id='canHalDemo'>Local Verification of CAN Interface</h2>
+		<iframe src="https://www.youtube.com/embed/bmKHAtUCD-Y" height="400" width="220" frameborder=0 allowfullscreen ng-show="showvideo"></iframe>
+		<p>In this video, we set the recieve filter for values between 0x100 and 0x103. First, we send a message with ID 0x104 which is transmitted but not received. Then we send a message with ID 0x103 which is transmitted and received (hits a breakpoint between transmit and receive so the LED cycles are distinct).</p>
 
 
-	<p><a href="/index.html">Return</a></p>
+		<p><a href="/index.html">Return</a></p>
 
-	<p><a href="../about.html"> Return to About Us Page</a></p>
+		<p><a href="../about.html"> Return to About Us Page</a></p>
 
 	</body>
 </html>

@@ -18,6 +18,13 @@ p{
     font-size: 18px;
 }
 
+ul{
+    color: black;
+    font-family: Arial;
+    font-size: 18px;
+}
+
+/*
 a, a:visited{
     color: blue;
     font-family: Arial;
@@ -33,10 +40,4 @@ a:hover{
 a:active{
     color: rgb(154, 154, 255);
     transition: all 0.25s;
-}
-
-ul{
-    color: black;
-    font-family: Arial;
-    font-size: 18px;
-}
+}*/

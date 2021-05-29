@@ -18,6 +18,21 @@ p{
     font-size: 18px;
 }
 
+ul{
+    color: black;
+    font-family: Arial;
+    font-size: 18px;
+}
+img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -343px;
+	margin-left: -480px;
+}
+
+
+/*
 a, a:visited{
     color: blue;
     font-family: Arial;
@@ -34,16 +49,4 @@ a:active{
     color: rgb(154, 154, 255);
     transition: all 0.25s;
 }
-
-ul{
-    color: black;
-    font-family: Arial;
-    font-size: 18px;
-}
-img{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -343px;
-	margin-left: -480px;
-}
+*/

@@ -17,6 +17,18 @@ p{
     font-size: 18px;
 }
 
+ul{
+    color: black;
+    font-family: Arial;
+    font-size: 18px;
+}
+img{
+    padding-left: 1%;
+    width: 300px;
+    height: 386px;
+}
+
+/*
 a, a:visited{
     color: blue;
     font-family: Arial;
@@ -33,13 +45,4 @@ a:active{
     color: rgb(154, 154, 255);
     transition: all 0.25s;
 }
-ul{
-    color: black;
-    font-family: Arial;
-    font-size: 18px;
-}
-img{
-    padding-left: 1%;
-    width: 300px;
-    height: 386px;
-}
+*/
