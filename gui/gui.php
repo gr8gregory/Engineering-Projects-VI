@@ -30,8 +30,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link href='css/gui.css' type='text/css' rel='stylesheet'/> 
-		<link href='css/menu.css' type='text/css' rel='stylesheet'/> 
+		<link href='/css/gui.css' type='text/css' rel='stylesheet'/> 
+		<link href='/css/menu.css' type='text/css' rel='stylesheet'/> 
 		<title>Graphical User Interface</title>
 	</head>
 
@@ -39,8 +39,8 @@
 	
 		<div class='div1'>
 			<ul class='h_menu'>
-                <li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
-				<li class='gui'><a class='menu' href="/gui.php"><b>Elevator Control</b></a></li>
+                		<li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
+				<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
 				<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
 				<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
 				<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
@@ -55,13 +55,13 @@
 				header('Refresh:0; url=gui.php');	
 			} 
 			$curFlr = get_currentFloor();
-			echo "<h2>Current floor # $curFlr </h2>";			
+			//echo "<h2>Current floor # $curFlr </h2>";			
 		?>		
 		
 		<h2> 	
 			<form action="gui.php" method="POST">
-				<img src="Button_Not_Pressed.png" class="Button_no"width="174" height="286">
-				<img src="Indicator_1_Down.png" class="indc_1D"width="656" height="173">
+				<img src="Button_Not_Pressed.png" class="Button_no">
+				<img src="Indicator_1_Down.png" class="indc_1D">
 				
 				<?php
 				/*<img src="Button_Pressed_Down.png" class="Button_down"width="174" height="286">
@@ -75,9 +75,7 @@
 				?>
 			</form>
 		</h2>
-
-		<p><a href="/index.html"> Return </a></p>
-		</body>
+	</body>
 		
 </html>
  
