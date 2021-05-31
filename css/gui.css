@@ -23,30 +23,28 @@ ul{
     font-family: Arial;
     font-size: 18px;
 }
+
+/***** Positioning the Images *****/
+img.Button_no, img.Button_up, img.Button_down{
+    position: absolute;
+    top: 20%;
+	left: 75%;
+}
+
+img.indc_1D, img.indc_1U, img.indc_2D, img.indc_2U, img.indc_3D, img.indc_3U{
+    position: absolute;
+    top: 10%;
+	left: 50%;
+}
+/*********************************/
+
+
+/*
 img{
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	margin-top: -343px;
 	margin-left: -480px;
-}
+}*/
 
-
-/*
-a, a:visited{
-    color: blue;
-    font-family: Arial;
-    font-size: 18px;
-}
-a:visited {
-    transition: all 0.5s;
-}    
-a:hover{
-    color: rgb(11, 11, 126);
-    transition: all 0.25s;
-}
-a:active{
-    color: rgb(154, 154, 255);
-    transition: all 0.25s;
-}
-*/

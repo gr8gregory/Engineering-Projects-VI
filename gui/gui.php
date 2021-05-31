@@ -60,7 +60,19 @@
 		
 		<h2> 	
 			<form action="gui.php" method="POST">
-				<img src="/gui.png" width="961" height="687">
+				<img src="Button_Not_Pressed.png" class="Button_no"width="174" height="286">
+				<img src="Indicator_1_Down.png" class="indc_1D"width="656" height="173">
+				
+				<?php
+				/*<img src="Button_Pressed_Down.png" class="Button_down"width="174" height="286">
+				<img src="Button_Pressed_Up.png" class="Button_up"width="174" height="286">
+				
+				<img src="Indicator_1_up.png" class="indc_1U"width="656" height="173">
+				<img src="Indicator_2_Down.png" class="indc_2D"width="656" height="173">
+				<img src="Indicator_2_up.png" class="indc_2U"width="656" height="173">
+				<img src="Indicator_3_Down.png" class="indc_3D"width="656" height="173">
+				<img src="Indicator_3_up.png" class="indc_3U"width="656" height="173">*/
+				?>
 			</form>
 		</h2>
 
