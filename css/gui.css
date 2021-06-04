@@ -33,17 +33,19 @@ img.Button_no, img.Button_up, img.Button_down{
 
 img.indc_1D, img.indc_1U, img.indc_2D, img.indc_2U, img.indc_3D, img.indc_3U{
     position: absolute;
-    top: 10%;
+    top: 110px;
+    margin-left:-328px;
 	left: 50%;
 }
 /*********************************/
 iframe.stream{
+	width: 600px;
+	height: 300px;
     position: absolute;
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
-    top: 30%;
+    top: 300px;
+    left: 50%;
+    margin-left: -300px;
+   
 
 }
 
