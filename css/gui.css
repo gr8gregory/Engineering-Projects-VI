@@ -27,28 +27,25 @@ ul{
 /***** Positioning the Images *****/
 img.Button_no, img.Button_up, img.Button_down{
     position: absolute;
-    top: 200px;
+    top: 20%;
 	left: 75%;
 }
 
 img.indc_1D, img.indc_1U, img.indc_2D, img.indc_2U, img.indc_3D, img.indc_3U{
     position: absolute;
-    top: 110px;
+    top: 10%;
 	left: 50%;
-	margin-left: -328px;
 }
 /*********************************/
 iframe.stream{
-	position:relative;
-	left: 50%;
-	top: 200px;
-	margin-left: -298px;
-	width: 600px;
-	height: 300px;
-	
-	
-}
+    position: absolute;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    top: 30%;
 
+}
 
 
 /*
