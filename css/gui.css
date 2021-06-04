@@ -27,33 +27,25 @@ ul{
 /***** Positioning the Images *****/
 img.Button_no, img.Button_up, img.Button_down{
     position: absolute;
-    width: 174px;
-    height: 286px;
-    top: 40%;
-    left: 90%;
-
-    margin-left: -87px;
-    margin-height: -143px;
+    top: 20%;
+	left: 75%;
 }
 
 img.indc_1D, img.indc_1U, img.indc_2D, img.indc_2U, img.indc_3D, img.indc_3U{
     position: absolute;
-    width: 656px;
-    height: 173px;
-    top: 120px;
-    left: 50%;
-    
-    margin-left: -323px;
+    top: 10%;
+	left: 50%;
 }
-
-
-/**** TBD ****/
-img.ele_no, img.ele_1, img.ele_2, img.ele_3{
-	
-}
-
-/************/
 /*********************************/
+iframe.stream{
+    position: absolute;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    top: 30%;
+
+}
 
 
 /*

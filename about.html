@@ -7,33 +7,70 @@
         <meta http-equiv='author' content='mgalle'/>
         <meta http-equiv='pragma' content='no-cache'/>
 
+		<!--bootstrap links: https://getbootstrap.com/docs/5.0/getting-started/introduction/-->
+
+        <!--BOOTstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <!--Bootstrap JS code-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
 		<link href='css/about.css' type='text/css' rel='stylesheet'/>
 		<link href='css/menu.css' type='text/css' rel='stylesheet'/>
+
+		<!--[if lt IE 9]>
+            <script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
+        <![endif]-->
 	</head>
 	<body>
+		<div id='page' class='container'>
+			<header>
+				<ul class='h_menu'>
+					<li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
+					<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
+					<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
+					<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
+					<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
+				</ul class='h_menu'>
+			</header>
+			
 
-		<div class='div1'>
-			<ul class='h_menu'>
-                <li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
-				<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
-				<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
-				<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
-				<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
-			</ul class='h_menu'>
+			<br>
+			<h1>Meet The Team</h1>
+			<br>
+
+			<div class='row'>
+				<div class='col-xs-12 col-md-4'>
+					<h2>Andrew</h2>
+					<img src="/andrew/andrew.jpg" alt="Mugshot of Andrew" height="200"><br>
+					<p class="bio">
+						This is andrew, He likes hats and earbuds. <br>
+					</p>
+					<p class='center'><a href="/andrew/logbook.html">Andrew's Logbook:</a></p>
+					<br>
+				</div>
+
+				<div class='col-xs-12 col-md-4'>
+					<h2>Caleb</h2>
+					<img src="/caleb/Caleb.png" alt="Mugshot of Caleb" height="200"><br>
+					<p class="bio">
+						This is caleb, he likes glasses and trees <br>
+					</p>
+					<p class='center'><a href="/caleb/logbook.html">Caleb's Logbook: </a></p>
+					<br>
+				</div>
+
+				<div class='col-xs-12 col-md-4'>
+					<h2>Greg</h2>
+					<img src="/greg/greg.jpg" alt="Mugshot of Greg" width="200" height="200"><br>
+					<p class="bio">
+						This is Greg, He is currently 21 and loves all things related to technology. <br>
+						In his spare time he participates in all kinds of sports and loves being active outside. <br>
+					</p>
+					<p class='center'><a href="/greg/logbook.html">Greg's Logbook: </a></p>
+					<br>
+				</div>
+			</div>
 		</div>
-		<br>
-		<h1>Meet The Team</h1>
-
-		<h2>Andrew<h2>
-		<p><a href="/andrew/logbook.html">Andrew's Logbook:</a></p>
-		
-		<h2>Caleb<h2>
-		<p><a href="/caleb/logbook.html">Caleb's Logbook: </a></p>
-		
-		<h2>Greg<h2>
-		<p><a href="/greg/logbook.html">Greg's Logbook: </a></p>
-
-		<p><a href="/index.html">Return</a></p>
 	</body>
 </html>
 
