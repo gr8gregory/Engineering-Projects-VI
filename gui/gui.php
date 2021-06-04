@@ -73,8 +73,11 @@
 				<img src="Indicator_3_Down.png" class="indc_3D"width="656" height="173">
 				<img src="Indicator_3_up.png" class="indc_3U"width="656" height="173">*/
 				?>
+				
+				<iframe src="http://192.168.0.201:5080/" style="height:250px; width=500px"></iframe>
+
 			</form>
-		</h2>
+		</h2> 
 	</body>
 		
 </html>
