@@ -60,12 +60,14 @@
 		
 		<h2> 	
 			<form action="gui.php" method="POST">
-				<img src="img/Button_Not_Pressed.png" class="Button_no">
 				<img src="img/Indicator_No_Floor.png" class="indc_NO">
 				<img src="img/none_lit_up.png" class="I_NO">
-				
-				
-
+				<h1 class="floor3">Floor 3</h1>
+				<img src="img/CallButtonDown.png" class="C_D">
+				<h1 class="floor2">Floor 2</h1>
+				<img src="img/CallButtonUpDown.png" class="C_UD">
+				<h1 class="floor1">Floor 1</h1>
+				<img src="img/CallButtonUp.png" class="C_U">
 				
 				<iframe class='stream' src="http://192.168.0.201:5080/" style="height:250px; width=500px"></iframe>
 				

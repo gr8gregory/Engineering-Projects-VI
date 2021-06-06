@@ -25,11 +25,23 @@ ul{
 }
 
 /***** Positioning the Images *****/
-img.Button_no, img.Button_up, img.Button_down{
+img.C_D{
     position: absolute;
-    top: 200px;
+    top: 150px;
     left: 75%;
-    width: 174px;
+    width: 200px;
+}
+img.C_UD{
+    position: absolute;
+    top: 250px;
+    left: 75%;
+    width: 200px;
+}
+img.C_U{
+    position: absolute;
+    top: 350px;
+    left: 75%;
+    width: 200px;
 }
 
 img.indc_NO, img.indc_1U, img.indc_2D, img.indc_2U, img.indc_3D, img.indc_3U{
@@ -48,6 +60,22 @@ img.I_NO{
     left: 23%;
     width: 300px;
     border-radius: 10px;
+}
+
+h1.floor3{
+    position: absolute;
+    top: 110px;
+    left: 75%;
+}
+h1.floor2{
+    position: absolute;
+    top: 210px;
+    left: 75%;
+}
+h1.floor1{
+    position: absolute;
+    top: 310px;
+    left: 75%;
 }
 
 /*
