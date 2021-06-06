@@ -65,25 +65,8 @@
 				<img src="img/none_lit_up.png" class="I_NO">
 				
 				
-				<?php/*
-				<img src="img/Button_Pressed_Down.png" class="Button_down">
-				<img src="img/Button_Pressed_Up.png" class="Button_up">
+
 				
-				<img src="img/Indicator_1_up.png" class="indc_1U">
-				<img src="img/Indicator_2_Down.png" class="indc_2D">
-				<img src="img/Indicator_2_up.png" class="indc_2U">
-				<img src="img/Indicator_3_Down.png" class="indc_3D">
-				<img src="img/Indicator_3_up.png" class="indc_3U">
-
-				<img src="img/button_1_lit_up.png" class="I_one">
-				<img src="img/button_2_lit_up.png" class="I_two">
-				<img src="img/button_3_lit_up.png" class="I_two">
-				<img src="img/open_lit_up.png" class="I_open">
-				<img src="img/close_light_up.png" class="I_close">
-				<img src="img/alarm_lit_up.png" class="I_alarm">
-				<img src="img/fan_lit_up.png" class="I_fan">
-				*/?>
-
 				<iframe class='stream' src="http://192.168.0.201:5080/" style="height:250px; width=500px"></iframe>
 				
 			</form>
