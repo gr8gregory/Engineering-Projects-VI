@@ -27,27 +27,40 @@ ul{
 /***** Positioning the Images *****/
 img.Button_no, img.Button_up, img.Button_down{
     position: absolute;
-    top: 20%;
-	left: 75%;
+    top: 200px;
+    left: 75%;
+    width: 174px;
 }
 
 img.indc_1D, img.indc_1U, img.indc_2D, img.indc_2U, img.indc_3D, img.indc_3U{
     position: absolute;
     top: 110px;
     margin-left:-328px;
-	left: 50%;
+    left: 50%;
+    width: 656px;
 }
+
+img.I_NO{
+    position: absolute;
+    top: 110px;
+    margin-left:-239px;
+    left: 10%;
+    width: 477px;
+}
+
+/*
+img.I_one, img.I_two, img.I_three, img.I_open, img.I_close, img.I_alarm, img.I_fan {}*/
+
 /*********************************/
 iframe.stream{
-	width: 600px;
-	height: 300px;
+    width: 600px;
+    height: 300px;
     position: absolute;
     top: 300px;
     left: 50%;
     margin-left: -300px;
-   
-
 }
+
 
 
 /*
