@@ -69,7 +69,7 @@
 				<h1 class="floor1">Floor 1</h1>
 				<img src="img/CallButtonUp.png" class="C_U">
 				
-				<iframe class='stream' src="http://192.168.0.201:5080/" style="height:250px; width=500px"></iframe>
+				<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>
 				
 			</form>
 		</h2> 
