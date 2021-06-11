@@ -60,17 +60,46 @@
 		
 		<h2> 	
 			<form action="gui.php" method="POST">
-				<img src="img/Indicator_No_Floor.png" class="indc_NO">
-				<img src="img/none_lit_up.png" class="I_NO">
+				<img src="img/Indicator_No_Floor.png" class="indc_NO" usemap="#indc">
+				<img src="img/none_lit_up.png" class="I_NO" usemap="#I">
+
+
 				<h1 class="floor3">Floor 3</h1>
-				<img src="img/CallButtonDown.png" class="C_D">
+				<img src="img/CallButtonDown.png" class="C_D" usemap="#CD">
+				<map name="CD">
+					<area shape="circle" coords="1791, 261,36 " onclick="myFunction_CD()">
+				</map>
+
 				<h1 class="floor2">Floor 2</h1>
-				<img src="img/CallButtonUpDown.png" class="C_UD">
+				<img src="img/CallButtonUpDown.png" class="C_UD" usemap="#CUD">
+				<map name="CUD">
+					<area shape="circle" coords="1791, 488, 36" onclick="myFunction_CUD_U()">
+					<area shape="circle" coords="1728, 594, 36" onclick="myFunction_CUD_D()">
+				</map>
+
 				<h1 class="floor1">Floor 1</h1>
-				<img src="img/CallButtonUp.png" class="C_U">
+				<img src="img/CallButtonUp.png" class="C_U" usemap="#CU">
+				<map name="CU">
+					<area shape="circle" coords="1728, 819, 36" onclick="myFunction_CU()">
+				</map>
 				
 				<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>
 				
+				<script>
+					function myFunction_CD() {
+						alert("Calling Elevator to go Down from Floor 3");
+					}
+					function myFunction_CUD_U() {
+						alert("Calling Elevator to go Up from Floor 2");
+					}
+					function myFunction_CUD_D() {
+						alert("Calling Elevator to go Down from Floor 2");
+					}
+					function myFunction_CU() {
+						alert("Calling Elevator to go up from Floor 1");
+					}
+				</script>
+
 			</form>
 		</h2> 
 	</body>
