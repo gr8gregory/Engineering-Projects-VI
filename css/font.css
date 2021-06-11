@@ -1,0 +1,25 @@
+* {
+    font-family: Georgia;
+}
+p{
+    font-size:100%;
+    text-indent: 15px;
+}
+h1{
+    font-size:160%;
+}
+h2{
+    font-size:125%;
+}
+ul, li, ol, p{
+    line-height: 20px;
+    text-align: justify;
+}
+img{
+    height: 300px;
+}
+p.caption{
+    text-align: center;
+    font-style: italic;
+    font-size: 90%;
+}
