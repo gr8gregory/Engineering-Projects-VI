@@ -1,10 +1,14 @@
 IMG.meme1{
+    width: 126px;
+    height: 126px;
     position:fixed;
     margin-top: -30px;
     top: 0%;
     right: 0%;
 }
 IMG.meme2{
+    width: 126px;
+    height: 126px;
     position:fixed;
     margin-top: -30px;
     top: 0%;
@@ -40,7 +44,7 @@ p{
     font-size: 18px;
 }
 
-/*
+
 li.h_menu,  ul.h_menu { 
     text-align: center;
     color: black;
@@ -64,6 +68,7 @@ li.h_menu_i {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+/*
 a:link.menu {
     text-decoration: none;
     color: black;
@@ -104,4 +109,4 @@ a:active{
     color: rgb(154, 154, 255);
     transition: all 0.25s;
 }
-*/
+/*
