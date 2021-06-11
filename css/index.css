@@ -1,12 +1,15 @@
 IMG.meme1{
     position:fixed;
-    margin-top: -30px;
+    margin-top: 30px;
+    height: 100px;
+    width: 100px;
     top: 0%;
     right: 0%;
 }
 IMG.meme2{
     position:fixed;
-    margin-top: -30px;
+    margin-top: 30px;
+    height: 100px;
     top: 0%;
     left: 0%;
 }
