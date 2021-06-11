@@ -34,6 +34,27 @@
             </header>
             <br>
             <h1> Diagnostics Page</h1>
+            <h3>Diagnostics Page Brainstorming:</h3>
+            <ul>
+                <li>Will read out the infromation about all critical infastructure of the elevator project. Will tell user if the database is offline, or if stream is offline, or if communications withe CAN controller are down</li>
+                <li>Will allow user to see the all the latest CAN updates from each NODE (effectivley showing all the most up to date information in the database) May be worthwhile to display a history of messages that the supervisory controller has read. For example all CAN message updates in the database can be stored in a link list that will allow a user to see the complete communication history on the CAN bus. (Not sure if the database can take care of this functionaliity yet)</li>
+                <li>Will allow user to commuicate to a supervisory program on the pi runinning under C++, the supervisory program is a seperate proccess from the FSM and shares a share memory ipc allowing it to properly log the information of the FSM. 
+                    It is necessary to be a seperate process as it will also gather relevant data from other parts of the pi (still figuring out what process is are worth logging)</li>
+                <li>Possbile things the supervisory process can capture log information from are</li>
+                    <ul>
+                        <li>CAN Bus information from the FSM</li>
+                        <li>Database status</li>
+                        <li>RTSP stram status</li>
+                        <li>Information on Linux services that can be used by the FSM, (audio service being used by the elevator speaker)</li>
+                    </ul>
+                <li>The suprevisory program can also allow the website to access a list of diagnostic functions that could range from</li>
+                    <ul>
+                        <li>allowing a user to run commands on a terminal session from the pi remotely</li>
+                        <li>retrive data stdin from the terminal session and display on the webstie</li>
+                        <li>define a list of specialised diagnostic commands to reduce troubleshooting time (a.k.a simple commands to restart web server, update website, restart stream, restart database, push and display information from the database at will)</li>
+                        <li>Send custom CAN messages </li>
+                    </ul>
+            </ul>
             <br>
             <hr>
             <div class='col'>
