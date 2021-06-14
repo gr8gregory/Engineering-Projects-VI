@@ -32,3 +32,12 @@ img{
     width: 300px;
     height: 386px;
 }
+
+iframe.terminal {
+    width: 800px;
+    height: 500px;
+    left: -50px;
+    resize: both;
+    min-height: 260px;
+    min-width: 700px;
+}
