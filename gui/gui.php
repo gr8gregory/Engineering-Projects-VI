@@ -36,18 +36,18 @@
 	</head>
 
 	<body>
-	
-		<div class='div1'>
+	<div class='div1'>
 			<ul class='h_menu'>
-                		<li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
+                <li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
 				<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
 				<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
 				<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
 				<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
+				<li class='login'><a class='menu'href="./login.html"><b>Login</b></a></li>
+				<li class="proj_details"><a class="menu" href="./proj_details.html"><b>Project Details</b></a></li>
 			</ul class='h_menu'>
 		</div>
-
-		<?php 
+	<?php 
 			// When the "GO" button is pressed, it sends the value of the new floor the user want to the elevator network. 
 			// and it then refreshes the page and re-loads.
 			if(isset($_POST['newfloor'])) {
