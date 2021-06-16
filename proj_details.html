@@ -8,8 +8,23 @@
 		<meta http-equiv="pragma" content="no-cache" /> <!-- want browser to reload this page every time -->
 		
 		<link href="css/project_details_style.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/menu.css">
 	</head>
+
+
 	<body>
+		<div class='div1'>
+			<ul class='h_menu'>
+                <li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
+				<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
+				<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
+				<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
+				<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
+				<li class='login'><a class='menu'href="./login.html"><b>Login</b></a></li>
+				<li class="proj_details"><a class="menu" href="./proj_details.html"><b>Project Details</b></a></li>
+			</ul class='h_menu'>
+		</div>
+
 		<h1>Project Details</h1>
 		<h2>Project Description</h2>
 		<p>The overall project plan (to be completed in <span class="mkunderlined">3 phases</span>) is to build and control an elevator, leveraging the use of a CAN bus communications environment, coupled with networked systems to create a means of tracking the elevator’s operational/diagnostics data. The elevator car’s position and status must also be viewable to computers over the Internet.  See the system diagram, below.

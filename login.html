@@ -9,23 +9,35 @@
 		<meta http-equiv='author' content='asammut'/>
         <meta http-equiv='pragma' content='no-cache'/>
 
+        <link rel="stylesheet" href="css/menu.css">
 		<link href='css/font.css' type='text/css' rel='stylesheet'/>
         <link href='css/login_style.css' type='text/css' rel='stylesheet'/>
     </head>
     <body>
+		<div class='div1'>
+			<ul class='h_menu'>
+                <li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
+				<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
+				<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
+				<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
+				<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
+				<li class='login'><a class='menu'href="./login.html"><b>Login</b></a></li>
+				<li class="proj_details"><a class="menu" href="./proj_details.html"><b>Project Details</b></a></li>
+			</ul class='h_menu'>
+		</div>
+
         <h1>Please Log In</h1>
         <form action='php/login.php' method='post' id='login'>
-            <div>
+            <div class="div_form">
                 <label for='user' class='text_label'>Username:</label>
                 <input id='user' type="text" class='text_input' name='username' required/>
             </div>
-            <div>
-                <label for='pass' class='text_label'>Password:</label>
+            <div class="div_form">
+                <label for='pass' class='text_label'>Password:</label><br>
                 <input id='pass' type="password" class='text_input' name='password' required/>
             </div>
-            <div>
-                <input id='submit' type='submit' value='Log in' />
-            </div>
+            <div class="div_form">
+                <input id='submit' type='submit' value='Log in' /> </div>
             
             <div><a href='request_access.html'>Request access</div></p>
         </form>
