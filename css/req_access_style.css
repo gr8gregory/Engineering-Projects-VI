@@ -4,32 +4,42 @@
 	text-align: right;
 	padding: 0px 10px 0px 0px;
 	font-weight: bold;
-	}
+}
 .text_input {				 		/* total width = 200+10+2 (border) = 212*/	
 	width: 200px;
 	text-align: left;
 	padding: 0px 0px 0px 10px;
 }
 
-div { padding: 5px 0px 5px 0px;	/* total width = 112 + 162 = 324 */
-	  width: 324px;}
+div { 
+	padding: 5px 0px 5px 0px;	/* total width = 112 + 162 = 324 */
+	width: 324px;
+}
 
-fieldset {padding: 5px;		/* total width = 324+5+5 (padding)= 334 */
-		  width: 334px;
+fieldset {
+	padding: 20px;		/* total width = 324+5+5 (padding)= 334 */
+	width: 334px;
 }
 legend {
 	background-color: #6388cb;  /* Use Gimp to get exact color */
 	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 	color: white;
 }
-input#submit { float: right; 
-		  background-color: #6388cb;
-		  color: white; 
-		  font-weight: bold;
-		  border-radius: 5px;
+input#submit { 
+	margin-left: 100px; 
+	background-color: #6388cb;
+	color: white; 
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 5px;
 }
 input#submit:hover {
 	background-color: white;
+	transition: 0.5s;
 	color: #6388cb;
 }	
 input#submit:active {
@@ -41,7 +51,7 @@ textarea {
 	height: 150px;
 	color: #707172;
 	font-family: Arial, Verdana, sans-serif;
-	background-image: url("../images/Conestoga_logo.jpg");
+	background-image: url("../images/conestoga.png");
 	background-position: bottom left;
 	background-size: 50%;
 	background-repeat: no-repeat;
