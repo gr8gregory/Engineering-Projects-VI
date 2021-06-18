@@ -44,6 +44,14 @@ img{
 p.center{
     text-align: center;
 }
+
+.copyright{
+    float: right;
+}
+
+.age{
+    float: left;
+}
 /*
 a, a:visited{
     color: blue;
