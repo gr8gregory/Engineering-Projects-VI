@@ -19,7 +19,7 @@ a.menu{
     font-family: Arial;
 }
 
-li.index, li.about, li.project, li.gui, li.video {
+li.index, li.about, li.project, li.gui, li.video, li.logout {
     display:inline-block;
 }
 

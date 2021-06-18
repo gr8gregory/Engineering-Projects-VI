@@ -38,12 +38,13 @@
 	<body>
 	
 		<div class='div1'>
-			<ul class='h_menu'>
-                		<li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
+		<ul class='h_menu'>
+                <li class='index'><a class='menu' href="/menu.html"><b>Main Menu</b></a></li>
 				<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
 				<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
 				<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
 				<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
+				<li class='logout'><a class='menu' href="/logout.php"><b>Logout</b></a></li>
 			</ul class='h_menu'>
 		</div>
 
@@ -55,6 +56,7 @@
 				header('Refresh:0; url=gui.php');	
 			} 
 			$curFlr = get_currentFloor();
+			
 			//echo "<h2>Current floor # $curFlr </h2>";			
 		?>		
 		
