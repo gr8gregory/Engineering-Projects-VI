@@ -27,6 +27,25 @@ form{
     width: 250;
 }
 
+.custom_button {
+    text-decoration: none;
+    padding: 4px;
+    background-color: #444;
+    color: white;
+    border: 0.5px solid;
+
+}
+
+.custom_button:hover {
+    transition: 0.5s;
+    background-color: #6388cb;
+    border: 0.5px solid black;
+}
+
+.custom_button:active {
+    background-color: orange;
+}
+
 /* Code from notes tested in class and works!! */
 /*
 
