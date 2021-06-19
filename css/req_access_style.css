@@ -46,6 +46,11 @@ input#submit:active {
 	background-color: orange;
 	color: white;	
 }
+input#submit:disabled {
+	transition: 1s;
+	background-color: lightgrey;
+	color: grey;
+}
 textarea {
 	width: 334px;
 	height: 150px;
@@ -58,4 +63,20 @@ textarea {
 }
 textarea:focus {
 	color: black;
+}
+
+p#commentTitle{
+	float: left;
+}
+
+p#charLeft{
+	float: right;
+}
+
+.feedback{
+	color: red;
+	font-style: italic;
+	font-size: 75%;
+	text-align: right;
+	margin: 0px;
 }

@@ -19,15 +19,18 @@
 				<legend>Contact Details</legend>
 				<div>
 					<label for="fname" class="text_label" >First Name:</label>
-					<input id="fname" class="text_input" type="text" name="firstname"  /> 
+					<input id="fname" class="text_input" type="text" name="firstname"  />
+					<p class="feedback" id="fNameFeedback"></p>
 				</div>
 				<div>
 					<label for="lname" class="text_label">Last Name:</label>  
-					<input id="lname" class="text_input" type="text" name="lastname"  /> 
+					<input id="lname" class="text_input" type="text" name="lastname"  />
+					<p class="feedback" id="lNameFeedback"></p>
 				</div>
 				<div>
 					<label for="email" class="text_label">Email:</label>     
-					<input id="email" class="text_input" type="email" name="email" /> 
+					<input id="email" class="text_input" type="email" name="email" />
+					<p class="feedback" id="emailFeedback"></p>
 				</div>
 				<div>
 					<label for="website" class="text_label">Website:</label>    
@@ -44,6 +47,7 @@
 					<label for="faculty">Faculty</label>
 					<input id="student" type="radio" name="fac_or_student" value="student" /> 
 					<label for="student">Student</label><br />
+					<p class="feedback" id="requestTypeFeedback"></p>
 				</div>
 			</fieldset>
 			
@@ -68,11 +72,17 @@
 			<input type="file" name="file_uploaded" />
 			
 			<div>
-				<p>Tell us a bit about yourself</p>
-				<textarea name="comments" class="text">Please enter your comments here ...</textarea><br />
+				<div>
+					<p id="commentTitle">Tell us a bit about yourself</p>
+					<p id="charLeft"></p>
+				</div>
+				<textarea id="comments" name="comments" class="text">Please enter your comments here ...</textarea>
+				<p id="commentFeedback" class="feedback"></p><br />
 				<input id="submit" type="submit" value="Submit Request" />
 			</div>
 		</form>
+		<a href="login.html">Back to login page</a>
+		<script src="js/req_access.js"></script>
 		<br />
 		<p> Copyright &copy SmoothBrains</p>
     </body>

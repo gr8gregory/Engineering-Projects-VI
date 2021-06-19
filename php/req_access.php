@@ -71,7 +71,7 @@ $submitted = !empty($_POST);
 			<div><label><?php 
 				if (isset($_POST['file_uploaded']))
 				{
-					echo "You selected file '<i>" . $_POST['file_uploaded'] . "</i>'";
+					echo "You selected file <i>". $_POST['file_uploaded'] . "</i>";
 				}
 			?></label></div>
 			<div><label><?php
