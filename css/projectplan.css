@@ -1,70 +1,86 @@
 body {
-    background-color: white;
-    margin-left: 25px;
-    margin-top: 35px;
-    padding-left: 2%;
-    padding-right: 2%;
+  background-color: white;
+  margin-left: 25px;
+  margin-top: 35px;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
-h1{
-    color: black;
-    font-family: Arial;
-    font-size: 30px;
+h1 {
+  color: black;
+  font-family: Arial;
+  font-size: 30px;
 }
 
-p{
-    color: black;
-    font-family: Arial;
-    font-size: 18px;
+p {
+  color: black;
+  font-family: Arial;
+  font-size: 18px;
 }
 
-
-ul{
-    color: black;
-    font-family: Arial;
-    font-size: 18px;
+ul {
+  color: black;
+  font-family: Arial;
+  font-size: 18px;
 }
-img{
-    padding-left: 1%;
-    width: 300px;
-    height: 386px;
+img {
+  padding-left: 1%;
+  width: 300px;
+  height: 386px;
 }
 
 .week-headings {
-    color: rgba(194, 29, 29, 0.5);
+  color: rgba(194, 29, 29, 0.5);
 }
 
-#mike, #ali {
-    color:rgba(49, 62, 138, 0.4);
+#mike,
+#ali {
+  color: rgba(49, 62, 138, 0.4);
 }
 
-.gh {background-color: blue;}
-.ch {background-color: yellow;}
-.as {background-color: red;}
-.all {background-color: lightgray;}
-.ag {background-color: purple;}
-.ac {background-color: orange;}
+.gh {
+  background-color: blue;
+}
+.ch {
+  background-color: yellow;
+}
+.as {
+  background-color: red;
+}
+.all {
+  background-color: lightgray;
+}
+.ag {
+  background-color: purple;
+}
+.ac {
+  background-color: orange;
+}
 
-table, td {
-    font-family: Arial;
-    border-spacing: 3px;
-    border: 1px solid #777;
+table,
+td {
+  font-family: Arial;
+  border-spacing: 3px;
+  border: 1px solid #777;
 }
-th.hrow{width: 600px;
-    text-align: left;
+th.hrow {
+  width: 600px;
+  text-align: left;
 }
-th {width: 50px;
-    font-weight: 500;
-    border: 1px solid #777;
+th {
+  width: 50px;
+  font-weight: 500;
+  border: 1px solid #777;
 }
 
-td:hover {background-color: lightgreen;}
+td:hover {
+  background-color: lightgreen;
+}
 
 td {
-    text-align: center;
-    padding: 5px;
+  text-align: center;
+  padding: 5px;
 }
-
 
 /*a, a:visited{
     color: blue;

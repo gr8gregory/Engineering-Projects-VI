@@ -1,31 +1,37 @@
-ul.h_menu{
-    list-style-type: none;
-    margin-left: 75px;
-    margin-right:100px;
-    padding-left: 0%;
-    overflow: hidden;
-    background-color: #444;
-    border-radius: 10px;
-    
-    text-align: center;
+ul.h_menu {
+  list-style-type: none;
+  margin-left: 75px;
+  margin-right: 100px;
+  padding-left: 0%;
+  overflow: hidden;
+  background-color: #444;
+  border-radius: 10px;
+
+  text-align: center;
 }
 
-a.menu{
-    display: block;
-    color: white;
+a.menu {
+  display: block;
+  color: white;
 
-    padding: 20px 20px;
-    text-decoration: white;
-    font-size: 20px;
-    font-family: Arial;
+  padding: 20px 20px;
+  text-decoration: white;
+  font-size: 20px;
+  font-family: Arial;
 }
 
-li.proj_details, li.login,li.index, li.about, li.project, li.gui, li.video {
-    display:inline-block;
+li.proj_details,
+li.login,
+li.index,
+li.about,
+li.project,
+li.gui,
+li.video {
+  display: inline-block;
 }
 
-li a.menu:hover{
-    background-color: #111;
-    color: #DDD;
-    transition: all 0.5s;
+li a.menu:hover {
+  background-color: #111;
+  color: #ddd;
+  transition: all 0.5s;
 }

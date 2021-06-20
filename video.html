@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Video Demonstration</title>
-		<meta name='description' content='Page in project'/>
-        <meta name='robots' content='noindex nofollow'/>
-        <meta http-equiv='author' content='ghuras'/>
-		<meta http-equiv='author' content='choeksema'/>
-		<meta http-equiv='author' content='asammut'/>
-        <meta http-equiv='pragma' content='no-cache'/>
+
+<head>
+	<title>Video Demonstration</title>
+	<meta name='description' content='Page in project' />
+	<meta name='robots' content='noindex nofollow' />
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, inital-scale=1"/>
+	<meta http-equiv='author' content='ghuras' />
+	<meta http-equiv='author' content='choeksema' />
+	<meta http-equiv='author' content='asammut' />
+	<meta http-equiv='pragma' content='no-cache' />
 
 
-		
-		<!--bootstrap links: https://getbootstrap.com/docs/5.0/getting-started/introduction/-->
 
-        <!--BOOTstrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <!--Bootstrap JS code-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<!--bootstrap links: https://getbootstrap.com/docs/5.0/getting-started/introduction/-->
 
-		<link href='css/font.css' type='text/css' rel='stylesheet'/>
-		<link href='css/video.css' type='text/css' rel='stylesheet'/>
-		<link href='css/menu.css' type='text/css' rel='stylesheet'/>
-		<!--[if lt IE 9]>
+	<!--BOOTstrap-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<!--Bootstrap JS code-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
+
+	<link href='css/font.css' type='text/css' rel='stylesheet' />
+	<link href='css/video.css' type='text/css' rel='stylesheet' />
+	<link href='css/menu.css' type='text/css' rel='stylesheet' />
+	<!--[if lt IE 9]>
             <script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
         <![endif]-->
-	</head>
-	
-	<body>
- 	<header>
-		 <nav>
+</head>
 
-			<ul class='h_menu'>
-                <li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
-				<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
-				<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
-				<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
-				<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
-				<li class='login'><a class='menu'href="./login.html"><b>Login</b></a></li>
-				<li class="proj_details"><a class="menu" href="./proj_details.html"><b>Project Details</b></a></li>
-			</ul class='h_menu'>
-			
-		 </nav>
-	 </header>
+<body>
+
+	<div id="page" class="container">
+		<header>
+			<nav>
+
+				<ul class='h_menu'>
+					<li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
+					<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
+					<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
+					<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
+					<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
+					<li class='login'><a class='menu' href="./login.html"><b>Login</b></a></li>
+					<li class="proj_details"><a class="menu" href="./proj_details.html"><b>Project Details</b></a></li>
+				</ul class='h_menu'>
+
+			</nav>
+		</header>
 
 
 		<h1>Video Demonstrations</h1>
@@ -52,23 +60,30 @@
 		</ul>
 
 		<h2 id='vid1'>Project Demo's</h2>
-		<iframe src="https://www.youtube.com/embed/KUoalpc8u7M" width="420" height="345" frameborder="0" allowfullscreen ng-show="showvideo"></iframe>
+		<iframe src="https://www.youtube.com/embed/KUoalpc8u7M" width="420" height="345" frameborder="0" allowfullscreen
+			ng-show="showvideo"></iframe>
 
 		<h2 id='greg1'>Greg's CAN Demo</h2>
-		<iframe src="https://www.youtube.com/embed/rf18mJjdDoQ" width="420" height="345" frameborder="0" allowfullscreen ng-show="showvideo"></iframe>
-		
+		<iframe src="https://www.youtube.com/embed/rf18mJjdDoQ" width="420" height="345" frameborder="0" allowfullscreen
+			ng-show="showvideo"></iframe>
+
 		<h2 id='canHalDemo'>Local Verification of CAN Interface</h2>
-		<iframe src="https://www.youtube.com/embed/bmKHAtUCD-Y" height="400" width="220" frameborder=0 allowfullscreen ng-show="showvideo"></iframe>
-		<p>In this video, we set the recieve filter for values between 0x100 and 0x103. First, we send a message with ID 0x104 which is transmitted but not received. Then we send a message with ID 0x103 which is transmitted and received (hits a breakpoint between transmit and receive so the LED cycles are distinct).</p>
+		<iframe src="https://www.youtube.com/embed/bmKHAtUCD-Y" height="400" width="220" frameborder=0 allowfullscreen
+			ng-show="showvideo"></iframe>
+		<p>In this video, we set the recieve filter for values between 0x100 and 0x103. First, we send a message with ID
+			0x104 which is transmitted but not received. Then we send a message with ID 0x103 which is transmitted and
+			received (hits a breakpoint between transmit and receive so the LED cycles are distinct).</p>
 
 
 
 
-
+		<aside></aside>
 		<footer>
 			<p><a href="/index.html">Return</a></p>
 			<p><a href="../about.html"> Return to About Us Page</a></p>
 			<p> Copyright &copy SmoothBrains</p>
 		</footer>
-	</body>
+	</div>
+</body>
+
 </html>
