@@ -12,19 +12,34 @@
 		<link href='css/font.css' type='text/css' rel='stylesheet'/>
         <link href='css/index.css' type='text/css' rel='stylesheet'/>  
 		<link href='css/menu.css' type='text/css' rel='stylesheet'/>
+		
+		<!--bootstrap links: https://getbootstrap.com/docs/5.0/getting-started/introduction/-->
+
+        <!--BOOTstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <!--Bootstrap JS code-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+		<!--[if lt IE 9]>
+            <script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
+        <![endif]-->
 	</head>
 	<body>
-		<div class='div1'>
-			<ul class='h_menu'>
-                <li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
-				<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
-				<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
-				<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
-				<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
-				<li class='login'><a class='menu'href="./login.html"><b>Login</b></a></li>
-				<li class="proj_details"><a class="menu" href="./proj_details.html"><b>Project Details</b></a></li>
-			</ul class='h_menu'>
-		</div>
+		<header>
+			<nav>
+					<ul class='h_menu'>
+              		  <li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
+						<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
+						<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
+						<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
+						<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
+						<li class='login'><a class='menu'href="./login.html"><b>Login</b></a></li>
+						<li class="proj_details"><a class="menu" href="./proj_details.html"><b>Project Details</b></a></li>
+					</ul class='h_menu'>
+			</nav>
+		</header>
+
+
 		<p id="time"></p>
 		<script src="js/dateTime.js"></script>
 
@@ -49,7 +64,11 @@
 		<p><a href="https://github.com/gr8gregory/Engineering-Projects-VI-website" target=_blank>Website Repository</a></p>
 		<p><a href="https://www.github.com/choeksema/Nucleo-F303RE_HAL_CAN" target=_blank title="Open repository in new tab">CAN Repository</a></p>
 		<p><a href="/diagnostics.html">Diagnostics Page</a></p>
-		<p> Copyright &copy SmoothBrains</p>
+
+		 <footer>
+			<p> Copyright &copy SmoothBrains</p>
+		 </footer>
+		
 	</body>
 
 </html>
