@@ -33,20 +33,45 @@
 </head>
 
 <body>
+	<header class="p-3 bg-dark text-white">
+		<div class="container">
+		  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+			<a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+				<img class="meme" role="img"  src="/andrew/tenor.gif" alt="Part Parrot" >
+			 
+			</a>
+	
+			<ul class="nav gap-1 col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-1">
+			  <li><a href="/index.html" class="nav-link px-2 text-secondary">Home</a></li>
+			  <li><a href="/gui/gui.php" class="nav-link px-2 text-white">Elevator</a></li>
+			  <li><a href="/projectplan.html" class="nav-link px-2 text-white">Project Plan</a></li>
+			  <li><a href="/video.html" class="nav-link px-2 text-white">Demo</a></li>
+			  <li><a href="/about.html" class="nav-link px-2 text-white">About</a></li>
+			  <li><a class="nav-link px-2 text-white" href="./proj_details.html">Project Details</a></li>
+
+			
+			</ul>
+	
+			<form class="col-14 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+			  <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+			</form>
+	
+			<div class="text-end">
+			  <button type="button" class="btn btn-outline-light me-2">Login</button>
+			  <button type="button" class="btn btn-warning">Sign-up</button>
+			</div>
+
+			<div class="text-end">
+				<p id="time"class="nav-link px-2 text-white"></p>
+				<script src="js/dateTime.js"></script>
+			</div>
+		  </div>
+		</div>
+	  </header>
+
 	<div id='page' class="container">
-		<header>
-			<nav>
-				<ul class='h_menu'>
-					<li class='index'><a class='menu' href="/index.html"><b>Main Menu</b></a></li>
-					<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
-					<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
-					<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
-					<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
-					<li class='login'><a class='menu' href="./login.html"><b>Login</b></a></li>
-					<li class="proj_details"><a class="menu" href="./proj_details.html"><b>Project Details</b></a></li>
-				</ul class='h_menu'>
-			</nav>
-		</header>
+
+	
 
 		<div id="content">
 		<br>
@@ -62,7 +87,7 @@
 				</p>
 				<p class='center'><a href="/andrew/logbook.html">Andrew's Logbook:</a></p>
 				<div>
-					<p class="age" id="andrewAge">Age: 23456</p>
+					<p class="age" id="andrewAge">Age: 12</p>
 					<p class="copyright"></p>
 				</div>
 			</div>

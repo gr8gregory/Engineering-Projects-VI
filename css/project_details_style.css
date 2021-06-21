@@ -2,9 +2,9 @@ body {
   font-family: sans-serif;
 }
 
-p,
-ul,
-ol {
+p.content,
+ul.content,
+ol.content {
   font-size: 100%;
   line-height: 20px;
   letter-spacing: 0px;
@@ -56,20 +56,20 @@ figcaption {
   color: blue;
 }
 
-body {
+.content {
   width: 950px;
   padding: 0px 10px 0px 10px;
   margin: 0px auto 0px auto;
   border: 2px solid black;
 }
 
-figure {
+figure.content {
   padding: 0px auto 0px auto;
   border: 2px solid green;
   border-radius: 25px;
 }
 
-img {
+img.content {
   height: 300px;
   display: block; /* Notice that img elements are inline */
   margin: 0px auto 0px auto;
@@ -77,10 +77,10 @@ img {
   box-shadow: 10px 10px 5px gray;
 }
 
-ul {
+ul.content {
   list-style-type: square;
 }
 /*ul {list-style-image: URL("../images/Conestoga_logo.jpg");} */
-ol {
+ol.content {
   list-style-type: lower-roman;
 }
