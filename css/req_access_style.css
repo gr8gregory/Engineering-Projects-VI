@@ -1,82 +1,84 @@
-.text_label {						/* total width = 100+10+2 (border) = 112 */
-	float: left;
-	width: 100px;
-	text-align: right;
-	padding: 0px 10px 0px 0px;
-	font-weight: bold;
+.text_label {
+  /* total width = 100+10+2 (border) = 112 */
+  float: left;
+  width: 100px;
+  text-align: right;
+  padding: 0px 10px 0px 0px;
+  font-weight: bold;
 }
-.text_input {				 		/* total width = 200+10+2 (border) = 212*/	
-	width: 200px;
-	text-align: left;
-	padding: 0px 0px 0px 10px;
+.text_input {
+  /* total width = 200+10+2 (border) = 212*/
+  width: 200px;
+  text-align: left;
+  padding: 0px 0px 0px 10px;
 }
 
-div { 
-	padding: 5px 0px 5px 0px;	/* total width = 112 + 162 = 324 */
-	width: 324px;
+div {
+  padding: 5px 0px 5px 0px; /* total width = 112 + 162 = 324 */
+  width: 324px;
 }
 
 fieldset {
-	padding: 20px;		/* total width = 324+5+5 (padding)= 334 */
-	width: 334px;
+  padding: 20px; /* total width = 324+5+5 (padding)= 334 */
+  width: 334px;
 }
 legend {
-	background-color: #6388cb;  /* Use Gimp to get exact color */
-	border-radius: 5px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
-	color: white;
+  background-color: #6388cb; /* Use Gimp to get exact color */
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
 }
-input#submit { 
-	margin-left: 100px; 
-	background-color: #6388cb;
-	color: white; 
-	font-weight: bold;
-	padding: 10px;
-	border-radius: 5px;
+input#submit {
+  margin-left: 100px;
+  background-color: #6388cb;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
 }
 input#submit:hover {
-	background-color: white;
-	transition: 0.5s;
-	color: #6388cb;
-}	
+  background-color: white;
+  transition: 0.5s;
+  color: #6388cb;
+}
 input#submit:active {
-	background-color: orange;
-	color: white;	
+  background-color: orange;
+  color: white;
 }
 input#submit:disabled {
-	transition: 1s;
-	background-color: lightgrey;
-	color: grey;
+  transition: 1s;
+  background-color: lightgrey;
+  color: grey;
 }
 textarea {
-	width: 334px;
-	height: 150px;
-	color: #707172;
-	font-family: Arial, Verdana, sans-serif;
-	background-image: url("../images/conestoga.png");
-	background-position: bottom left;
-	background-size: 50%;
-	background-repeat: no-repeat;
+  width: 334px;
+  height: 150px;
+  color: #707172;
+  font-family: Arial, Verdana, sans-serif;
+  background-image: url("../images/conestoga.png");
+  background-position: bottom left;
+  background-size: 50%;
+  background-repeat: no-repeat;
 }
 textarea:focus {
-	color: black;
+  color: black;
 }
 
-p#commentTitle{
-	float: left;
+p#commentTitle {
+  float: left;
 }
 
-p#charLeft{
-	float: right;
+p#charLeft {
+  float: right;
 }
 
-.feedback{
-	color: red;
-	font-style: italic;
-	font-size: 75%;
-	text-align: right;
-	margin: 0px;
+.feedback {
+  color: red;
+  font-style: italic;
+  font-size: 75%;
+  text-align: right;
+  margin: 0px;
 }
