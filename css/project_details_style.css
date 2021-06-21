@@ -58,13 +58,13 @@ figcaption {
   border: 2px solid black;
 }
 
-figure.content {
+figure.in_page {
   padding: 0px auto 0px auto;
   border: 2px solid green;
   border-radius: 25px;
 }
 
-img.content {
+img.in_page {
   height: 300px;
   display: block; /* Notice that img elements are inline */
   margin: 0px auto 0px auto;
