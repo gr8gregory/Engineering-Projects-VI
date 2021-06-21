@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: Georgia, sans-serif;
 }
 
 p.content,
@@ -33,27 +33,22 @@ figcaption {
 
 .mkbold {
   font-weight: bold;
-  color: red;
 }
 
 .mkunderlined {
   text-decoration: underline;
-  color: red;
 }
 
 #hcs12 {
   font-weight: bold;
-  color: blue;
 }
 
 #can {
   font-weight: bold;
-  color: blue;
 }
 
 #buttons {
   font-weight: bold;
-  color: blue;
 }
 
 .content {
