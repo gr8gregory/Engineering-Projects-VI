@@ -6,19 +6,19 @@
   padding-right: 2%;
 }
 
-h1 {
+h1.container {
   color: black;
   font-family: Arial;
   font-size: 30px;
 }
 
-p {
+p.content{
   color: black;
   font-family: Arial;
   font-size: 18px;
 }
 
-ul {
+ul.content {
   color: black;
   font-family: Arial;
   font-size: 18px;

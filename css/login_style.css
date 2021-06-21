@@ -1,16 +1,22 @@
 
-.text_label {                   /* total width = 117 = 100 + 10 + 5 + 2 = 117 */
+
+
+
+
+
+/*
+
+.text_label {
     width: 100px;
     margin-bottom: 20px;
 }
 
-.text_input {               /* total width = 207 = 200 + 5 + 2 */
+.text_input {               
     width: 200px;
     padding-top: 20px;
-    /*border: 1px solid black; */   /*This line caused issues in the class!!! - bug in CSS when placing a border on a text input? */  
 }
 
-.div_form {                   /* total width = 207+117 = 324 */
+.div_form {                  
     width: 207.2px;
     height: 100px;
     margin: 0px auto;
@@ -45,6 +51,9 @@ form{
 .custom_button:active {
     background-color: orange;
 }
+
+*/
+
 
 /* Code from notes tested in class and works!! */
 /*

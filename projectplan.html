@@ -69,209 +69,281 @@
 			  </div>
 			</div>
 		  </header>
+		  <div class="container">
+		  
+		  <main class="container">
+			<div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+			  <div class="col-md-6 px-0">
+				<h1 class="display-4 fst-italic">The project plan</h1>
+				<p class="lead my-3">This page will show you all the information you need to know on oure project plan! It contains a custom html gantt chart for some reason!</p>
+			  </div>
+			</div>
+		  
+			<div class="row mb-2">
 
-		<div id="page" class="content">
-		<br>
-		<h1>The Project Plan</h1>
-		<ul>
-			<li><a href='#gantt'>Gantt Chart</a></li>
-			<li><a href='#status'>Weekly Status Report</a></li>
-		</ul>
+				<div class="col-md-6">
+					<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+					  <div class="col p-4 d-flex flex-column position-static">
+						<strong class="d-inline-block mb-2 text-success">Google Docs</strong>
+						<h3 class="mb-0">Gantt Chart</h3>
+				
+						<p class="mb-auto">A copy of our gantt chart direct from google docs, for the most up to date information</p>
+						<a href="#gantt" class="stretched-link">Take a look...</a>
+					  </div>
+					  <div class="col-auto d-none d-lg-block">
+						<img class="img-thumbnail" src="/images/googlesheets.png" alt="Google Sheets Logo">
+					  </div>
+					</div>
+				  </div>
 
-		<h2>Gantt Chart</h2>
-		<table>
-			<thead>
-				<tr>
-					<th></th>
-					<th>W1</th>
-					<th>W2</th>
-					<th>W3</th>
-					<th>W4</th>
-					<th>W5</th>
-					<th>W6</th>
-					<th>W7</th>
-					<th>W8</th>
-					<th>W9</th>
-					<th>W10</th>
-					<th>W11</th>
-					<th>W12</th>
-					<th>W13</th>
-					<th>W14</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class='hrow'>Setup Communication Between Client and Server</th>
-					<td class="ag">AS/GH</td>
-					<td colspan="13"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Complete Project Plan</th>
-					<td class="ch">CH</td>
-					<td colspan="13"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Can Protocol Documentation</th>
-					<td class="as">AS</td>
-					<td colspan="13"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Implemnet CAN protocol (Nucelo via HAL)(as per outline plus loopback)</th>
-					<td colspan="2" class="ac">AS/CH</td>
-					<td colspan="12"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Prove capability to read CAN messages (test moving elevator with sample software)
-					</th>
-					<td></td>
-					<td class="as">AS</td>
-					<td colspan="12"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Start UI Design (floor and car)(change floor buttons and lights, current floor
-						lights)</th>
-					<td></td>
-					<td class="gh">GH</td>
-					<td colspan="12"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Elevator logic state machine</th>
-					<td class="gh">GH</td>
-					<td colspan="13"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Brainstorm unique feature</th>
-					<td class="all" colspan="14">All</td>
-				</tr>
-				<tr>
-					<th class='hrow'>Log all CAN information to database</th>
-					<td colspan="2"></td>
-					<td class="ch" colspan="4">CH</td>
-					<td colspan="8"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Research CAN LAN interfacing</th>
-					<td colspan="6"></td>
-					<td class="ch" colspan="4">CH</td>
-					<td colspan="4"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Client Program to access database</th>
-					<td colspan="2"></td>
-					<td class="ag" colspan="3">AS/GH</td>
-					<td colspan="9"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Client program to request diagnostic report</th>
-					<td colspan="5"></td>
-					<td class="ag" colspan="3">AS/GH</td>
-					<td colspan="6"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Client program to control operation</th>
-					<td colspan="8"></td>
-					<td class="ag" colspan="2">AS/GH</td>
-					<td colspan="4"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Complete UI Design</th>
-					<td colspan="2"></td>
-					<td colspan="8" class="gh">GH</td>
-					<td colspan="4"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Sabboth Mode</th>
-					<td colspan="2"></td>
-					<td colspan="4" class="ch">CH</td>
-					<td colspan="8"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Floor Announcements</th>
-					<td colspan="6"></td>
-					<td colspan="4" class="ch">CH</td>
-					<td colspan="4"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Brainstorm Capstone Ideas</th>
-					<td colspan="14" class="all">All</td>
-				</tr>
-				<tr>
-					<th class='hrow'>Research CAN/LAN Interfacing</th>
-					<td colspan="7"></td>
-					<td colspan="3" class="ch">CH</td>
-					<td colspan="4"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>UI Updates the database and CAN messages are generated</th>
-					<td colspan="10"></td>
-					<td colspan="2" class="gh">GH</td>
-					<td colspan="2"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>database updates based on CAN activity</th>
-					<td colspan="10"></td>
-					<td colspan="2" class="ch">CH</td>
-					<td colspan="2"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>UI updates bases on CAN database updates</th>
-					<td colspan="10"></td>
-					<td colspan="2" class="as">AS</td>
-					<td colspan="2"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>PI relays messages between CAN and LAN</th>
-					<td colspan="11"></td>
-					<td colspan="2" class="as">AS</td>
-					<td colspan="1"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Finish Implimenting the FSM logic</th>
-					<td colspan="8"></td>
-					<td colspan="4" class="gh">GH</td>
-					<td colspan="2"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Implement unique Feature</th>
-					<td colspan="11"></td>
-					<td colspan="2" class="ch">CH</td>
-					<td colspan="1"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Compile demo Video</th>
-					<td colspan="11"></td>
-					<td colspan="2" class="all">All</td>
-					<td colspan="1"></td>
-				</tr>
-				<tr>
-					<th class='hrow'>Complete presentation</th>
-					<td colspan="11"></td>
-					<td colspan="2" class="all">All</td>
-					<td colspan="1"></td>
-				</tr>
+				  <div class="col-md-6">
+					<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+					  <div class="col p-4 d-flex flex-column position-static">
+						<strong class="d-inline-block mb-2 text-primary">Google Docs</strong>
+						<h3 class="mb-0">Weekly Status Report</h3>
+				
+						<p class="mb-auto">A copy of our weekly status report straight from google docs, for the most up to date information</p>
+						<a href="#status" class="stretched-link">Take a look...</a>
+					  </div>
+					  <div class="col-auto d-none d-lg-block">
+						<img class="img-thumbnail " src="/images/Google-Docs-logo.png" alt="Google Sheets Logo">
+					  </div>
+					</div>
+				  </div>
 
-			</tbody>
-			<tfoot>
-				<tr>
-					<th colspan="15">GH = Greg Huras, CH = Caleb Hoeksema, AS = Andrew Sammut</th>
-				</tr>
-			</tfoot>
-		</table>
-		<br><br>
-		<hr>
+			  <div class="col-md-15">
+				<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				  <div class="col p-4 d-flex flex-column position-static">
+					<strong class="block mb-2 text-primary">Project Plan</strong>
+					<h3 class="mb-0">Gantt Chart</h3>
+					
+					<table>
+						<thead>
+							<tr>
+								<th></th>
+								<th>W1</th>
+								<th>W2</th>
+								<th>W3</th>
+								<th>W4</th>
+								<th>W5</th>
+								<th>W6</th>
+								<th>W7</th>
+								<th>W8</th>
+								<th>W9</th>
+								<th>W10</th>
+								<th>W11</th>
+								<th>W12</th>
+								<th>W13</th>
+								<th>W14</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class='hrow'>Setup Communication Between Client and Server</th>
+								<td class="ag">AS/GH</td>
+								<td colspan="13"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Complete Project Plan</th>
+								<td class="ch">CH</td>
+								<td colspan="13"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Can Protocol Documentation</th>
+								<td class="as">AS</td>
+								<td colspan="13"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Implemnet CAN protocol (Nucelo via HAL)(as per outline plus loopback)</th>
+								<td colspan="2" class="ac">AS/CH</td>
+								<td colspan="12"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Prove capability to read CAN messages (test moving elevator with sample software)
+								</th>
+								<td></td>
+								<td class="as">AS</td>
+								<td colspan="12"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Start UI Design (floor and car)(change floor buttons and lights, current floor
+									lights)</th>
+								<td></td>
+								<td class="gh">GH</td>
+								<td colspan="12"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Elevator logic state machine</th>
+								<td class="gh">GH</td>
+								<td colspan="13"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Brainstorm unique feature</th>
+								<td class="all" colspan="14">All</td>
+							</tr>
+							<tr>
+								<th class='hrow'>Log all CAN information to database</th>
+								<td colspan="2"></td>
+								<td class="ch" colspan="4">CH</td>
+								<td colspan="8"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Research CAN LAN interfacing</th>
+								<td colspan="6"></td>
+								<td class="ch" colspan="4">CH</td>
+								<td colspan="4"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Client Program to access database</th>
+								<td colspan="2"></td>
+								<td class="ag" colspan="3">AS/GH</td>
+								<td colspan="9"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Client program to request diagnostic report</th>
+								<td colspan="5"></td>
+								<td class="ag" colspan="3">AS/GH</td>
+								<td colspan="6"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Client program to control operation</th>
+								<td colspan="8"></td>
+								<td class="ag" colspan="2">AS/GH</td>
+								<td colspan="4"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Complete UI Design</th>
+								<td colspan="2"></td>
+								<td colspan="8" class="gh">GH</td>
+								<td colspan="4"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Sabboth Mode</th>
+								<td colspan="2"></td>
+								<td colspan="4" class="ch">CH</td>
+								<td colspan="8"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Floor Announcements</th>
+								<td colspan="6"></td>
+								<td colspan="4" class="ch">CH</td>
+								<td colspan="4"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Brainstorm Capstone Ideas</th>
+								<td colspan="14" class="all">All</td>
+							</tr>
+							<tr>
+								<th class='hrow'>Research CAN/LAN Interfacing</th>
+								<td colspan="7"></td>
+								<td colspan="3" class="ch">CH</td>
+								<td colspan="4"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>UI Updates the database and CAN messages are generated</th>
+								<td colspan="10"></td>
+								<td colspan="2" class="gh">GH</td>
+								<td colspan="2"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>database updates based on CAN activity</th>
+								<td colspan="10"></td>
+								<td colspan="2" class="ch">CH</td>
+								<td colspan="2"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>UI updates bases on CAN database updates</th>
+								<td colspan="10"></td>
+								<td colspan="2" class="as">AS</td>
+								<td colspan="2"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>PI relays messages between CAN and LAN</th>
+								<td colspan="11"></td>
+								<td colspan="2" class="as">AS</td>
+								<td colspan="1"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Finish Implimenting the FSM logic</th>
+								<td colspan="8"></td>
+								<td colspan="4" class="gh">GH</td>
+								<td colspan="2"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Implement unique Feature</th>
+								<td colspan="11"></td>
+								<td colspan="2" class="ch">CH</td>
+								<td colspan="1"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Compile demo Video</th>
+								<td colspan="11"></td>
+								<td colspan="2" class="all">All</td>
+								<td colspan="1"></td>
+							</tr>
+							<tr>
+								<th class='hrow'>Complete presentation</th>
+								<td colspan="11"></td>
+								<td colspan="2" class="all">All</td>
+								<td colspan="1"></td>
+							</tr>
+			
+						</tbody>
+						<tfoot>
+							<tr>
+								<th colspan="15">GH = Greg Huras, CH = Caleb Hoeksema, AS = Andrew Sammut</th>
+							</tr>
+						</tfoot>
+					</table>
 
-		<aside>
-			<h2 id=gantt>The Project Gant Chart</h2>
-			<iframe src="https://docs.google.com/spreadsheets/d/1e_5T0x0EjHhmOmpzPxVkbjXvwUw7ogk0D4VAjaNvMFk/edit#gid=0"
-				style="height:900px;width:1100px;" title="description"></iframe>
+				  </div>
+				
+				</div>
+			  </div>
 
-			<h2 id=status>Weekly Status Report</h2>
-			<iframe
-				src="https://docs.google.com/document/d/e/2PACX-1vSGaBO7TCAzJEfRbpMGqQqIIMMIQLfplft6bneg-d6V5XNG5JagCG5a5tPmfC74FlD4pZuI6UmnOYfr/pub?embedded=true"
-				style="height:900px;width:1100px;" title="Status Report" boader="0px"></iframe>
-			<p><a href="https://docs.google.com/document/d/1vcVVj-9MozF39ACKs6DU9n8Ep5-aIrBiFOIzXQuQqlU/edit">Status
-					Report</a></p>
-		</aside>
+			  <div class="col-md-15">
+				<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				  <div class="col p-4 d-flex flex-column position-static">
+					<strong class="block mb-2 text-success">Project Plan</strong>
+					<h3 class="mb-0">Gantt Chart</h3>
+					<a id='gantt'></a>
+
+					<p class="mb-auto">A copy of our gantt chart direct from google docs, for the most up to date information</p>
+
+					<iframe src="https://docs.google.com/spreadsheets/d/1e_5T0x0EjHhmOmpzPxVkbjXvwUw7ogk0D4VAjaNvMFk/edit#gid=0"
+					style="height:900px;width:1100px;" title="description"></iframe>
+				
+
+				  </div>
+				
+				</div>
+			  </div>
+
+			  
+			  <div class="col-md-15">
+				<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				  <div class="col p-4 d-flex flex-column position-static">
+					<strong class="block mb-2 text-primary">Project Plan</strong>
+					<a id='status'></a>
+					<h3 class="mb-0">Weekly status Report</h3>
+					<p class="mb-auto">A copy of our weekly status report in an iframe!</p>
+
+					<iframe
+					src="https://docs.google.com/document/d/e/2PACX-1vSGaBO7TCAzJEfRbpMGqQqIIMMIQLfplft6bneg-d6V5XNG5JagCG5a5tPmfC74FlD4pZuI6UmnOYfr/pub?embedded=true"
+					style="height:900px;width:1100px;" title="Status Report" boader="0px"></iframe>
+				<p><a href="https://docs.google.com/document/d/1vcVVj-9MozF39ACKs6DU9n8Ep5-aIrBiFOIzXQuQqlU/edit">Status
+						Report</a></p>
+
+				  </div>
+				
+				</div>
+			  </div>
+
+			 
+			</div>
+		  
+		
+		
 
 		<footer>
 			<p><a href="/index.html">Return</a></p>
