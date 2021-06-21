@@ -1,4 +1,4 @@
-	body { font-family: sans-serif;}
+	body { font-family: Georgia, sans-serif;}
 
 	p,ul,ol { font-size: 100%;
 		line-height: 20px;
@@ -18,20 +18,25 @@
 				font-size: 90%;
 	}
 	
-	.mkbold {font-weight: bold;
-			 color: red; }
+	.mkbold {
+		font-weight: bold;
+	}
 	
-	.mkunderlined {text-decoration: underline;
-					color: red; }
+	.mkunderlined {
+		text-decoration: underline;
+	}
 	
-	#hcs12 { font-weight: bold;
-		color: blue;}
+	#hcs12 { 
+		font-weight: bold;
+	}
 	
-	#can { font-weight: bold;
-		color: blue;}
+	#can { 
+		font-weight: bold;
+	}
 	
-	#buttons { font-weight: bold;
-		color: blue;  }
+	#buttons { 
+		font-weight: bold;
+	}
 
 
 	body { width: 950px;
