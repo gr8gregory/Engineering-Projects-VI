@@ -65,13 +65,23 @@
 			<?php 
 				// When the "GO" button is pressed, it sends the value of the new floor the user want to the elevator network. 
 				// and it then refreshes the page and re-loads.
-				if(isset($_POST['newfloor'])) {
+				/*if(isset($_POST['newfloor'])) {
 					$curFlr = update_elevatorNetwork(1, $_POST['newfloor']); 
 					header('Refresh:0; url=gui.php');	
 				} 
 				$curFlr = get_currentFloor();
 				echo $floor3;
-				echo "<h2>Current floor # $curFlr </h2>";	
+				echo "<h2>Current floor # $curFlr </h2>";	*/
+
+				if(isset($_GET['id'])) {
+					if($_GET['value']=="1" || $_GET['value']=="2" || $_GET['value']=="3"){
+						$curFlr = update_elevatorNetwork(1, $_GET['value']); 
+						//header('Refresh:0; url=gui.php');
+					}
+						
+				} 
+				$curFlr = get_currentFloor();
+				echo "<h2>Current floor # $curFlr </h2>";
 				
 				if(isset($_GET['id'])){
 					if($_GET['id']=='I'){
@@ -80,22 +90,22 @@
 								echo "Floor 1 Button has been pressed";
 								break;
 							case "2":
-								echo "Floor 1 Button has been pressed";
+								echo "Floor 2 Button has been pressed";
 								break;
 							case "3":
-								echo "Floor 1 Button has been pressed";
+								echo "Floor 3 Button has been pressed";
 								break;
 							case "C":
-								echo "Floor 1 Button has been pressed";
+								echo "Closed door Button has been pressed";
 								break;
 							case "O":
-								echo "Floor 1 Button has been pressed";
+								echo "Open door Button has been pressed";
 								break;
 							case "F":
-								echo "Floor 1 Button has been pressed";
+								echo "Fan Button has been pressed";
 								break;
 							case "B":
-								echo "Floor 1 Button has been pressed";
+								echo "Bell Button has been pressed";
 								break;
 							default:
 								echo "";
@@ -122,14 +132,7 @@
 						<area shape="circle" coords="174, 403, 30" onclick="myFunction_IB()" href="gui.php?id=I&value=B">
 					</map>
 
-					<script type="text/javascript">
-						function mapI(var pass){
-							<?php $Ival = "pass";?>
-						}
-					</script>
-
-
-
+	
 					<h1 class="floor3">Floor 3</h1>
 					<img src="img/CallButtonDown.png" class="C_D" usemap="#CD" id="CD">
 					<map name="CD">
@@ -150,9 +153,11 @@
 						<area shape="circle" coords="63, 117,36" onclick="myFunction_CU()">
 					</map>
 					
-					<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>
+					<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>?>
 					
-					<script src="gui.js"></script>
+					<script src="gui.js" type="text/javascript">
+						imginit();
+					</script>
 
 				</form>
 			</h2> 
@@ -163,3 +168,4 @@
 	</html>
 	
 	
+

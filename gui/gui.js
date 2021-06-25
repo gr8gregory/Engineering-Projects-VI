@@ -1,15 +1,16 @@
 function myFunction_CD() {
-    console.log(document.getElementById("CD").src);
-    
+
+    var CD;
     if(document.getElementById("CD").src == "http://142.156.193.130:50000/gui/img/CallButtonDownLit.png"){
         document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDown.png";
-        console.log("true");
+        CD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+
     }
     else{
-        console.log("else");
         document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";
-    }
-
+	 CD = "http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";    
+	}
+	localStorage.setItem("CD", CD);
 }
 function myFunction_CUD_U() {
 
@@ -40,13 +41,15 @@ function myFunction_CU() {
     }
 }
 function myFunction_I3() {
-
+	
     if(document.getElementById("INO").src == "http://142.156.193.130:50000/gui/img/Panel_3.png"){
         document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/none_lit_up.png";
-    }
+	return false;    
+}
     else{
         document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/Panel_3.png";
-    }
+	return true;    
+}
 }
 function myFunction_I2() {
 
@@ -102,3 +105,10 @@ function myFunction_IB() {
         document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/Panel_B.png";
     }
 }
+
+function imginit(){
+    document.getElementById("CD").src = localStorage.getItem("CD");
+	console.log(localStorage.getItem("CD"));
+	console.log("yes it works");
+}
+
