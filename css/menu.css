@@ -6,20 +6,19 @@ ul.h_menu{
     overflow: hidden;
     background-color: #444;
     border-radius: 10px;
-    
     text-align: center;
 }
 
 a.menu{
     display: block;
     color: white;
-    padding: 20px 20px;
+    padding: 20px;
     text-decoration: none;
     font-size: 20px;
     font-family: Arial;
 }
 
-li.index, li.about, li.project, li.gui, li.video, li.logout {
+li.index, li.about, li.project, li.gui, li.video, li.logout, li.login {
     display:inline-block;
 }
 

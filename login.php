@@ -1,12 +1,18 @@
 <?php
 // Initialize the session
-session_set_cookie_params(0);
 session_start();
+
+// We start the session, then we login saving the login variables as part of the session. 
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+if($_SESSION["loggedin"] != false){
     header("location: /menu.html");
     exit;
+}
+
+if(!empty($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+    echo '<script>alert("Access denied, Login or signup to view this page.")</script>';
 }
  
 // Include config file
@@ -55,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     // Bind result variables
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
+                        if(password_verify($password, $hashed_password)){ // This compares the login $password with the hashed $password in the database
                             // Password is correct, so start a new session
                             session_start();
                             
@@ -83,7 +89,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             mysqli_stmt_close($stmt);
         }
     }
-    
     // Close connection
     mysqli_close($link);
 }
@@ -125,7 +130,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p>Don't have an account? <a href="index.php">Sign up now</a>.</p>
+            <br>
+            <p>View the website <a href="menu.html">here</a> with guest access</p>
         </form>
     </div>
 </body>

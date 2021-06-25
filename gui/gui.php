@@ -1,6 +1,19 @@
 <?php
+    // Initialize the session
+    session_start();
+    
+    // Check if user is not logged in, if not redirect to the login page. 
+    if($_SESSION["loggedin"] != true){
+        $_SESSION['message'] = 'message';
+        header("location: /login.php");
+        exit;
+    }
+    
+?>
+
+<?php
 	
-	function update_elevatorNetwork(int $node_ID, int $new_floor =1): int {
+	function update_elevatorNetwork(int $node_ID, int $new_floor): int {
 		$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
 		$query = 'UPDATE elevatorNetwork 
 				SET currentFloor = :floor
@@ -38,39 +51,35 @@
 	<body>
 	
 		<div class='div1'>
-		<ul class='h_menu'>
+			<ul class='h_menu'>
                 <li class='index'><a class='menu' href="/menu.html"><b>Main Menu</b></a></li>
 				<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
 				<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
 				<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
 				<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
 				<li class='logout'><a class='menu' href="/logout.php"><b>Logout</b></a></li>
+				<li class='login'><a class='menu' href="/login.php"><b>login</b></a></li>
 			</ul class='h_menu'>
-		</div>
-
-		<?php 
-			// When the "GO" button is pressed, it sends the value of the new floor the user want to the elevator network. 
-			// and it then refreshes the page and re-loads.
-			if(isset($_POST['newfloor'])) {
-				$curFlr = update_elevatorNetwork(1, $_POST['newfloor']); 
-				header('Refresh:0; url=gui.php');	
-			} 
-			$curFlr = get_currentFloor();
-			
-			//echo "<h2>Current floor # $curFlr </h2>";			
-		?>		
+		</div>		
 		
 		<h2> 	
-		<form action="gui.php" method="POST">
+		<form>
+			<?php
+				$curFlr = get_currentFloor();
+				echo "<h2>Current Floor # $curFlr</h2>";
+			?>
 				<img src="img/Indicator_No_Floor.png" class="indc_NO">
-
-
 
 				<img src="img/none_lit_up.png" class="I_NO" usemap="#I" id="INO">
                 <map name="I">
-					<area shape="circle" coords="125, 73, 30" onclick="myFunction_I3()">
-                    <area shape="circle" coords="125, 157, 30" onclick="myFunction_I2()">
-                    <area shape="circle" coords="125, 240, 30" onclick="myFunction_I1()">
+					<area shape="circle" coords="125, 73, 30" onclick="myFunction_I3()"
+						<?php $curFlr = update_elevatorNetwork(1, 3); header('Refresh:0; url=gui.php');?>>
+
+                    <area shape="circle" coords="125, 157, 30" onclick="myFunction_I2()"
+						<?php $curFlr = update_elevatorNetwork(1, 2); header('Refresh:0; url=gui.php');?>>
+
+                    <area shape="circle" coords="125, 240, 30" onclick="myFunction_I1()"
+						<?php $curFlr = update_elevatorNetwork(1, 1); header('Refresh:0; url=gui.php');?>>
 
                     <area shape="circle" coords="78, 320,30" onclick="myFunction_IC()">
                     <area shape="circle" coords="174, 320,30" onclick="myFunction_IO()">

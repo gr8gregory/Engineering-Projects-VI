@@ -41,3 +41,10 @@ iframe.terminal {
     min-height: 260px;
     min-width: 700px;
 }
+
+table, td, th {
+    font-family: Arial;
+    border-spacing: 3px;
+    border: 1px solid #777;
+    padding: 5px;
+}
