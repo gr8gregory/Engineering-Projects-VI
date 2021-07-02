@@ -16,7 +16,7 @@
 		function update_elevatorNetwork(int $node_ID, int $new_floor): int {
 			$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
 			$query = 'UPDATE elevatorNetwork 
-					SET currentFloor = :floor
+					SET requestedFloor = :floor
 					WHERE nodeID = :id';
 			$statement = $db1->prepare($query);
 			$statement->bindvalue('floor', $new_floor);
@@ -156,7 +156,9 @@
 					<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>?>
 					
 					<script src="gui.js" type="text/javascript">
+						console.log("testing");
 						imginit();
+						console.log("Testing");
 					</script>
 
 				</form>
