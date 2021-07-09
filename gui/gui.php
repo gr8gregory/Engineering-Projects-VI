@@ -127,7 +127,7 @@
 
 						<area shape="circle" coords="125, 240, 30" onclick=" myFunction_I1()" href="gui.php?id=I&value=1">
 
-						<area shape="circle" coords="78, 320,30" onclick="myFunction_IC()" href="gui.php?id=I&value=C">
+						<area shape="circle" coords="78, 320,30" onclick="myFunction_IC()" >
 						<area shape="circle" coords="174, 320,30" onclick="myFunction_IO()" href="gui.php?id=I&value=O">
 						<area shape="circle" coords="78, 403, 30" onclick="myFunction_IF()" href="gui.php?id=I&value=F">
 						<area shape="circle" coords="174, 403, 30" onclick="myFunction_IB()" href="gui.php?id=I&value=B">
@@ -153,17 +153,10 @@
 					<map name="CU">
 						<area shape="circle" coords="63, 117,36" onclick="myFunction_CU()">
 					</map>
-					
-<<<<<<< HEAD
-										
-					<script src="gui.js" type="text/javascript">
-						
-=======
 					<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>?>
-					
+
 					<script type="text/javascript">
 						imginit();
->>>>>>> 17a5c730d18315d3a34dad96cb1374fd3c90fda1
 					</script>
 
 				</form>
