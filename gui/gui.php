@@ -116,9 +116,9 @@
 			
 			<h2> 	
 			<form action=gui.php method="GET">
-					<img src="img/Indicator_No_Floor.png" class="indc_NO">
+					<img src="" class="indc_NO" >
 
-					<img src="img/none_lit_up.png" class="I_NO" usemap="#I" id="INO">
+					<img src="" class="I_NO" usemap="#I" id="INO">
 					<map name="I">
 						<area shape="circle" coords="125, 73, 30" onclick="myFunction_I3()" href="gui.php?id=I&value=3">
 
@@ -134,30 +134,28 @@
 
 	
 					<h1 class="floor3">Floor 3</h1>
-					<img src="img/CallButtonDown.png" class="C_D" usemap="#CD" id="CD">
+					<img src="" class="C_D" usemap="#CD" id="CD">
 					<map name="CD">
 						<area shape="circle" coords="63, 117,36" onclick="myFunction_CD()">
 						
 					</map>
 
 					<h1 class="floor2">Floor 2</h1>
-					<img src="img/CallButtonUpDown.png" class="C_UD" usemap="#CUD" id="CUD">
+					<img src="" class="C_UD" usemap="#CUD" id="CUD">
 					<map name="CUD">
 						<area shape="circle" coords="63, 64,36" onclick="myFunction_CUD_U()">
 						<area shape="circle" coords="63, 169,36" onclick="myFunction_CUD_D()">
 					</map>
 
 					<h1 class="floor1">Floor 1</h1>
-					<img src="img/CallButtonUp.png" class="C_U" usemap="#CU" id="CU">
+					<img src="" class="C_U" usemap="#CU" id="CU">
 					<map name="CU">
 						<area shape="circle" coords="63, 117,36" onclick="myFunction_CU()">
 					</map>
 					
 										
 					<script src="gui.js" type="text/javascript">
-						console.log("testing");
-						imginit();
-						console.log("Testing");
+						
 					</script>
 
 				</form>
