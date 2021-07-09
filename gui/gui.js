@@ -138,10 +138,91 @@ function imginit(){
 
     if ( localStorage.getItem('CD')) {
         CD = localStorage.getItem('CD');
-      }
-      else {
-        CD = "http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";
-      }
-      document.getElementById("CD").src= CD;
+    }
+    else {
+        CD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    document.getElementById("CD").src= CD;
+
+    if ( localStorage.getItem('CUD')) {
+        CD = localStorage.getItem('CUD');
+    }
+    else {
+        CUD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    document.getElementById("CUD").src= CUD;
+
+    if ( localStorage.getItem('CDD')) {
+        CDD = localStorage.getItem('CDD');
+    }
+    else {
+        CDD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    document.getElementById("CDD").src= CDD;
+
+    if ( localStorage.getItem('CU')) {
+        CU = localStorage.getItem('CU');
+    }
+    else {
+        CU = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    document.getElementById("CU").src= CU;
+
+    if ( localStorage.getItem('I3')) {
+        I3 = localStorage.getItem('I3');
+    }
+    else {
+        I3 = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    document.getElementById("I3").src= I3;
+
+    if ( localStorage.getItem('I2')) {
+        I2 = localStorage.getItem('I2');
+    }
+    else {
+        I2 = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    document.getElementById("I2").src= I2;
+
+    if ( localStorage.getItem('I1')) {
+        I1 = localStorage.getItem('I1');
+    }
+    else {
+        I1 = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    document.getElementById("I1").src= I1;
+
+    if ( localStorage.getItem('IO')) {
+        IO = localStorage.getItem('IO');
+    }
+    else {
+        IO = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    document.getElementById("IO").src= IO;
+
+    if ( localStorage.getItem('IC')) {
+        IC = localStorage.getItem('IC');
+    }
+    else {
+        IC = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    document.getElementById("IC").src= IC;
+
+    if ( localStorage.getItem('IB')) {
+        IB = localStorage.getItem('IB');
+    }
+    else {
+        IB = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    document.getElementById("IB").src= IB;
+
+    if ( localStorage.getItem('IF')) {
+        IF = localStorage.getItem('IF');
+    }
+    else {
+        IF = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    document.getElementById("IF").src= IF;
+
 }
 
