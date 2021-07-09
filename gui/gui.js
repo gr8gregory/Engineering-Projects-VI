@@ -4,7 +4,6 @@ function myFunction_CD() {
     if(document.getElementById("CD").src == 'http://142.156.193.130:50000/gui/img/CallButtonDownLit.png'){
         document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDown.png";
         CD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
-
     }
     else{
         document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";
@@ -148,7 +147,7 @@ function imginit(){
         CD = localStorage.getItem('CUD');
     }
     else {
-        CUD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        CUD = "http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
     }
     document.getElementById("CUD").src= CUD;
 
@@ -156,7 +155,7 @@ function imginit(){
         CDD = localStorage.getItem('CDD');
     }
     else {
-        CDD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        CDD="http://142.156.193.130:50000/gui/img/CallButtonUpDown.png"
     }
     document.getElementById("CDD").src= CDD;
 
@@ -164,7 +163,7 @@ function imginit(){
         CU = localStorage.getItem('CU');
     }
     else {
-        CU = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        CU="http://142.156.193.130:50000/gui/img/CallButtonUp.png";
     }
     document.getElementById("CU").src= CU;
 
@@ -172,7 +171,7 @@ function imginit(){
         I3 = localStorage.getItem('I3');
     }
     else {
-        I3 = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        I3="http://142.156.193.130:50000/gui/img/none_lit_up.png"
     }
     document.getElementById("I3").src= I3;
 
@@ -180,7 +179,7 @@ function imginit(){
         I2 = localStorage.getItem('I2');
     }
     else {
-        I2 = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        I2="http://142.156.193.130:50000/gui/img/none_lit_up.png";
     }
     document.getElementById("I2").src= I2;
 
@@ -188,7 +187,7 @@ function imginit(){
         I1 = localStorage.getItem('I1');
     }
     else {
-        I1 = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        I1="http://142.156.193.130:50000/gui/img/none_lit_up.png";
     }
     document.getElementById("I1").src= I1;
 
@@ -196,7 +195,7 @@ function imginit(){
         IO = localStorage.getItem('IO');
     }
     else {
-        IO = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        IO="http://142.156.193.130:50000/gui/img/none_lit_up.png";
     }
     document.getElementById("IO").src= IO;
 
@@ -204,7 +203,7 @@ function imginit(){
         IC = localStorage.getItem('IC');
     }
     else {
-        IC = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        IC="http://142.156.193.130:50000/gui/img/Panel_O.png";
     }
     document.getElementById("IC").src= IC;
 
@@ -212,7 +211,7 @@ function imginit(){
         IB = localStorage.getItem('IB');
     }
     else {
-        IB = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        IB="http://142.156.193.130:50000/gui/img/none_lit_up.png";
     }
     document.getElementById("IB").src= IB;
 
@@ -220,7 +219,7 @@ function imginit(){
         IF = localStorage.getItem('IF');
     }
     else {
-        IF = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        IF="http://142.156.193.130:50000/gui/img/Panel_F.png";
     }
     document.getElementById("IF").src= IF;
 
