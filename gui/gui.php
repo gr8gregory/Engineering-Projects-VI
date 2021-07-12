@@ -46,6 +46,7 @@
 			<link href='/css/gui.css' type='text/css' rel='stylesheet'/> 
 			<link href='/css/menu.css' type='text/css' rel='stylesheet'/> 
 			<title>Graphical User Interface</title>
+			<script src="gui.js" type="text/javascript"></script>
 		</head>
 
 		<body>
@@ -116,7 +117,7 @@
 			
 			<h2> 	
 			<form action=gui.php method="GET">
-					<img src="img/Indicator_No_Floor.png" class="indc_NO">
+					<img src="img/Indicator_No_Floor.png" class="indc_NO" id=>
 
 					<img src="img/none_lit_up.png" class="I_NO" usemap="#I" id="INO">
 					<map name="I">
@@ -126,7 +127,7 @@
 
 						<area shape="circle" coords="125, 240, 30" onclick=" myFunction_I1()" href="gui.php?id=I&value=1">
 
-						<area shape="circle" coords="78, 320,30" onclick="myFunction_IC()" href="gui.php?id=I&value=C">
+						<area shape="circle" coords="78, 320,30" onclick="myFunction_IC()" >
 						<area shape="circle" coords="174, 320,30" onclick="myFunction_IO()" href="gui.php?id=I&value=O">
 						<area shape="circle" coords="78, 403, 30" onclick="myFunction_IF()" href="gui.php?id=I&value=F">
 						<area shape="circle" coords="174, 403, 30" onclick="myFunction_IB()" href="gui.php?id=I&value=B">
@@ -152,13 +153,10 @@
 					<map name="CU">
 						<area shape="circle" coords="63, 117,36" onclick="myFunction_CU()">
 					</map>
-					
 					<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>?>
-					
-					<script src="gui.js" type="text/javascript">
-						console.log("testing");
+
+					<script type="text/javascript">
 						imginit();
-						console.log("Testing");
 					</script>
 
 				</form>
