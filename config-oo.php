@@ -4,8 +4,8 @@
    
 
     $servername = "localhost";
-    $username = "root";
-    $password = "password";
+    $username = "test";
+    $password = "test";
     $dbname = "elevator";
 
     $link = new mysqli($servername, $username, $password, $dbname);
