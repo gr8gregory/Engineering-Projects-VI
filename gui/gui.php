@@ -8,7 +8,7 @@
 			header("location: /login.php");
 			exit;
 		}
-		
+
 	?>
 
 	<?php
@@ -44,24 +44,67 @@
 	<html>
 		<head>
 			<link href='/css/gui.css' type='text/css' rel='stylesheet'/> 
-			<link href='/css/menu.css' type='text/css' rel='stylesheet'/> 
+			<link href='/css/navi.css' type='text/css' rel='stylesheet'/> 
 			<title>Graphical User Interface</title>
 			<script src="gui.js" type="text/javascript"></script>
+
+			<meta name='robots' content='noindex nofollow' />
+	
+
+
+	<!--bootstrap links: https://getbootstrap.com/docs/5.0/getting-started/introduction/-->
+
+	<!--BOOTstrap-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<!--Bootstrap JS code-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
+
+	<link href='css/projectplan.css' type='text/css' rel='stylesheet' />
+	<link href='css/navi.css' type='text/css' rel='stylesheet' />
+	<!--[if lt IE 9]>
+            <script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
+        <![endif]-->
 		</head>
 
 		<body>
-		
-			<div class='div1'>
-				<ul class='h_menu'>
-					<li class='index'><a class='menu' href="/menu.html"><b>Main Menu</b></a></li>
-					<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
-					<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
-					<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
-					<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
-					<li class='logout'><a class='menu' href="/logout.php"><b>Logout</b></a></li>
-					<li class='login'><a class='menu' href="/login.php"><b>login</b></a></li>
-				</ul class='h_menu'>
+		<header class="p-3 bg-dark text-white">
+		<div class="container">
+		  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+			<a href="./" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+				<img class="meme" role="img"  src="/andrew/tenor.gif" alt="Part Parrot" >
+			 
+			</a>
+	
+			<ul class="nav gap-1 col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-1">
+			  <li><a href="../menu.html" class="nav-link px-2 text-secondary">Home</a></li>
+			  <li><a href="/gui/gui.php" class="nav-link px-2 text-white">Elevator</a></li>
+			  <li><a href="../projectplan.html" class="nav-link px-2 text-white">Project Plan</a></li>
+			  <li><a href="../video.html" class="nav-link px-2 text-white">Demo</a></li>
+			  <li><a href="../about.html" class="nav-link px-2 text-white">About</a></li>
+
+			
+			</ul>
+	
+			<form class="col-14 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+			  <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+			</form>
+	
+			<div class="text-end">
+			  <a type="button" href="./login.php" class="btn btn-outline-light me-2">Login</a>
+			  <a type="button" href="./logout.php" class="btn btn-warning">Logout</a>
 			</div>
+
+			<div class="text-end">
+				<p id="time"class="nav-link px-2 text-white"></p>
+				<script src="js/dateTime.js"></script>
+			</div>
+		  </div>
+		</div>
+	  </header>
+		
 
 			<?php 
 				// When the "GO" button is pressed, it sends the value of the new floor the user want to the elevator network. 
