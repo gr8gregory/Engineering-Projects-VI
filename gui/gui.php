@@ -153,7 +153,7 @@
 					<map name="CU">
 						<area shape="circle" coords="63, 117,36" onclick="myFunction_CU()">
 					</map>
-					<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>?>
+					<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe> ?>
 
 					<script type="text/javascript">
 						imginit();
