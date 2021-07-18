@@ -120,35 +120,69 @@
 				if(isset($_GET['id'])) {
 					if($_GET['value']=="1" || $_GET['value']=="2" || $_GET['value']=="3"){
 						$curFlr = update_elevatorNetwork(1, $_GET['value']); 
-						//header('Refresh:0; url=gui.php');
+						header('Refresh:0; url=gui.php');
 					}
 						
 				} 
 				$curFlr = get_currentFloor();
-				echo "<h2>Current floor # $curFlr </h2>";
+				if($curFlr == 1){
+					echo "<img src='img/Indicator_1_up.png' class='indc_NO' id='floor'>";
+				}
+				else if($curFlr == 2){
+					echo "<img src='img/Indicator_2_up.png' class='indc_NO' id='floor'>";;
+				}
+				else if($curFlr == 3){
+					echo "<img src='img/Indicator_3_up.png' class='indc_NO' id='floor'>";
+				}
+				else{
+					echo "<img src='img/Indicator_No_Floor.png' class='indc_NO' id='floor'>";
+				}
+						
+				//echo "<h2>Current floor # $curFlr </h2>";
 				
 				if(isset($_GET['id'])){
 					if($_GET['id']=='I'){
 						switch($_GET['value']){
 							case "1":
-								echo "Floor 1 Button has been pressed";
+								echo "Floor 1 Button has been un-pressed";
 								break;
 							case "2":
-								echo "Floor 2 Button has been pressed";
+								echo "Floor 2 Button has been un-pressed";
 								break;
 							case "3":
-								echo "Floor 3 Button has been pressed";
+								echo "Floor 3 Button has been un-pressed";
 								break;
 							case "C":
-								echo "Closed door Button has been pressed";
+								echo "Closed door Button has been un-pressed";
 								break;
 							case "O":
-								echo "Open door Button has been pressed";
+								echo "Open door Button has been un-pressed";
 								break;
 							case "F":
-								echo "Fan Button has been pressed";
+								echo "Fan Button has been un-pressed";
 								break;
 							case "B":
+								echo "Bell Button has been un-pressed";
+								break;
+							case "11":
+								echo "Floor 1 Button has been pressed";
+								break;
+							case "21":
+								echo "Floor 2 Button has been pressed";
+								break;
+							case "31":
+								echo "Floor 3 Button has been pressed";
+								break;
+							case "C1":
+								echo "Closed door Button has been pressed";
+								break;
+							case "O1":
+								echo "Open door Button has been pressed";
+								break;
+							case "F1":
+								echo "Fan Button has been pressed";
+								break;
+							case "B1":
 								echo "Bell Button has been pressed";
 								break;
 							default:
@@ -160,21 +194,25 @@
 			
 			<h2> 	
 			<form action=gui.php method="GET">
-					<img src="img/Indicator_No_Floor.png" class="indc_NO" id=>
 
 					<img src="img/none_lit_up.png" class="I_NO" usemap="#I" id="INO">
 					<map name="I">
-						<area shape="circle" coords="125, 73, 30" onclick="myFunction_I3()" href="gui.php?id=I&value=3">
-
-						<area shape="circle" coords="125, 157, 30" onclick="myFunction_I2()" href="gui.php?id=I&value=2">
-
-						<area shape="circle" coords="125, 240, 30" onclick=" myFunction_I1()" href="gui.php?id=I&value=1">
-
-						<area shape="circle" coords="78, 320,30" onclick="myFunction_IC()" >
-						<area shape="circle" coords="174, 320,30" onclick="myFunction_IO()" href="gui.php?id=I&value=O">
-						<area shape="circle" coords="78, 403, 30" onclick="myFunction_IF()" href="gui.php?id=I&value=F">
-						<area shape="circle" coords="174, 403, 30" onclick="myFunction_IB()" href="gui.php?id=I&value=B">
+						<area shape="circle" coords="125, 73, 30" onclick="myFunction_I3()" href="gui.php?id=I&value=31">
+						<area shape="circle" coords="125, 157, 30" onclick="myFunction_I2()" href="gui.php?id=I&value=21">
+						<area shape="circle" coords="125, 240, 30" onclick=" myFunction_I1()" href="gui.php?id=I&value=11">
+						<area shape="circle" coords="78, 320,30" onclick="myFunction_IO()" href="gui.php?id=I&value=O1">
+						<area shape="circle" coords="174, 320,30" onclick="myFunction_IC()" href="gui.php?id=I&value=C1">
+						<area shape="circle" coords="78, 403, 30" onclick="myFunction_IF()" href="gui.php?id=I&value=F1">
+						<area shape="circle" coords="174, 403, 30" onclick="myFunction_IB()" href="gui.php?id=I&value=B1">
 					</map>
+			
+					<a href="gui.php?id=I&value=B"><img src="img/panel/alarm_lit_up.png" class="mapA" id="A" onclick="myFunction_IB()"></a>
+					<a href="gui.php?id=I&value=1"><img src="img/panel/button_1_lit_up.png" class="map1" id="one" onclick=" myFunction_I1()"></a>
+					<a href="gui.php?id=I&value=2"><img src="img/panel/button_2_lit_up.png" class="map2" id="two" onclick="myFunction_I2()"></a>
+					<a href="gui.php?id=I&value=3"><img src="img/panel/button_3_lit_up.png" class="map3" id="three" onclick="myFunction_I3()"></a>
+					<a href="gui.php?id=I&value=C"><img src="img/panel/close_light_up.png" class="mapC" id="C" onclick="myFunction_IC()"></a>
+					<a href="gui.php?id=I&value=F"><img src="img/panel/fan_lit_up.png" class="mapF" id="F" onclick="myFunction_IF()"></a>
+					<a href="gui.php?id=I&value=O"><img src="img/panel/open_lit_up.png" class="mapO" id="O" onclick="myFunction_IO()"></a>
 
 	
 					<h1 class="floor3">Floor 3</h1>
@@ -203,8 +241,6 @@
 					</script>
 
 				</form>
-			</h2> 
-		</body>
 			</h2> 
 		</body>
 			
