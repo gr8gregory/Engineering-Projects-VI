@@ -48,87 +48,95 @@ function myFunction_CU() {
     localStorage.setItem("CU", CU);
 }
 function myFunction_I3() {
-	var I3;
-    if(document.getElementById("INO").src == "http://142.156.193.130:50000/gui/img/Panel_3.png"){
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/none_lit_up.png";
-	    I3="http://142.156.193.130:50000/gui/img/none_lit_up.png"
+	var I3 = document.getElementById("three");
+
+    if(I3.style.display === "none"){
+        I3.style.display="block";
+	    I3=document.getElementById("three");
     }
     else{
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/Panel_3.png";
-        I3="http://142.156.193.130:50000/gui/img/Panel_3.png"
+        I3.style.display="none";
+        I3="";
 	}
     localStorage.setItem("I3", I3);
 }
 function myFunction_I2() {
-    var I2;
-    if(document.getElementById("INO").src == "http://142.156.193.130:50000/gui/img/Panel_2.png"){
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/none_lit_up.png";
-        I2="http://142.156.193.130:50000/gui/img/none_lit_up.png";
+    var I2 = document.getElementById("two");
+    
+    if(I2.style.display === "none"){
+        I2.style.display="block";
+	    I2=document.getElementById("two");
     }
     else{
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/Panel_2.png";
-        I2="http://142.156.193.130:50000/gui/img/Panel_2.png";
-    }
+        I2.style.display="none";
+        I2="";
+	}
     localStorage.setItem("I2", I2);
 }
 function myFunction_I1() {
-    var I1;
-    if(document.getElementById("INO").src == "http://142.156.193.130:50000/gui/img/Panel_1.png"){
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/none_lit_up.png";
-        I1="http://142.156.193.130:50000/gui/img/none_lit_up.png";
+    var I1 = document.getElementById("one");
+    
+    if(I1.style.display === "none"){
+        I1.style.display="block";
+	    I1=document.getElementById("one");
     }
     else{
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/Panel_1.png";
-        I1="http://142.156.193.130:50000/gui/img/Panel_1.png";
-    }
+        I1.style.display="none";
+        I1="";
+	}
     localStorage.setItem("I1", I1);
 }
 function myFunction_IC() {
-    var IC;
-    if(document.getElementById("INO").src == "http://142.156.193.130:50000/gui/img/Panel_O.png"){
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/none_lit_up.png";
-        IC="http://142.156.193.130:50000/gui/img/none_lit_up.png";
+    var IC = document.getElementById("C");
+    
+    if(IC.style.display === "none"){
+        IC.style.display="block";
+	    IC=document.getElementById("C");
     }
     else{
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/Panel_O.png";
-        IC="http://142.156.193.130:50000/gui/img/Panel_O.png";
-    }
+        IC.style.display="none";
+        IC="";
+	}
     localStorage.setItem("IC", IC);
 }
+
 function myFunction_IO() {
-    var IO;
-    if(document.getElementById("INO").src == "http://142.156.193.130:50000/gui/img/Panel_C.png"){
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/none_lit_up.png";
-        IO="http://142.156.193.130:50000/gui/img/none_lit_up.png";
+    var IO = document.getElementById("O");
+    
+    if(IO.style.display === "none"){
+        IO.style.display="block";
+	    IO=document.getElementById("O");
     }
     else{
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/Panel_C.png";
-        IO="http://142.156.193.130:50000/gui/img/Panel_C.png";
-    }
+        IO.style.display="none";
+        IO="";
+	}
     localStorage.setItem("IO", IO);
 }
 function myFunction_IF() {
-    var IF;
-    if(document.getElementById("INO").src == "http://142.156.193.130:50000/gui/img/Panel_F.png"){
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/none_lit_up.png";
-        IF="http://142.156.193.130:50000/gui/img/none_lit_up.png";
+    var IF = document.getElementById("F");
+    console.log("HelloF");
+    if(IF.style.display === "none"){
+        IF.style.display="block";
+	    IF=document.getElementById("F");
     }
     else{
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/Panel_F.png";
-        IF="http://142.156.193.130:50000/gui/img/Panel_F.png";
-    }
+        IF.style.display="none";
+        IF="";
+	}
     localStorage.setItem("IF", IF);
 }
 function myFunction_IB() {
-    var IB;
-    if(document.getElementById("INO").src == "http://142.156.193.130:50000/gui/img/Panel_B.png"){
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/none_lit_up.png";
-        IB="http://142.156.193.130:50000/gui/img/none_lit_up.png";
+    var IB = document.getElementById("A");
+    console.log("HelloB");
+    if(IB.style.display === "none"){
+        IB.style.display="block";
+	    IB=document.getElementById("A");
     }
     else{
-        document.getElementById("INO").src="http://142.156.193.130:50000/gui/img/Panel_B.png";
-        IB="http://142.156.193.130:50000/gui/img/Panel_B.png";
-    }
+        IB.style.display="none";
+        IB="";
+	}
     localStorage.setItem("IB", IB);
 }
 
@@ -151,14 +159,6 @@ function imginit(){
     }
     document.getElementById("CUD").src= CUD;
 
-//    if ( localStorage.getItem('CDD')) {
-//        CDD = localStorage.getItem('CDD');
-//    }
-//    else {
-//        CDD="http://142.156.193.130:50000/gui/img/CallButtonUpDown.png"
-//    }
-//    document.getElementById("CUD").src= CDD;
-
     if ( localStorage.getItem('CU')) {
         CU = localStorage.getItem('CU');
     }
@@ -170,60 +170,54 @@ function imginit(){
 
 
     if ( localStorage.getItem('I3')) {
-        I3 = localStorage.getItem('I3');
+        document.getElementById("three").style.display="block";
     }
     else {
-        I3="http://142.156.193.130:50000/gui/img/none_lit_up.png"
+        document.getElementById("three").style.display="none";
     }
-    document.getElementById("I3").src= I3;
 
     if ( localStorage.getItem('I2')) {
-        I2 = localStorage.getItem('I2');
+        document.getElementById("two").style.display="block";
     }
     else {
-        I2="http://142.156.193.130:50000/gui/img/none_lit_up.png";
+        document.getElementById("two").style.display="none";
     }
-    document.getElementById("I2").src= I2;
 
     if ( localStorage.getItem('I1')) {
-        I1 = localStorage.getItem('I1');
+        document.getElementById("one").style.display="block";
     }
     else {
-        I1="http://142.156.193.130:50000/gui/img/none_lit_up.png";
+        document.getElementById("one").style.display="none";
     }
-    document.getElementById("I1").src= I1;
 
     if ( localStorage.getItem('IO')) {
-        IO = localStorage.getItem('IO');
+        document.getElementById("O").style.display="block";
     }
     else {
-        IO="http://142.156.193.130:50000/gui/img/none_lit_up.png";
+        document.getElementById("O").style.display="none";
     }
-    document.getElementById("IO").src= IO;
 
     if ( localStorage.getItem('IC')) {
-        IC = localStorage.getItem('IC');
+        document.getElementById("C").style.display="block";
     }
     else {
-        IC="http://142.156.193.130:50000/gui/img/Panel_O.png";
+        document.getElementById("C").style.display="none";
     }
-    document.getElementById("IC").src= IC;
-
-    if ( localStorage.getItem('IB')) {
-        IB = localStorage.getItem('IB');
-    }
-    else {
-        IB="http://142.156.193.130:50000/gui/img/none_lit_up.png";
-    }
-    document.getElementById("IB").src= IB;
 
     if ( localStorage.getItem('IF')) {
-        IF = localStorage.getItem('IF');
+        document.getElementById("F").style.display="block";
     }
     else {
-        IF="http://142.156.193.130:50000/gui/img/Panel_F.png";
+        document.getElementById("F").style.display="none";
     }
-    document.getElementById("IF").src= IF;
 
+    if ( localStorage.getItem('IB')) {
+        document.getElementById("A").style.display="block";
+    }
+    else {
+        document.getElementById("A").style.display="none";
+    }
+
+    
 }
 
