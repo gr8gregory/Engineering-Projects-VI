@@ -38,6 +38,18 @@
 				}
 				return $current_floor;
 		}
+
+		function get_requestedFloor(): int {
+			try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
+			catch (PDOException $e){echo $e->getMessage();}
+
+				// Query the database to display current floor
+				$rows = $db->query('SELECT requestedFloor FROM elevatorNetwork');
+				foreach ($rows as $row) {
+					$requested_floor = $row[0];
+				}
+				return $requested_floor;
+		}
 	?>
 
 	<!DOCTYPE html>
@@ -82,20 +94,37 @@
 						
 				} 
 				$curFlr = get_currentFloor();
-				if($curFlr == 1){
+				$reqFlr = get_requestedFloor();
+				if(($curFlr - $reqFlr) > 0){
+					$dir = "D";
+				}
+				else{
+					$dir = "U";
+				}
+
+				if($curFlr == 1 && $dir=="U"){
 					echo "<img src='img/Indicator_1_up.png' class='indc_NO' id='floor'>";
 				}
-				else if($curFlr == 2){
+				else if($curFlr == 1 && $dir=="D"){
+					echo "<img src='img/Indicator_1_down.png' class='indc_NO' id='floor'>";
+				}
+				else if($curFlr == 2 && $dir=="U"){
 					echo "<img src='img/Indicator_2_up.png' class='indc_NO' id='floor'>";;
 				}
-				else if($curFlr == 3){
+				else if($curFlr == 2 && $dir=="D"){
+					echo "<img src='img/Indicator_2_down.png' class='indc_NO' id='floor'>";
+				}
+				else if($curFlr == 3 && $dir=="U"){
 					echo "<img src='img/Indicator_3_up.png' class='indc_NO' id='floor'>";
+				}
+				else if($curFlr == 3 && $dir=="D"){
+					echo "<img src='img/Indicator_3_down.png' class='indc_NO' id='floor'>";
 				}
 				else{
 					echo "<img src='img/Indicator_No_Floor.png' class='indc_NO' id='floor'>";
 				}
 						
-				//echo "<h2>Current floor # $curFlr </h2>";
+				echo "<h2>Current floor # $curFlr </h2>";
 				
 				if(isset($_GET['id'])){
 					if($_GET['id']=='I'){
@@ -147,6 +176,27 @@
 						}
 					}
 				}
+
+				if(isset($_GET['id'])){
+					if($_GET['id']=='D'){
+						switch($_GET['value']){
+							case "1":
+								echo "1 Calling To go Up";
+								break;
+							case "2U":
+								echo "2 Calling To go Up";
+								break;
+							case "2D":
+								echo "2 Calling To go Down";
+								break;
+							case "3":
+								echo "3 Calling To go Down";
+								break;
+							default:
+								echo "";
+						}
+					}
+				}
 			?>		
 			
 			<h2> 	
@@ -175,21 +225,21 @@
 					<h1 class="floor3">Floor 3</h1>
 					<img src="img/CallButtonDown.png" class="C_D" usemap="#CD" id="CD">
 					<map name="CD">
-						<area shape="circle" coords="63, 117,36" onclick="myFunction_CD()">
+						<area shape="circle" coords="63, 117,36" onclick="myFunction_CD()" href="gui.php?id=D&value=3">
 						
 					</map>
 
 					<h1 class="floor2">Floor 2</h1>
 					<img src="img/CallButtonUpDown.png" class="C_UD" usemap="#CUD" id="CUD">
 					<map name="CUD">
-						<area shape="circle" coords="63, 64,36" onclick="myFunction_CUD_U()">
-						<area shape="circle" coords="63, 169,36" onclick="myFunction_CUD_D()">
+						<area shape="circle" coords="63, 64,36" onclick="myFunction_CUD_U()" href="gui.php?id=D&value=2U">
+						<area shape="circle" coords="63, 169,36" onclick="myFunction_CUD_D()" href="gui.php?id=D&value=2D">
 					</map>
 
 					<h1 class="floor1">Floor 1</h1>
 					<img src="img/CallButtonUp.png" class="C_U" usemap="#CU" id="CU">
 					<map name="CU">
-						<area shape="circle" coords="63, 117,36" onclick="myFunction_CU()">
+						<area shape="circle" coords="63, 117,36" onclick="myFunction_CU()" href="gui.php?id=D&value=1">
 					</map>
 					<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>?>
 
