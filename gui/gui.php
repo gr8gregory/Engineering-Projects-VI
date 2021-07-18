@@ -132,7 +132,7 @@
 				if(isset($_GET['id'])) {
 					if($_GET['value']=="1" || $_GET['value']=="2" || $_GET['value']=="3"){
 						$curFlr = update_elevatorNetwork(1, $_GET['value']); 
-						header('Refresh:0; url=gui.php');
+						//header('Refresh:0; url=gui.php');
 					}
 						
 				} 
