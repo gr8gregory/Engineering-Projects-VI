@@ -8,8 +8,6 @@
 			header("location: /login.php");
 			exit;
 		}
-		// Include Config
-		require_once "config.php";
 		
 	?>
 
@@ -88,13 +86,6 @@
 				echo $floor3;
 				echo "<h2>Current floor # $curFlr </h2>";	*/
 
-				$t=time();
-				$date = date("Y-m-d",$t);
-				$time = date("H-m-s",$t);
-
-				$curFlr = get_currentFloor();
-				$reqFlr = get_requestedFloor();
-
 				if(isset($_GET['id'])) {
 					if($_GET['value']=="1" || $_GET['value']=="2" || $_GET['value']=="3"){
 						$curFlr = update_elevatorNetwork(1, $_GET['value']); 
@@ -102,7 +93,8 @@
 					}
 						
 				} 
-				
+				$curFlr = get_currentFloor();
+				$reqFlr = get_requestedFloor();
 				if(($curFlr - $reqFlr) > 0){
 					$dir = "D";
 				}
@@ -133,7 +125,7 @@
 				}
 						
 				echo "<h2>Current floor # $curFlr </h2>";
-				$sql = "INSERT INTO elevatorNetwork (date, time, nodeID, status, currentFloor, requestedFloor, otherInfo) VALUES('$date', '$time', '1', '1', '$curFlr', '2','test')";
+				
 				if(isset($_GET['id'])){
 					if($_GET['id']=='I'){
 						switch($_GET['value']){
@@ -160,15 +152,12 @@
 								break;
 							case "11":
 								echo "Floor 1 Button has been pressed";
-								$sql = "INSERT INTO elevatorNetwork (date, time, nodeID, status, currentFloor, requestedFloor, otherInfo) VALUES('$date', '$time', '1', '1', '$curFlr', '1','test')";
 								break;
 							case "21":
 								echo "Floor 2 Button has been pressed";
-								$sql = "INSERT INTO elevatorNetwork (date, time, nodeID, status, currentFloor, requestedFloor, otherInfo) VALUES('$date', '$time', '2', '1', '$curFlr', '2','test')";
 								break;
 							case "31":
 								echo "Floor 3 Button has been pressed";
-								$sql = "INSERT INTO elevatorNetwork (date, time, nodeID, status, currentFloor, requestedFloor, otherInfo) VALUES('$date', '$time', '3', '1', '$curFlr', '3','test')";
 								break;
 							case "C1":
 								echo "Closed door Button has been pressed";
