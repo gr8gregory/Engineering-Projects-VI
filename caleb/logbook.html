@@ -23,6 +23,7 @@
 				<li><a href="#week5">Week 5</a></li>
 				<li><a href='#week6'>Week 6</a></li>
 				<li><a href='#week7'>Week 7</a></li>
+				<li><a href='#week8'>Week 8</a></li>
 				
 			</ul>
 
@@ -139,6 +140,21 @@
 				</ul>
 				<li>Looked into implementing an FSM but did not get very far. I will work on this in the coming week.</li>
 			</ul>
+
+			<h2 id='week8'>Week 8</h2>
+			<ul>
+				<li>This week, I revamped the DB code to make it better</li>
+				<li>I created a new repos with the elevator code. The main reason for the new repos was to reorganize all the files (although most files had a lot of rework)</li>
+				<li>Made a program to substitute as the website for independent testing</li>
+				<li>Implemented the FSM based on the lecture notes from DS&A S3</li>
+				<ul>
+					<li>There seems to be no way to know if the elevator is above or below floor 2 when it is moving. So, the FSM isn't perfect. Hopefully, I have a chance to take another look this week.</li>
+				</ul>
+				<li>Got communication from the database to the FSM locally but when I put it on the pi to add "move elevator" commands, the Pi decided not to behave. It failed consistently on a call to "next()" on a ResultSet pointer. Spent a few hours trying to debug.</li>
+				<li>Because of the previous point, I removed the database communication for now. The user can type a button "press" and the elevator will move accordingly.</li>
+				<li>Implemented a basic Sabbath mode. Right now, it runs on demand and doesn't care about what time it is.</li>
+			</ul>
+
 			<hr>
 
 			<p><a href="/about.html">Return</a></p>
