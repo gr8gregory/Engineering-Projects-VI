@@ -79,7 +79,31 @@
                         </table>
                     <br>
                 </div>
-                <hr>
+                <div class='col-xs-12 col-md-12'>
+                    <h2>elevatorNetwork Contents</h2>
+                        <table>
+                            <tr>
+                                <th>date</th>
+                                <th>time</th>
+                                <th>nodeID</th>
+                                <th>status</th>
+                                <th>currentFloor</th>
+                                <th>requestedFloor</th>
+                                <th>otherInfo</th>
+                            </tr>
+                            <?php
+                                $sql = "SELECT * FROM elevatorNetwork";
+                                $result = $link->query($sql);
+                                if($result->num_rows>0){
+                                    while($row = $result->fetch_assoc()){
+                                        echo "<tr><td>" . $row['date'] . "</td><td>" . $row["time"] . "</td><td>" . $row["nodeID"] . "</td><td>" . $row['status'] . "</td><td>" . $row["currentFloor"] . "</td><td>" . $row["requestedFloor"] . "</td><td>" . $row["otherInfo"] . "</td></tr>";
+                                    }
+                                }
+                            ?>
+                        </table>
+                    <br>
+                </div>
+		<hr>
                 <div class='col-xs-12 col-md-12'>
                     <h2>CAN Messages</h2>
                     <br>

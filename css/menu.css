@@ -1,7 +1,10 @@
 
 
 
-
+img.meme{
+    height: 25px;
+    width: 25px;
+}
 body {
     background-color: white;
     margin-left: 25px;

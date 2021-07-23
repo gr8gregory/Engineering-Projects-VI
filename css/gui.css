@@ -12,6 +12,14 @@ h1{
     font-size: 30px;
 }
 
+IMG.meme{
+    
+    height: 50px;
+    width: 50px;
+    margin-bottom: 15px;
+    margin-right: 90%;
+  
+  }
 p{
     color: black;
     font-family: Arial;
