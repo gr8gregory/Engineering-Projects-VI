@@ -8,6 +8,7 @@ function myFunction_CD() {
     else{
         document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";
 	    CD = "http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";    
+        document.getElementById("down").play();
 	}
 	localStorage.setItem("CD", CD);
 }
@@ -20,6 +21,7 @@ function myFunction_CUD_U() {
     else{
         document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/call_button_lit_up.png";
         CUD="http://142.156.193.130:50000/gui/img/call_button_lit_up.png"
+        document.getElementById("up").play();
     }
     localStorage.setItem("CUD", CUD);
 }
@@ -32,6 +34,7 @@ function myFunction_CUD_D() {
     else{
         document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/call_button_lit_down.png";
         CDD="http://142.156.193.130:50000/gui/img/call_button_lit_down.png"
+        document.getElementById("down").play();
     }
     localStorage.setItem("CUD", CDD);
 }
@@ -44,6 +47,7 @@ function myFunction_CU() {
     else{
         document.getElementById("CU").src="http://142.156.193.130:50000/gui/img/CallButtonLitUp.png";
         CU="http://142.156.193.130:50000/gui/img/CallButtonLitUp.png";
+        document.getElementById("up").play();
     }
     localStorage.setItem("CU", CU);
 }

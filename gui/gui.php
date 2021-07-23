@@ -8,12 +8,14 @@
 			header("location: /login.php");
 			exit;
 		}
+		// Include Config
+		require_once "config.php";
 		
 	?>
 
 	<?php
 		
-		function update_elevatorNetwork(int $node_ID, int $new_floor): int {
+		function update_elevatorNetwork(int $node_ID, int $status): int {
 			$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
 			$query = 'UPDATE elevatorNetwork 
 					SET requestedFloor = :floor
@@ -25,6 +27,23 @@
 			
 			return $new_floor;
 		}
+
+		function insert_elevatorNetwork_webreq(int $node_ID, int $stat, int $floor): int {
+			try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
+			catch (PDOException $e){echo $e->getMessage();}
+
+			$query = 'INSERT INTO elevatorNetwork (nodeID, status, floor)
+					VALUES (:node, :status, :floor )';
+			$statement = $db1->prepare($query);
+			$statement->bindvalue('id', $node_ID);
+			$statement->bindvalue('status', $stat);
+			$statement->bindvalue('floor', $new_floor);
+			
+			$statement->execute();	
+			echo "sucsess";
+			return $new_floor;
+		}
+
 	?>
 	<?php 
 		function get_currentFloor(): int {
@@ -39,12 +58,24 @@
 				return $current_floor;
 		}
 
-		function get_requestedFloor(): int {
+		function get_Floor(): int {
 			try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 			catch (PDOException $e){echo $e->getMessage();}
 
 				// Query the database to display current floor
-				$rows = $db->query('SELECT requestedFloor FROM elevatorNetwork');
+				$rows = $db->query('SELECT floor FROM elevatorNetwork WHERE status = 2');
+				foreach ($rows as $row) {
+					$requested_floor = $row[0];
+				}
+				return $requested_floor;
+		}
+
+		function move_Floor(): int {
+			try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
+			catch (PDOException $e){echo $e->getMessage();}
+
+				// Query the database to display current floor
+				$rows = $db->query('SELECT floor FROM elevatorNetwork WHERE status = 1'); // Recieves the direction of the elevator moving. 
 				foreach ($rows as $row) {
 					$requested_floor = $row[0];
 				}
@@ -76,48 +107,33 @@
 			</div>
 
 			<?php 
-				// When the "GO" button is pressed, it sends the value of the new floor the user want to the elevator network. 
-				// and it then refreshes the page and re-loads.
-				/*if(isset($_POST['newfloor'])) {
-					$curFlr = update_elevatorNetwork(1, $_POST['newfloor']); 
-					header('Refresh:0; url=gui.php');	
-				} 
-				$curFlr = get_currentFloor();
-				echo $floor3;
-				echo "<h2>Current floor # $curFlr </h2>";	*/
+				$flr = get_Floor();
+				$move = move_Floor();
 
-				if(isset($_GET['id'])) {
-					if($_GET['value']=="1" || $_GET['value']=="2" || $_GET['value']=="3"){
-						$curFlr = update_elevatorNetwork(1, $_GET['value']); 
+				/*if(isset($_GET['id'])) {
+					if($_GET['value'] =="1" || $_GET['value'] =="2" || $_GET['value'] =="3"){
+						$curFlr = update_elevatorNetwork(0, $_GET['value']); 
 						header('Refresh:0; url=gui.php');
 					}
-						
 				} 
-				$curFlr = get_currentFloor();
-				$reqFlr = get_requestedFloor();
-				if(($curFlr - $reqFlr) > 0){
-					$dir = "D";
-				}
-				else{
-					$dir = "U";
-				}
+				*/
 
-				if($curFlr == 1 && $dir=="U"){
+				if($flr == 1 || $move==5){
 					echo "<img src='img/Indicator_1_up.png' class='indc_NO' id='floor'>";
 				}
-				else if($curFlr == 1 && $dir=="D"){
+				else if($flr == 1 || $move==4){
 					echo "<img src='img/Indicator_1_down.png' class='indc_NO' id='floor'>";
 				}
-				else if($curFlr == 2 && $dir=="U"){
+				else if($flr == 2 || $move==5){
 					echo "<img src='img/Indicator_2_up.png' class='indc_NO' id='floor'>";;
 				}
-				else if($curFlr == 2 && $dir=="D"){
+				else if($flr == 2 || $move==4){
 					echo "<img src='img/Indicator_2_down.png' class='indc_NO' id='floor'>";
 				}
-				else if($curFlr == 3 && $dir=="U"){
+				else if($flr == 3 || $move==5){
 					echo "<img src='img/Indicator_3_up.png' class='indc_NO' id='floor'>";
 				}
-				else if($curFlr == 3 && $dir=="D"){
+				else if($flr == 3 || $move==4){
 					echo "<img src='img/Indicator_3_down.png' class='indc_NO' id='floor'>";
 				}
 				else{
@@ -125,7 +141,6 @@
 				}
 						
 				echo "<h2>Current floor # $curFlr </h2>";
-				
 				if(isset($_GET['id'])){
 					if($_GET['id']=='I'){
 						switch($_GET['value']){
@@ -152,12 +167,18 @@
 								break;
 							case "11":
 								echo "Floor 1 Button has been pressed";
+								$curFlr = insert_elevatorNetwork_webreq(0, 0, 1); 
+								header('Refresh:0; url=gui.php');
 								break;
 							case "21":
 								echo "Floor 2 Button has been pressed";
+								$curFlr = insert_elevatorNetwork_webreq(0, 0, 2); 
+								header('Refresh:0; url=gui.php');
 								break;
 							case "31":
 								echo "Floor 3 Button has been pressed";
+								$curFlr = insert_elevatorNetwork_webreq(0, 0, 3); 
+								header('Refresh:0; url=gui.php');
 								break;
 							case "C1":
 								echo "Closed door Button has been pressed";
@@ -173,6 +194,7 @@
 								break;
 							default:
 								echo "";
+								$sql = "";
 						}
 					}
 				}
@@ -182,15 +204,23 @@
 						switch($_GET['value']){
 							case "1":
 								echo "1 Calling To go Up";
+								$curFlr = insert_elevatorNetwork_webreq(0, 1, 5); 
+								header('Refresh:0; url=gui.php');
 								break;
 							case "2U":
 								echo "2 Calling To go Up";
+								$curFlr = insert_elevatorNetwork_webreq(0, 2, 5); 
+								header('Refresh:0; url=gui.php');
 								break;
 							case "2D":
 								echo "2 Calling To go Down";
+								$curFlr = insert_elevatorNetwork_webreq(0, 2, 4); 
+								header('Refresh:0; url=gui.php');
 								break;
 							case "3":
 								echo "3 Calling To go Down";
+								$curFlr = insert_elevatorNetwork_webreq(0, 3, 4); 
+								header('Refresh:0; url=gui.php');
 								break;
 							default:
 								echo "";
@@ -247,6 +277,22 @@
 						imginit();
 					</script>
 
+					<audio id='down'>
+						<source src="./audio/down.mp3">
+					</audio>
+					<audio id='up'>
+						<source src="./audio/up.mp3">
+					</audio>
+					<audio id='first'>
+						<source src="./audio/first.mp3">
+					</audio>
+					<audio id='second'>
+						<source src="./audio/second.mp3">
+					</audio>
+					<audio id='third'>
+						<source src="./audio/third.mp3">
+					</audio>
+
 				</form>
 			</h2> 
 		</body>
@@ -254,5 +300,4 @@
 	</html>
 	
 	
-
 
