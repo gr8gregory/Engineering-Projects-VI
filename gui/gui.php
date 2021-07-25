@@ -9,7 +9,7 @@
 			exit;
 		}
 		// Include Config
-		require_once "config.php";
+		//require_once "config.php";
 		
 	?>
 
@@ -58,7 +58,7 @@
 				return $current_floor;
 		}
 
-		function get_Floor(): int {
+/*		function get_Floor(): int {
 			try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 			catch (PDOException $e){echo $e->getMessage();}
 
@@ -80,7 +80,7 @@
 					$requested_floor = $row[0];
 				}
 				return $requested_floor;
-		}
+		}*/
 	?>
 
 	<!DOCTYPE html>
@@ -107,16 +107,16 @@
 			</div>
 
 			<?php 
-				$flr = get_Floor();
-				$move = move_Floor();
+//				$flr = get_Floor();
+//				$move = move_Floor();
 
 				/*if(isset($_GET['id'])) {
 					if($_GET['value'] =="1" || $_GET['value'] =="2" || $_GET['value'] =="3"){
 						$curFlr = update_elevatorNetwork(0, $_GET['value']); 
 						header('Refresh:0; url=gui.php');
 					}
-				} 
-				*/
+				}*/
+				
 
 				if($flr == 1 || $move==5){
 					echo "<img src='img/Indicator_1_up.png' class='indc_NO' id='floor'>";
@@ -125,7 +125,7 @@
 					echo "<img src='img/Indicator_1_down.png' class='indc_NO' id='floor'>";
 				}
 				else if($flr == 2 || $move==5){
-					echo "<img src='img/Indicator_2_up.png' class='indc_NO' id='floor'>";;
+					echo "<img src='img/Indicator_2_up.png' class='indc_NO' id='floor'>";
 				}
 				else if($flr == 2 || $move==4){
 					echo "<img src='img/Indicator_2_down.png' class='indc_NO' id='floor'>";
@@ -167,18 +167,18 @@
 								break;
 							case "11":
 								echo "Floor 1 Button has been pressed";
-								$curFlr = insert_elevatorNetwork_webreq(0, 0, 1); 
-								header('Refresh:0; url=gui.php');
+								//$curFlr = insert_elevatorNetwork_webreq(0, 0, 1); 
+								//header('Refresh:0; url=gui.php');
 								break;
 							case "21":
 								echo "Floor 2 Button has been pressed";
-								$curFlr = insert_elevatorNetwork_webreq(0, 0, 2); 
-								header('Refresh:0; url=gui.php');
+								//$curFlr = insert_elevatorNetwork_webreq(0, 0, 2); 
+								//header('Refresh:0; url=gui.php');
 								break;
 							case "31":
 								echo "Floor 3 Button has been pressed";
-								$curFlr = insert_elevatorNetwork_webreq(0, 0, 3); 
-								header('Refresh:0; url=gui.php');
+								//$curFlr = insert_elevatorNetwork_webreq(0, 0, 3); 
+								//header('Refresh:0; url=gui.php');
 								break;
 							case "C1":
 								echo "Closed door Button has been pressed";
@@ -194,7 +194,7 @@
 								break;
 							default:
 								echo "";
-								$sql = "";
+								
 						}
 					}
 				}
@@ -204,29 +204,50 @@
 						switch($_GET['value']){
 							case "1":
 								echo "1 Calling To go Up";
-								$curFlr = insert_elevatorNetwork_webreq(0, 1, 5); 
-								header('Refresh:0; url=gui.php');
+								//$curFlr = insert_elevatorNetwork_webreq(0, 1, 5); 
+								//header('Refresh:0; url=gui.php');
+								audio(1);
 								break;
 							case "2U":
 								echo "2 Calling To go Up";
-								$curFlr = insert_elevatorNetwork_webreq(0, 2, 5); 
-								header('Refresh:0; url=gui.php');
+								//$curFlr = insert_elevatorNetwork_webreq(0, 2, 5); 
+								//header('Refresh:0; url=gui.php');
+								audio(1);
 								break;
 							case "2D":
 								echo "2 Calling To go Down";
-								$curFlr = insert_elevatorNetwork_webreq(0, 2, 4); 
-								header('Refresh:0; url=gui.php');
+								//$curFlr = insert_elevatorNetwork_webreq(0, 2, 4); 
+								//header('Refresh:0; url=gui.php');
+								audio(2);
 								break;
 							case "3":
 								echo "3 Calling To go Down";
-								$curFlr = insert_elevatorNetwork_webreq(0, 3, 4); 
-								header('Refresh:0; url=gui.php');
+								//$curFlr = insert_elevatorNetwork_webreq(0, 3, 4); 
+								//header('Refresh:0; url=gui.php');
+								audio(2);
 								break;
 							default:
 								echo "";
 						}
 					}
 				}
+			
+			function audio(int $flag){
+                        if($flag == 1){
+				echo "<script> 
+				var audio = new Audio('./audio/up.mp3');
+ 				audio.play();
+ 				</script>";
+			}
+			if($flag == 2){
+			 echo "<script>
+                                var audio = new Audio('./audio/down.mp3');
+                                audio.play();
+                                </script>";
+
+                        }
+}
+
 			?>		
 			
 			<h2> 	
@@ -255,7 +276,7 @@
 					<h1 class="floor3">Floor 3</h1>
 					<img src="img/CallButtonDown.png" class="C_D" usemap="#CD" id="CD">
 					<map name="CD">
-						<area shape="circle" coords="63, 117,36" onclick="myFunction_CD()" href="gui.php?id=D&value=3">
+						<area shape="circle" coords="63, 117,36" onclick="myFunction_CD()" >
 						
 					</map>
 
