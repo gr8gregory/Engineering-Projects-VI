@@ -8,7 +8,9 @@ function myFunction_CD() {
     else{
         document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";
 	    CD = "http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";    
-        document.getElementById("down").play();
+        //document.getElementById("down").play();
+	var audio = new Audio('./audio/down.mp3');
+	audio.play();
 	}
 	localStorage.setItem("CD", CD);
 }

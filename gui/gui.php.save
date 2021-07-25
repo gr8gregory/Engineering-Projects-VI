@@ -80,8 +80,8 @@
 					$requested_floor = $row[0];
 				}
 				return $requested_floor;
-		}*/
-	?>
+		}
+*/	?>
 
 	<!DOCTYPE html>
 	<html>
@@ -115,8 +115,8 @@
 						$curFlr = update_elevatorNetwork(0, $_GET['value']); 
 						header('Refresh:0; url=gui.php');
 					}
-				}*/
-				
+				} 
+				*/
 
 				if($flr == 1 || $move==5){
 					echo "<img src='img/Indicator_1_up.png' class='indc_NO' id='floor'>";
@@ -206,48 +206,40 @@
 								echo "1 Calling To go Up";
 								//$curFlr = insert_elevatorNetwork_webreq(0, 1, 5); 
 								//header('Refresh:0; url=gui.php');
-								audio(1);
 								break;
 							case "2U":
 								echo "2 Calling To go Up";
 								//$curFlr = insert_elevatorNetwork_webreq(0, 2, 5); 
 								//header('Refresh:0; url=gui.php');
-								audio(1);
 								break;
 							case "2D":
 								echo "2 Calling To go Down";
 								//$curFlr = insert_elevatorNetwork_webreq(0, 2, 4); 
 								//header('Refresh:0; url=gui.php');
-								audio(2);
 								break;
 							case "3":
 								echo "3 Calling To go Down";
 								//$curFlr = insert_elevatorNetwork_webreq(0, 3, 4); 
 								//header('Refresh:0; url=gui.php');
-								audio(2);
 								break;
 							default:
 								echo "";
 						}
 					}
-				}
 			
-			function audio(int $flag){
-                        if($flag == 1){
-				echo "<script> 
-				var audio = new Audio('./audio/up.mp3');
- 				audio.play();
- 				</script>";
-			}
-			if($flag == 2){
-			 echo "<script>
-                                var audio = new Audio('./audio/down.mp3');
-                                audio.play();
-                                </script>";
+			function update_elevatorNetwork(int $node_ID, int $status): int {
+                        $db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
+                        $query = 'UPDATE elevatorNetwork
+                                        SET requestedFloor = :floor
+                                        WHERE nodeID = :id';
+                        $statement = $db1->prepare($query);
+                        $statement->bindvalue('floor', $new_floor);
+                        $statement->bindvalue('id', $node_ID);
+                        $statement->execute();
 
-                        }
-}
-
+                        return $new_floor;
+                }
+	}
 			?>		
 			
 			<h2> 	
@@ -276,7 +268,7 @@
 					<h1 class="floor3">Floor 3</h1>
 					<img src="img/CallButtonDown.png" class="C_D" usemap="#CD" id="CD">
 					<map name="CD">
-						<area shape="circle" coords="63, 117,36" onclick="myFunction_CD()" href="gui.php?id=D&value=3">
+						<area shape="circle" coords="63, 117,36" onclick="myFunction_CD()" >
 						
 					</map>
 
