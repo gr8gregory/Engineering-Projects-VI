@@ -46,6 +46,7 @@
 
 	?>
 	<?php 
+		/* Old get floor function
 		function get_currentFloor(): int {
 			try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 			catch (PDOException $e){echo $e->getMessage();}
@@ -56,9 +57,9 @@
 					$current_floor = $row[0];
 				}
 				return $current_floor;
-		}
+		}*/
 
-/*		function get_Floor(): int {
+		function get_Floor(): int {
 			try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 			catch (PDOException $e){echo $e->getMessage();}
 
@@ -70,7 +71,7 @@
 				return $requested_floor;
 		}
 
-		function move_Floor(): int {
+		function get_move_Floor(): int {
 			try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 			catch (PDOException $e){echo $e->getMessage();}
 
@@ -80,7 +81,7 @@
 					$requested_floor = $row[0];
 				}
 				return $requested_floor;
-		}*/
+		}
 	?>
 
 	<!DOCTYPE html>
@@ -107,9 +108,9 @@
 			</div>
 
 			<?php 
-//				$flr = get_Floor();
-//				$move = move_Floor();
-
+				//$flr = get_Floor();
+				//$move = get_move_Floor();
+				
 				/*if(isset($_GET['id'])) {
 					if($_GET['value'] =="1" || $_GET['value'] =="2" || $_GET['value'] =="3"){
 						$curFlr = update_elevatorNetwork(0, $_GET['value']); 
@@ -118,7 +119,7 @@
 				}*/
 				
 
-				if($flr == 1 || $move==5){
+				/*if($flr == 1 || $move==5){
 					echo "<img src='img/Indicator_1_up.png' class='indc_NO' id='floor'>";
 				}
 				else if($flr == 1 || $move==4){
@@ -138,7 +139,7 @@
 				}
 				else{
 					echo "<img src='img/Indicator_No_Floor.png' class='indc_NO' id='floor'>";
-				}
+				}*/
 						
 				echo "<h2>Current floor # $curFlr </h2>";
 				if(isset($_GET['id'])){
@@ -167,18 +168,18 @@
 								break;
 							case "11":
 								echo "Floor 1 Button has been pressed";
-								//$curFlr = insert_elevatorNetwork_webreq(0, 0, 1); 
-								//header('Refresh:0; url=gui.php');
+								$insert = insert_elevatorNetwork_webreq(0, 0, 1); 
+								header('Refresh:0; url=gui.php');
 								break;
 							case "21":
 								echo "Floor 2 Button has been pressed";
-								//$curFlr = insert_elevatorNetwork_webreq(0, 0, 2); 
-								//header('Refresh:0; url=gui.php');
+								$insert = insert_elevatorNetwork_webreq(0, 0, 2); 
+								header('Refresh:0; url=gui.php');
 								break;
 							case "31":
 								echo "Floor 3 Button has been pressed";
-								//$curFlr = insert_elevatorNetwork_webreq(0, 0, 3); 
-								//header('Refresh:0; url=gui.php');
+								$insert = insert_elevatorNetwork_webreq(0, 0, 3); 
+								header('Refresh:0; url=gui.php');
 								break;
 							case "C1":
 								echo "Closed door Button has been pressed";
@@ -198,55 +199,83 @@
 						}
 					}
 				}
-
+				if(!isset($_GET['id'])){
+					$oneStat= $U2Stat = $D2Stat = $threeStat = 0;
+				}
 				if(isset($_GET['id'])){
 					if($_GET['id']=='D'){
 						switch($_GET['value']){
 							case "1":
 								echo "1 Calling To go Up";
-								//$curFlr = insert_elevatorNetwork_webreq(0, 1, 5); 
-								//header('Refresh:0; url=gui.php');
-								audio(1);
+								$insert = insert_elevatorNetwork_webreq(0, 1, 5); 
+								
+								if($oneStat == 0){
+									audio(1);
+									$oneStat = 1;
+								}
+								else{
+									$oneStat = 0;
+								}
+								
 								break;
 							case "2U":
 								echo "2 Calling To go Up";
-								//$curFlr = insert_elevatorNetwork_webreq(0, 2, 5); 
-								//header('Refresh:0; url=gui.php');
-								audio(1);
+								$insert = insert_elevatorNetwork_webreq(0, 2, 5); 
+								
+								if($U2Stat == 0){
+									audio(1);
+									$U2Stat = 1;
+								}
+								else{
+									$U2Stat = 0;
+								}
 								break;
 							case "2D":
 								echo "2 Calling To go Down";
-								//$curFlr = insert_elevatorNetwork_webreq(0, 2, 4); 
-								//header('Refresh:0; url=gui.php');
-								audio(2);
+								$insert = insert_elevatorNetwork_webreq(0, 2, 4); 
+								
+								if($D2Stat == 0){
+									audio(2);
+									$D2Stat = 1;
+								}
+								else{
+									$D2Stat = 0;
+								}
 								break;
 							case "3":
 								echo "3 Calling To go Down";
-								//$curFlr = insert_elevatorNetwork_webreq(0, 3, 4); 
-								//header('Refresh:0; url=gui.php');
-								audio(2);
+								$insert = insert_elevatorNetwork_webreq(0, 3, 4); 
+								header('Refresh:0; url=gui.php');
+								if($threeStat == 0){
+									audio(2);
+									$threeStat = 1;
+								}
+								else{
+									$threeStat = 0;
+								}
 								break;
 							default:
 								echo "";
 						}
 					}
+
+					//header('Refresh:0; url=gui.php');
 				}
 			
 			function audio(int $flag){
-                        if($flag == 1){
-				echo "<script> 
-				var audio = new Audio('./audio/up.mp3');
- 				audio.play();
- 				</script>";
+                if($flag == 1){
+					echo "<script> 
+					var audio = new Audio('./audio/up.mp3');
+ 					audio.play();
+ 					</script>";
+				}
+				if($flag == 2){
+					echo "<script>
+					var audio = new Audio('./audio/down.mp3');
+					audio.play();
+					</script>";
+            	}
 			}
-			if($flag == 2){
-			 echo "<script>
-                                var audio = new Audio('./audio/down.mp3');
-                                audio.play();
-                                </script>";
-
-                        }
-}
 
 			?>		
 			
