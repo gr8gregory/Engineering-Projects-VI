@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Heroes · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
+
+
+    <script src="capture.js">
+    </script>
+    <!-- Bootstrap core CSS -->
+<link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="heroes.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+
+  </head>
+  <body>
+    
+<main>
+ 
+
+  
+  <div class="px-4 py-5 my-2 text-center">
+    <img class="d-block mx-auto mb-4" src="logo.png" alt="" width="72" height="72">
+    <h1 class="display-5 fw-bold">Add your face to login database...</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead">Using our remote facial recognition system we can gurantee a secure login into our site. Our facial recongition system is based on a python server running opencv and dlib, all pictures are sent through internet socket to a server for verification</p>
+  
+    </div>
+
+  </div>
+
+  <div id="border" class="px-4 pt-4  rounded text-center">
+
+  <div class="container text-md-center">
+    <div class="row">
+      <div class = "col-md-6">
+        <video class= "fluid" id="video" poster="placeholder.png" >Video stream not available.</video>
+      </div>
+      <div class = "col-md-6">
+          <img id="photo" class = "fluid" alt="The screen capture will appear in this box."> 
+      </div>
+    </div>
+    <div class=row>
+    <div class="col-md-6">
+      <button type="button" id="startbutton" class="btn btn-primary btn-lg px-4 gap-3">Take Photo</button>
+
+    </div>
+    <div class="col-md-6">
+      <button type="button" id="submitbutton" class="btn btn-outline-secondary btn-lg px-4">Submit</button>
+
+    </div>
+    
+  </div>
+    <canvas id="canvas">
+    </canvas>
+  </div>
+
+</div>
+
+
+
+
+
+
+  
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
