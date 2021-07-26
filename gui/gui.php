@@ -15,7 +15,7 @@
 
 	<?php
 		
-		function update_elevatorNetwork(int $node_ID, int $status): int {
+		/*function update_elevatorNetwork(int $node_ID, int $status): int {
 			$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
 			$query = 'UPDATE elevatorNetwork 
 					SET requestedFloor = :floor
@@ -26,22 +26,22 @@
 			$statement->execute();	
 			
 			return $new_floor;
-		}
+		}*/
 
-		function insert_elevatorNetwork_webreq(int $node_ID, int $stat, int $floor): int {
-			try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
+		function insert_elevatorNetwork_webreq(int $node_ID, int $stat, int $floor): int { 
+			try { $db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 			catch (PDOException $e){echo $e->getMessage();}
 
 			$query = 'INSERT INTO elevatorNetwork (nodeID, status, floor)
 					VALUES (:node, :status, :floor )';
 			$statement = $db1->prepare($query);
-			$statement->bindvalue('id', $node_ID);
+			$statement->bindvalue('nodeID', $node_ID);
 			$statement->bindvalue('status', $stat);
-			$statement->bindvalue('floor', $new_floor);
-			
+			$statement->bindvalue('floor', $floor);
+			// The error is: Warning: PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+			// This happens when it tries to execute. 
 			$statement->execute();	
-			echo "sucsess";
-			return $new_floor;
+			return $floor;
 		}
 
 	?>
@@ -62,50 +62,127 @@
 		function get_Floor(): int {
 			try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 			catch (PDOException $e){echo $e->getMessage();}
-
+				$requested_floor = 0;
 				// Query the database to display current floor
 				$rows = $db->query('SELECT floor FROM elevatorNetwork WHERE status = 2');
-				foreach ($rows as $row) {
-					$requested_floor = $row[0];
+				if (is_array($rows) || is_object($rows)){	
+					foreach ($rows as $row) {
+						$requested_floor = $row[0];
+					}
+					return $requested_floor;
 				}
-				return $requested_floor;
+				else{
+					return -1;
+				}
+				
 		}
 
 		function get_move_Floor(): int {
 			try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 			catch (PDOException $e){echo $e->getMessage();}
-
+				$requested_floor = 0;
 				// Query the database to display current floor
 				$rows = $db->query('SELECT floor FROM elevatorNetwork WHERE status = 1'); // Recieves the direction of the elevator moving. 
-				foreach ($rows as $row) {
-					$requested_floor = $row[0];
+				if (is_array($rows) || is_object($rows)){	
+					foreach ($rows as $row) {
+						$requested_floor = $row[0];
+					}
+					return $requested_floor;
 				}
-				return $requested_floor;
+				else{
+					return -1;
+				}
 		}
 	?>
 
 	<!DOCTYPE html>
 	<html>
 		<head>
-			<link href='/css/gui.css' type='text/css' rel='stylesheet'/> 
-			<link href='/css/menu.css' type='text/css' rel='stylesheet'/> 
+			
 			<title>Graphical User Interface</title>
+			<meta name='description' content='Page in project' />
+			<meta name='robots' content='noindex nofollow' />
+			<meta charset="utf-8"/>
+			<meta name="viewport" content="width=device-width, inital-scale=1"/>
+			<meta http-equiv='author' content='ghuras' />
+			<meta http-equiv='author' content='choeksema' />
+			<meta http-equiv='author' content='asammut' />
+			<meta http-equiv='pragma' content='no-cache' />
+
+			<link href='/css/gui.css' type='text/css' rel='stylesheet' />
+			<link href='/css/menu.css' type='text/css' rel='stylesheet' />
+			<link href='/css/navi.css' type='text/css' rel='stylesheet' />
 			<script src="gui.js" type="text/javascript"></script>
+
+			<!--BOOTstrap-->
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+				integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+			<!--Bootstrap JS code-->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+				integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+				crossorigin="anonymous"></script>
+
+				<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+				<link href="/css/heroes.css" rel="stylesheet">
+				
+
+			<style>
+			.bd-placeholder-img {
+				font-size: 1.125rem;
+				text-anchor: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				user-select: none;
+			}
+
+			@media (min-width: 768px) {
+				.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+				}
+			}
+			</style>
+			<!--[if lt IE 9]>
+					<script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
+				<![endif]-->
+
 		</head>
 
 		<body>
 		
-			<div class='div1'>
-				<ul class='h_menu'>
-					<li class='index'><a class='menu' href="/menu.html"><b>Main Menu</b></a></li>
-					<li class='gui'><a class='menu' href="/gui/gui.php"><b>Elevator Control</b></a></li>
-					<li class='about'><a class='menu' href="/about.html"><b>About the team</b></a></li>
-					<li class='project'><a class='menu' href="/projectplan.html"><b>Project Plan</b></a></li>
-					<li class='video'><a class='menu' href="/video.html"><b>Video Demonstration</b></a></li>
-					<li class='logout'><a class='menu' href="/logout.php"><b>Logout</b></a></li>
-					<li class='login'><a class='menu' href="/login.php"><b>login</b></a></li>
-				</ul class='h_menu'>
-			</div>
+		<header class="p-3 bg-dark text-white">
+                <div class="container">
+                  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="./" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                        <img class="meme" role="img"  src="/andrew/tenor.gif" alt="Part Parrot" >
+                     
+                    </a>
+            
+                    <ul class="nav gap-1 col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-1">
+                      <li><a href="/menu.html" class="nav-link px-2 text-secondary">Home</a></li>
+                      <li><a href="/gui/gui.php" class="nav-link px-2 text-white">Elevator</a></li>
+                      <li><a href="/projectplan.html" class="nav-link px-2 text-white">Project Plan</a></li>
+                      <li><a href="/video.html" class="nav-link px-2 text-white">Demo</a></li>
+                      <li><a href="/about.html" class="nav-link px-2 text-white">About</a></li>
+        
+                    
+                    </ul>
+            
+                    <form class="col-14 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                      <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+                    </form>
+            
+                    <div class="text-end">
+                        <a type="button" href="/login.php" class="btn btn-outline-light me-2">Login</a>
+                        <a type="button" href="/logout.php" class="btn btn-warning">Logout</a>
+                    </div>
+        
+                    <div class="text-end">
+                        <p id="time"class="nav-link px-2 text-white"></p>
+                        <script src="/js/dateTime.js"></script>
+                    </div>
+                  </div>
+                </div>
+            </header>
 
 			<?php 
 				//$flr = get_Floor();
@@ -119,7 +196,7 @@
 				}*/
 				
 
-				/*if($flr == 1 || $move==5){
+				if($flr == 1 || $move==5){
 					echo "<img src='img/Indicator_1_up.png' class='indc_NO' id='floor'>";
 				}
 				else if($flr == 1 || $move==4){
@@ -139,9 +216,9 @@
 				}
 				else{
 					echo "<img src='img/Indicator_No_Floor.png' class='indc_NO' id='floor'>";
-				}*/
+				}
 						
-				echo "<h2>Current floor # $curFlr </h2>";
+				//echo "<h2>Current floor # $curFlr </h2>";
 				if(isset($_GET['id'])){
 					if($_GET['id']=='I'){
 						switch($_GET['value']){
@@ -168,17 +245,17 @@
 								break;
 							case "11":
 								echo "Floor 1 Button has been pressed";
-								$insert = insert_elevatorNetwork_webreq(0, 0, 1); 
+								//$insert = insert_elevatorNetwork_webreq(0, 0, 1); 
 								header('Refresh:0; url=gui.php');
 								break;
 							case "21":
 								echo "Floor 2 Button has been pressed";
-								$insert = insert_elevatorNetwork_webreq(0, 0, 2); 
+								//$insert = insert_elevatorNetwork_webreq(0, 0, 2);
 								header('Refresh:0; url=gui.php');
 								break;
 							case "31":
 								echo "Floor 3 Button has been pressed";
-								$insert = insert_elevatorNetwork_webreq(0, 0, 3); 
+								//$insert = insert_elevatorNetwork_webreq(0, 0, 3); 
 								header('Refresh:0; url=gui.php');
 								break;
 							case "C1":
@@ -199,15 +276,16 @@
 						}
 					}
 				}
-				if(!isset($_GET['id'])){
+				
+				//if(!isset($_GET['id'])){
 					$oneStat= $U2Stat = $D2Stat = $threeStat = 0;
-				}
+				//}
 				if(isset($_GET['id'])){
 					if($_GET['id']=='D'){
 						switch($_GET['value']){
 							case "1":
 								echo "1 Calling To go Up";
-								$insert = insert_elevatorNetwork_webreq(0, 1, 5); 
+								//$insert = insert_elevatorNetwork_webreq(0, 1, 5); 
 								
 								if($oneStat == 0){
 									audio(1);
@@ -220,7 +298,7 @@
 								break;
 							case "2U":
 								echo "2 Calling To go Up";
-								$insert = insert_elevatorNetwork_webreq(0, 2, 5); 
+								//$insert = insert_elevatorNetwork_webreq(0, 2, 5); 
 								
 								if($U2Stat == 0){
 									audio(1);
@@ -232,7 +310,7 @@
 								break;
 							case "2D":
 								echo "2 Calling To go Down";
-								$insert = insert_elevatorNetwork_webreq(0, 2, 4); 
+								//$insert = insert_elevatorNetwork_webreq(0, 2, 4); 
 								
 								if($D2Stat == 0){
 									audio(2);
@@ -244,7 +322,7 @@
 								break;
 							case "3":
 								echo "3 Calling To go Down";
-								$insert = insert_elevatorNetwork_webreq(0, 3, 4); 
+								//$insert = insert_elevatorNetwork_webreq(0, 3, 4); 
 								header('Refresh:0; url=gui.php');
 								if($threeStat == 0){
 									audio(2);
