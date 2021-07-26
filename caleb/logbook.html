@@ -24,6 +24,7 @@
 				<li><a href='#week6'>Week 6</a></li>
 				<li><a href='#week8'>Week 8</a></li>
 				<li><a href='#week9'>Week 9</a></li>
+				<li><a href='#week10'>Week 10</a></li>
 				
 			</ul>
 
@@ -154,6 +155,19 @@
 				<li>Because of the previous point, I removed the database communication for now. The user can type a button "press" and the elevator will move accordingly.</li>
 				<li>Implemented a basic Sabbath mode. Right now, it runs on demand and doesn't care about what time it is.</li>
 			</ul>
+
+			<h2 id='week10'>Week 10</h2>
+			<ul>
+				<li>This week, I reworked the database access for project "db_can" so it worked on the Pi. Once the sql::Connection pointer was deleted, the sql::ResultSet method "next()" could no longer be called (it threw a SEG_FAULT). So, I returned a vector of a vector instead and reworked much of the code. There is still work to be done to make everything functional but it is starting to come together.</li>
+				<li>I implemented Sabbath mode fully:</li>
+				<ul>
+					<li>It checks the date and time to see if it should run or not</li>
+					<li>It is accessible as a demo mode at any time (terminal command "demo")</li>
+					<li>It is overridable on the Sabbath (terminal command "override")</li>
+				</ul>
+				<li>Updated the database with the new tables outlined in the <a href="https://docs.google.com/document/d/1GyuzBbPtIW2943uFqYutMMhTsYFlX3sKdxFnj76Z954/edit" target="_blank">protocol document</a></li>
+				<li>Project "web_sub" works with the new database definition</li>
+				<li>Started fixing error messages. This will be fixed in all files by next week.</li>
 
 			<hr>
 
