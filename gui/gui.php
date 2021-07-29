@@ -1,13 +1,14 @@
 	<?php
+
 		// Initialize the session
-		session_start();
+		//session_start();
 		
 		// Check if user is not logged in, if not redirect to the login page. 
-		if($_SESSION["loggedin"] != true){
-			$_SESSION['message'] = 'message';
-			header("location: /login.php");
-			exit;
-		}
+		//if($_SESSION["loggedin"] != true){
+		//	$_SESSION['message'] = 'message';
+		//	header("location: /login.php");
+		//	exit;
+		//}
 		// Include Config
 		//require_once "config.php";
 		
@@ -28,20 +29,19 @@
 			return $new_floor;
 		}*/
 
-		function insert_elevatorNetwork_webreq(int $node_ID, int $stat, int $floor): int { 
+		function insert_elevatorNetwork_webreq(int $node_ID, int $stat, int $flr): int { 
 			try { $db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 			catch (PDOException $e){echo $e->getMessage();}
 
-			$query = 'INSERT INTO elevatorNetwork (nodeID, status, floor)
-					VALUES (:node, :status, :floor )';
+			$query = 'INSERT INTO elevatorNetwork (nodeID, status, floor) VALUES (?,?,?)';
 			$statement = $db1->prepare($query);
-			$statement->bindvalue('nodeID', $node_ID);
-			$statement->bindvalue('status', $stat);
-			$statement->bindvalue('floor', $floor);
+			//$statement->bindvalue('nodeID', $node_ID);
+			//$statement->bindvalue('stat', $stat);
+			//$statement->bindvalue('flr', $flr);
 			// The error is: Warning: PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
 			// This happens when it tries to execute. 
-			$statement->execute();	
-			return $floor;
+			$statement->execute([$node_ID, $stat, $flr]);	
+			return $flr;
 		}
 
 	?>
@@ -185,8 +185,8 @@
             </header>
 
 			<?php 
-				//$flr = get_Floor();
-				//$move = get_move_Floor();
+				$flr = get_Floor();
+				$move = get_move_Floor();
 				
 				/*if(isset($_GET['id'])) {
 					if($_GET['value'] =="1" || $_GET['value'] =="2" || $_GET['value'] =="3"){
@@ -245,17 +245,17 @@
 								break;
 							case "11":
 								echo "Floor 1 Button has been pressed";
-								//$insert = insert_elevatorNetwork_webreq(0, 0, 1); 
+								$insert = insert_elevatorNetwork_webreq(0, 0, 1); 
 								header('Refresh:0; url=gui.php');
 								break;
 							case "21":
 								echo "Floor 2 Button has been pressed";
-								//$insert = insert_elevatorNetwork_webreq(0, 0, 2);
+								$insert = insert_elevatorNetwork_webreq(0, 0, 2);
 								header('Refresh:0; url=gui.php');
 								break;
 							case "31":
 								echo "Floor 3 Button has been pressed";
-								//$insert = insert_elevatorNetwork_webreq(0, 0, 3); 
+								$insert = insert_elevatorNetwork_webreq(0, 0, 3); 
 								header('Refresh:0; url=gui.php');
 								break;
 							case "C1":
@@ -285,7 +285,7 @@
 						switch($_GET['value']){
 							case "1":
 								echo "1 Calling To go Up";
-								//$insert = insert_elevatorNetwork_webreq(0, 1, 5); 
+								$insert = insert_elevatorNetwork_webreq(0, 1, 5); 
 								
 								if($oneStat == 0){
 									audio(1);
@@ -298,7 +298,7 @@
 								break;
 							case "2U":
 								echo "2 Calling To go Up";
-								//$insert = insert_elevatorNetwork_webreq(0, 2, 5); 
+								$insert = insert_elevatorNetwork_webreq(0, 2, 5); 
 								
 								if($U2Stat == 0){
 									audio(1);
@@ -310,7 +310,7 @@
 								break;
 							case "2D":
 								echo "2 Calling To go Down";
-								//$insert = insert_elevatorNetwork_webreq(0, 2, 4); 
+								$insert = insert_elevatorNetwork_webreq(0, 2, 4); 
 								
 								if($D2Stat == 0){
 									audio(2);
@@ -322,7 +322,7 @@
 								break;
 							case "3":
 								echo "3 Calling To go Down";
-								//$insert = insert_elevatorNetwork_webreq(0, 3, 4); 
+								$insert = insert_elevatorNetwork_webreq(0, 3, 4); 
 								header('Refresh:0; url=gui.php');
 								if($threeStat == 0){
 									audio(2);
@@ -371,13 +371,13 @@
 						<area shape="circle" coords="174, 403, 30" onclick="myFunction_IB()" href="gui.php?id=I&value=B1">
 					</map>
 			
-					<a href="gui.php?id=I&value=B"><img src="img/panel/alarm_lit_up.png" class="mapA" id="A" onclick="myFunction_IB()"></a>
-					<a href="gui.php?id=I&value=1"><img src="img/panel/button_1_lit_up.png" class="map1" id="one" onclick=" myFunction_I1()"></a>
-					<a href="gui.php?id=I&value=2"><img src="img/panel/button_2_lit_up.png" class="map2" id="two" onclick="myFunction_I2()"></a>
-					<a href="gui.php?id=I&value=3"><img src="img/panel/button_3_lit_up.png" class="map3" id="three" onclick="myFunction_I3()"></a>
-					<a href="gui.php?id=I&value=C"><img src="img/panel/close_light_up.png" class="mapC" id="C" onclick="myFunction_IC()"></a>
-					<a href="gui.php?id=I&value=F"><img src="img/panel/fan_lit_up.png" class="mapF" id="F" onclick="myFunction_IF()"></a>
-					<a href="gui.php?id=I&value=O"><img src="img/panel/open_lit_up.png" class="mapO" id="O" onclick="myFunction_IO()"></a>
+					<a href="gui.php?id=I&value=B"><img src="./img/panel/alarm_lit_up.png" class="mapA" id="A" onclick="myFunction_IB()"></a>
+					<a href="gui.php?id=I&value=1"><img src="./img/panel/button_1_lit_up.png" class="map1" id="one" onclick=" myFunction_I1()"></a>
+					<a href="gui.php?id=I&value=2"><img src="./img/panel/button_2_lit_up.png" class="map2" id="two" onclick="myFunction_I2()"></a>
+					<a href="gui.php?id=I&value=3"><img src="./img/panel/button_3_lit_up.png" class="map3" id="three" onclick="myFunction_I3()"></a>
+					<a href="gui.php?id=I&value=C"><img src="./img/panel/close_light_up.png" class="mapC" id="C" onclick="myFunction_IC()"></a>
+					<a href="gui.php?id=I&value=F"><img src="./img/panel/fan_lit_up.png" class="mapF" id="F" onclick="myFunction_IF()"></a>
+					<a href="gui.php?id=I&value=O"><img src="./img/panel/open_lit_up.png" class="mapO" id="O" onclick="myFunction_IO()"></a>
 
 	
 					<h1 class="floor3">Floor 3</h1>
