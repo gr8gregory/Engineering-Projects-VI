@@ -1,16 +1,14 @@
 	<?php
 
 		// Initialize the session
-		//session_start();
+		session_start();
 		
 		// Check if user is not logged in, if not redirect to the login page. 
-		//if($_SESSION["loggedin"] != true){
-		//	$_SESSION['message'] = 'message';
-		//	header("location: /login.php");
-		//	exit;
-		//}
-		// Include Config
-		//require_once "config.php";
+		if($_SESSION["loggedin"] != true){
+			$_SESSION['message'] = 'message';
+			header("location: /login.php");
+			exit;
+		}
 		
 	?>
 
@@ -29,17 +27,12 @@
 			return $new_floor;
 		}*/
 
-		function insert_elevatorNetwork_webreq(int $node_ID, int $stat, int $flr): int { 
+		function insert_elevatorNetwork_webreq(int $node_ID, int $stat, int $flr): int { // NODEID, STATUS, FLOOR
 			try { $db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 			catch (PDOException $e){echo $e->getMessage();}
 
 			$query = 'INSERT INTO elevatorNetwork (nodeID, status, floor) VALUES (?,?,?)';
 			$statement = $db1->prepare($query);
-			//$statement->bindvalue('nodeID', $node_ID);
-			//$statement->bindvalue('stat', $stat);
-			//$statement->bindvalue('flr', $flr);
-			// The error is: Warning: PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
-			// This happens when it tries to execute. 
 			$statement->execute([$node_ID, $stat, $flr]);	
 			return $flr;
 		}
@@ -285,7 +278,7 @@
 						switch($_GET['value']){
 							case "1":
 								echo "1 Calling To go Up";
-								$insert = insert_elevatorNetwork_webreq(0, 1, 5); 
+								$insert = insert_elevatorNetwork_webreq(1, 0, 5); 
 								
 								if($oneStat == 0){
 									audio(1);
@@ -298,7 +291,7 @@
 								break;
 							case "2U":
 								echo "2 Calling To go Up";
-								$insert = insert_elevatorNetwork_webreq(0, 2, 5); 
+								$insert = insert_elevatorNetwork_webreq(2, 0, 5); 
 								
 								if($U2Stat == 0){
 									audio(1);
@@ -310,7 +303,7 @@
 								break;
 							case "2D":
 								echo "2 Calling To go Down";
-								$insert = insert_elevatorNetwork_webreq(0, 2, 4); 
+								$insert = insert_elevatorNetwork_webreq(2, 0, 4); 
 								
 								if($D2Stat == 0){
 									audio(2);
@@ -322,7 +315,7 @@
 								break;
 							case "3":
 								echo "3 Calling To go Down";
-								$insert = insert_elevatorNetwork_webreq(0, 3, 4); 
+								$insert = insert_elevatorNetwork_webreq(3, 0, 4); 
 								header('Refresh:0; url=gui.php');
 								if($threeStat == 0){
 									audio(2);
