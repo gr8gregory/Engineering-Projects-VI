@@ -1,14 +1,14 @@
 	<?php
 
 		// Initialize the session
-		session_start();
+		//session_start();
 		
 		// Check if user is not logged in, if not redirect to the login page. 
-		if($_SESSION["loggedin"] != true){
+		/*if($_SESSION["loggedin"] != true){
 			$_SESSION['message'] = 'message';
 			header("location: /login.php");
 			exit;
-		}
+		}*/
 		
 	?>
 
@@ -86,6 +86,51 @@
 					return -1;
 				}
 		}
+
+		function IndcStatus(){
+			try { 
+				$db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
+				$query = 'SELECT nodeID, floor, status FROM elevatorNetwork'; 
+				$stmt = $db->prepare($query);
+				$stmt->execute();
+				$result = $stmt->FetchAll(PDO::FETCH_ASSOC);
+				$stat['1']='0';
+				$stat['2']='0';
+				$stat['3']='0';
+				$stat['4']='0';
+				$stat['5']='0';
+				$stat['6']='0';
+				$stat['7']='0';
+
+				foreach( $result as $row){
+					if($row['nodeID'] == 1){
+						$stat['1']='1';
+					}
+					if($row['nodeID'] == 2 && $row['floor']== 4){
+						$stat['2']='2';
+					}
+					if($row['nodeID'] == 2 && $row['floor']== 5){
+						$stat['3']='2';
+					}
+					if($row['nodeID'] == 3){
+						$stat['4']='3';
+					}
+					if($row['nodeID']== 0 && ($row['status']!=2) && $row['floor']==1){
+						$stat['5']='1';
+					}
+					if($row['nodeID']== 0 && ($row['status']!=2) && $row['floor']==2){
+						$stat['6']='2';
+					}
+					if($row['nodeID']== 0 && ($row['status']!=2) && $row['floor']==3){
+						$stat['7']='3';
+					}
+				}
+				return $stat; 
+				
+			}
+			catch (PDOException $e){echo $e->getMessage();}	
+		}
+
 	?>
 
 	<!DOCTYPE html>
@@ -181,13 +226,7 @@
 				$flr = get_Floor();
 				$move = get_move_Floor();
 				
-				/*if(isset($_GET['id'])) {
-					if($_GET['value'] =="1" || $_GET['value'] =="2" || $_GET['value'] =="3"){
-						$curFlr = update_elevatorNetwork(0, $_GET['value']); 
-						header('Refresh:0; url=gui.php');
-					}
-				}*/
-				
+
 
 				if($flr == 1 || $move==5){
 					echo "<img src='img/Indicator_1_up.png' class='indc_NO' id='floor'>";
@@ -211,7 +250,6 @@
 					echo "<img src='img/Indicator_No_Floor.png' class='indc_NO' id='floor'>";
 				}
 						
-				//echo "<h2>Current floor # $curFlr </h2>";
 				if(isset($_GET['id'])){
 					if($_GET['id']=='I'){
 						switch($_GET['value']){
@@ -265,73 +303,12 @@
 								break;
 							default:
 								echo "";
-								
 						}
 					}
 				}
 				
-				//if(!isset($_GET['id'])){
-					$oneStat= $U2Stat = $D2Stat = $threeStat = 0;
-				//}
-				if(isset($_GET['id'])){
-					if($_GET['id']=='D'){
-						switch($_GET['value']){
-							case "1":
-								echo "1 Calling To go Up";
-								$insert = insert_elevatorNetwork_webreq(1, 0, 5); 
-								
-								if($oneStat == 0){
-									audio(1);
-									$oneStat = 1;
-								}
-								else{
-									$oneStat = 0;
-								}
-								
-								break;
-							case "2U":
-								echo "2 Calling To go Up";
-								$insert = insert_elevatorNetwork_webreq(2, 0, 5); 
-								
-								if($U2Stat == 0){
-									audio(1);
-									$U2Stat = 1;
-								}
-								else{
-									$U2Stat = 0;
-								}
-								break;
-							case "2D":
-								echo "2 Calling To go Down";
-								$insert = insert_elevatorNetwork_webreq(2, 0, 4); 
-								
-								if($D2Stat == 0){
-									audio(2);
-									$D2Stat = 1;
-								}
-								else{
-									$D2Stat = 0;
-								}
-								break;
-							case "3":
-								echo "3 Calling To go Down";
-								$insert = insert_elevatorNetwork_webreq(3, 0, 4); 
-								header('Refresh:0; url=gui.php');
-								if($threeStat == 0){
-									audio(2);
-									$threeStat = 1;
-								}
-								else{
-									$threeStat = 0;
-								}
-								break;
-							default:
-								echo "";
-						}
-					}
 
-					//header('Refresh:0; url=gui.php');
-				}
+				
 			
 			function audio(int $flag){
                 if($flag == 1){
@@ -350,11 +327,12 @@
 
 			?>		
 			
-			<h2> 	
+			<h2>
+
 			<form action=gui.php method="GET">
 
-					<img src="img/none_lit_up.png" class="I_NO" usemap="#I" id="INO">
-					<map name="I">
+			<img src="img/none_lit_up.png" class="I_NO" usemap="#I" id="INO">
+			<map name="I">
 						<area shape="circle" coords="125, 73, 30" onclick="myFunction_I3()" href="gui.php?id=I&value=31">
 						<area shape="circle" coords="125, 157, 30" onclick="myFunction_I2()" href="gui.php?id=I&value=21">
 						<area shape="circle" coords="125, 240, 30" onclick=" myFunction_I1()" href="gui.php?id=I&value=11">
@@ -364,36 +342,119 @@
 						<area shape="circle" coords="174, 403, 30" onclick="myFunction_IB()" href="gui.php?id=I&value=B1">
 					</map>
 			
-					<a href="gui.php?id=I&value=B"><img src="./img/panel/alarm_lit_up.png" class="mapA" id="A" onclick="myFunction_IB()"></a>
-					<a href="gui.php?id=I&value=1"><img src="./img/panel/button_1_lit_up.png" class="map1" id="one" onclick=" myFunction_I1()"></a>
-					<a href="gui.php?id=I&value=2"><img src="./img/panel/button_2_lit_up.png" class="map2" id="two" onclick="myFunction_I2()"></a>
-					<a href="gui.php?id=I&value=3"><img src="./img/panel/button_3_lit_up.png" class="map3" id="three" onclick="myFunction_I3()"></a>
-					<a href="gui.php?id=I&value=C"><img src="./img/panel/close_light_up.png" class="mapC" id="C" onclick="myFunction_IC()"></a>
-					<a href="gui.php?id=I&value=F"><img src="./img/panel/fan_lit_up.png" class="mapF" id="F" onclick="myFunction_IF()"></a>
-					<a href="gui.php?id=I&value=O"><img src="./img/panel/open_lit_up.png" class="mapO" id="O" onclick="myFunction_IO()"></a>
+					<a href="gui.php"><img src="./img/panel/alarm_lit_up.png" class="mapA" id="A"></a>
+					<a href="gui.php"><img src="./img/panel/button_1_lit_up.png" class="map1" id="one"></a>
+					<a href="gui.php"><img src="./img/panel/button_2_lit_up.png" class="map2" id="two"></a>
+					<a href="gui.php"><img src="./img/panel/button_3_lit_up.png" class="map3" id="three"></a>
+					<a href="gui.php"><img src="./img/panel/close_light_up.png" class="mapC" id="C"></a>
+					<a href="gui.php"><img src="./img/panel/fan_lit_up.png" class="mapF" id="F"></a>
+					<a href="gui.php"><img src="./img/panel/open_lit_up.png" class="mapO" id="O"></a>
 
 	
 					<h1 class="floor3">Floor 3</h1>
-					<img src="img/CallButtonDown.png" class="C_D" usemap="#CD" id="CD">
+					<img src="img/CallButtonDown.png" class="C_D" usemap="#CD" id="_CD">
+					<img src="img/CallButtonDownLit.png" class="C_D" id="CD" onclick="myFunction_CD()">
 					<map name="CD">
 						<area shape="circle" coords="63, 117,36" onclick="myFunction_CD()" href="gui.php?id=D&value=3">
-						
 					</map>
-
+					
 					<h1 class="floor2">Floor 2</h1>
-					<img src="img/CallButtonUpDown.png" class="C_UD" usemap="#CUD" id="CUD">
+					<img src="img/CallButtonUpDown.png" class="C_UD" usemap="#CUD" id="_CUD">
+					
+					<img src="img/call_button_lit_down.png" class="C_UD" id="CUD_D" onclick="myFunction_CUD_D()">
+					<img src="img/call_button_lit_up.png" class="C_UD" id="CUD_U" onclick="myFunction_CUD_U()">
 					<map name="CUD">
 						<area shape="circle" coords="63, 64,36" onclick="myFunction_CUD_U()" href="gui.php?id=D&value=2U">
 						<area shape="circle" coords="63, 169,36" onclick="myFunction_CUD_D()" href="gui.php?id=D&value=2D">
 					</map>
 
 					<h1 class="floor1">Floor 1</h1>
-					<img src="img/CallButtonUp.png" class="C_U" usemap="#CU" id="CU">
+					<img src="./img/CallButtonUp.png" class="C_U" usemap="#CU" id="_CU">
+					<img src="img/CallButtonLitUp.png" class="C_U" id="CUP" onclick="myFunction_CU()">
 					<map name="CU">
 						<area shape="circle" coords="63, 117,36" onclick="myFunction_CU()" href="gui.php?id=D&value=1">
 					</map>
-					<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>?>
 
+					<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>?>
+					<?php
+
+
+						$stat = IndcStatus();
+				
+						$oneStat = $U2Stat = $D2Stat = $threeStat = 1;
+						
+						if($stat['1'] == '0'){
+							echo '<script type="text/javascript">CU_reset();</script>';
+							$oneStat = 0;
+						}
+						if($stat['2'] == '0'){
+							echo '<script type="text/javascript">CUD_D_reset();</script>';
+							$D2Stat = 0;
+						}
+						if($stat['3'] == '0'){
+							echo '<script type="text/javascript">CUD_U_reset();</script>';
+							$U2Stat = 0;
+						}
+						if($stat['4'] == '0'){
+							echo '<script type="text/javascript">CD_reset();</script>';
+							$threeStat = 0;
+						}
+						if($stat['5'] == '0'){
+							echo '<script type="text/javascript">I1_reset();</script>';
+						}
+						if($stat['6'] == '0'){
+							echo '<script type="text/javascript">I2_reset();</script>';
+						}
+						if($stat['7'] == '0'){
+							echo '<script type="text/javascript">I3_reset();</script>';
+						}
+
+						if(isset($_GET['id'])){
+							if($_GET['id']=='D'){
+								switch($_GET['value']){
+									case "1":
+										echo "1 Calling To go Up";
+										$insert = insert_elevatorNetwork_webreq(1, 0, 5); 
+										
+										if($oneStat == 0){ // Meaning the indicator is off. 
+											audio(1);
+										}
+										
+										break;
+									case "2U":
+										echo "2 Calling To go Up";
+										$insert = insert_elevatorNetwork_webreq(2, 0, 5); 
+										
+										if($U2Stat == 0){
+											audio(1);
+										}
+		
+										break;
+									case "2D":
+										echo "2 Calling To go Down";
+										$insert = insert_elevatorNetwork_webreq(2, 0, 4); 
+										
+										if($D2Stat == 0){
+											audio(2);
+										}
+		
+										break;
+									case "3":
+										echo "3 Calling To go Down";
+										$insert = insert_elevatorNetwork_webreq(3, 0, 4); 
+										
+										if($threeStat == 0){
+											audio(2);
+										}
+		
+										break;
+									default:
+										echo "";
+								}
+							}
+						}
+
+					?>
 					<script type="text/javascript">
 						imginit();
 					</script>

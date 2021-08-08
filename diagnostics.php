@@ -35,9 +35,29 @@
         <!--Bootstrap JS code-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
-		<link href='css/font.css' type='text/css' rel='stylesheet'/>
-        <link href='css/menu.css' type='text/css' rel='stylesheet'/>
-        <link href='css/diagnostics.css' type='text/css' rel='stylesheet'/>
+		<link href='/css/font.css' type='text/css' rel='stylesheet'/>
+        <link href='/css/menu.css' type='text/css' rel='stylesheet'/>
+        <link href='/css/navi.css' type='text/css' rel='stylesheet' />
+        <link href='/css/diagnostics.css' type='text/css' rel='stylesheet'/>
+
+        <style>
+			.bd-placeholder-img {
+				font-size: 1.125rem;
+				text-anchor: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				user-select: none;
+			}
+
+			@media (min-width: 768px) {
+				.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+				}
+			}
+			</style>
+			<!--[if lt IE 9]>
+					<script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
+				<![endif]-->
 	</head>
 	<body>
         <div id='page'>
