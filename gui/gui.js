@@ -1,4 +1,4 @@
-function myFunction_CD() {
+/*function myFunction_CD() {
 
     var CD;
     document.getElementById("CD").src == 'http://142.156.193.130:50000/gui/img/CallButtonDownLit.png';
@@ -50,7 +50,79 @@ function myFunction_CU() {
         document.getElementById("up").play();
     }
     localStorage.setItem("CU", CU);
+}*/
+
+
+
+
+function myFunction_CD() {
+
+    var CD = document.getElementById("CD");
+    
+    if(CD.style.display === "none"){
+        CD.style.display="block";
+	    CD=document.getElementById("CD");
+        console.log("True");
+    }
+    else{
+        CD.style.display="none";
+        CD="";
+        console.log("False");
+	}
+    localStorage.setItem("CD", CD);
+   
 }
+function myFunction_CUD_U() {
+    var CUD = document.getElementById("CUD_U");
+    
+    if(CUD.style.display === "none"){
+        CUD.style.display="block";
+	    CUD=document.getElementById("CUD_U");
+        console.log("True");
+    }
+    else{
+        CUD.style.display="none";
+        CUD="";
+        console.log("False");
+	}
+    localStorage.setItem("CUD_U", CUD);
+}
+function myFunction_CUD_D() {
+
+    var CDD = document.getElementById("CUD_D");
+    
+    if(CDD.style.display === "none"){
+        CDD.style.display="block";
+	    CDD=document.getElementById("CUD_D");
+        console.log("True");
+    }
+    else{
+        CDD.style.display="none";
+        CDD="";
+        console.log("False");
+	}
+    localStorage.setItem("CUD_D", CDD);
+}
+function myFunction_CU() {
+    var CU = document.getElementById("CUP");
+    
+    if(CU.style.display === "none"){
+        CU.style.display="block";
+	    CU=document.getElementById("CUP");
+        console.log("True");
+    }
+    else{
+        CU.style.display="none";
+        CU="";
+        console.log("False");
+	}
+    localStorage.setItem("CUP", CU);
+}
+
+
+
+
+
 function myFunction_I3() {
 	var I3 = document.getElementById("three");
 
@@ -145,32 +217,42 @@ function myFunction_IB() {
 }
 
 function imginit(){
-    var IB, IF, IO, IC, I1, I2, I3, CU, CDD, CUD, CD;
 
     if ( localStorage.getItem('CD')) {
-        CD = localStorage.getItem('CD');
+        document.getElementById("CD").style.display="block";
+        console.log("block");
     }
     else {
-        CD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        document.getElementById("CD").style.display="none";
+        console.log("none");
     }
-    document.getElementById("CD").src= CD;
 
-    if ( localStorage.getItem('CUD')) {
-        CUD = localStorage.getItem('CUD');
+    if ( localStorage.getItem('CUD_D')) {
+        document.getElementById("CUD_D").style.display="block";
+        console.log("block");
     }
     else {
-        CUD = "http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
+        document.getElementById("CUD_D").style.display="none";
+        console.log("none");
     }
-    document.getElementById("CUD").src= CUD;
 
-    if ( localStorage.getItem('CU')) {
-        CU = localStorage.getItem('CU');
+    if ( localStorage.getItem('CUD_U')) {
+        document.getElementById("CUD_U").style.display="block";
+        console.log("block");
     }
     else {
-        CU="http://142.156.193.130:50000/gui/img/CallButtonUp.png";
+        document.getElementById("CUD_U").style.display="none";
+        console.log("none");
     }
-    document.getElementById("CU").src= CU;
-    console.log(document.getElementById("CU").src);
+
+    if ( localStorage.getItem('CUP')) {
+        document.getElementById("CUP").style.display="block";
+        console.log("block");
+    }
+    else {
+        document.getElementById("CUP").style.display="none";
+        console.log("none");
+    }
 
 
     if ( localStorage.getItem('I3')) {
@@ -236,8 +318,8 @@ function CD_reset() {
 
 function CU_reset() {
     console.log("Node 1 reset");
-    document.getElementById("CU").src="http://142.156.193.130:50000/gui/img/CallButtonDown.png";
-    var CU = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    document.getElementById("CU").src="http://142.156.193.130:50000/gui/img/CallButtonUp.png";
+    var CU = "http://142.156.193.130:50000/gui/img/CallButtonUp.png";
     localStorage.setItem("CU", CU);
 }
 

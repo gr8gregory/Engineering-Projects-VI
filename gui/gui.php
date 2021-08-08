@@ -331,7 +331,7 @@
 
 			<form action=gui.php method="GET">
 
-					<img src="img/none_lit_up.png" class="I_NO" usemap="#I" id="INO">
+			<img src="img/none_lit_up.png" class="I_NO" usemap="#I" id="INO">
 					<map name="I">
 						<area shape="circle" coords="125, 73, 30" onclick="myFunction_I3()" href="gui.php?id=I&value=31">
 						<area shape="circle" coords="125, 157, 30" onclick="myFunction_I2()" href="gui.php?id=I&value=21">
@@ -352,23 +352,30 @@
 
 	
 					<h1 class="floor3">Floor 3</h1>
-					<img src="img/CallButtonDown.png" class="C_D" usemap="#CD" id="CD">
+					<img src="img/CallButtonDown.png" class="C_D" usemap="#CD" id="_CD">
+					<img src="img/CallButtonDownLit.png" class="C_D" id="CD" onclick="myFunction_CD()">
 					<map name="CD">
-						<area shape="circle" coords="63, 117,36" onclick="myFunction_CD()" href="gui.php?id=D&value=3">
+						<area shape="circle" coords="63, 117,36" onclick="myFunction_CD()" >
 					</map>
+					
 
 					<h1 class="floor2">Floor 2</h1>
-					<img src="img/CallButtonUpDown.png" class="C_UD" usemap="#CUD" id="CUD">
+					<img src="img/CallButtonUpDown.png" class="C_UD" usemap="#CUD" id="_CUD">
+					
+					<img src="img/call_button_lit_down.png" class="C_UD" id="CUD_D" onclick="myFunction_CUD_D()">
+					<img src="img/call_button_lit_up.png" class="C_UD" id="CUD_U" onclick="myFunction_CUD_U()">
 					<map name="CUD">
-						<area shape="circle" coords="63, 64,36" onclick="myFunction_CUD_U()" href="gui.php?id=D&value=2U">
-						<area shape="circle" coords="63, 169,36" onclick="myFunction_CUD_D()" href="gui.php?id=D&value=2D">
+						<area shape="circle" coords="63, 64,36" onclick="myFunction_CUD_U()" >
+						<area shape="circle" coords="63, 169,36" onclick="myFunction_CUD_D()" >
 					</map>
 
 					<h1 class="floor1">Floor 1</h1>
-					<img src="img/CallButtonUp.png" class="C_U" usemap="#CU" id="CU">
+					<img src="./img/CallButtonUp.png" class="C_U" usemap="#CU" id="_CU">
+					<img src="img/CallButtonLitUp.png" class="C_U" id="CUP" onclick="myFunction_CU()">
 					<map name="CU">
-						<area shape="circle" coords="63, 117,36" onclick="myFunction_CU()" href="gui.php?id=D&value=1">
+						<area shape="circle" coords="63, 117,36" onclick="myFunction_CU()" >
 					</map>
+					
 					<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>?>
 					<?php
 
