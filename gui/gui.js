@@ -258,16 +258,19 @@ function CUD_D_reset() {
 
 
 function I3_reset() {
+    var I3 = document.getElementById("three");
     I3.style.display="none";
     I3="";
     localStorage.setItem("I3", I3);
 }
 function I2_reset() {
+    var I2 = document.getElementById("two");
     I2.style.display="none";
     I2="";
     localStorage.setItem("I2", I2);
 }
 function I1_reset() {
+    var I1 = document.getElementById("one");
     I1.style.display="none";
     I1="";
     localStorage.setItem("I1", I1);
