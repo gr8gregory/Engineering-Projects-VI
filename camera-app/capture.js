@@ -56,6 +56,10 @@
             }
 
           }
+
+          loading.style.display = "none";
+          success.style.display = "block";
+
       };
   
     function startup() {
@@ -66,6 +70,7 @@
       submitbutton = document.getElementById('submitbutton');
       view = document.getElementById('border');
       loading = document.getElementById('loading');
+      success = document.getElementById('success');
 
 
         
@@ -76,6 +81,7 @@
 
       submitbutton.style.display = "none";
       loading.style.display = "none";
+      success.style.display = "none";
 
 
       submitbutton.addEventListener("click", buttonSubmit);
