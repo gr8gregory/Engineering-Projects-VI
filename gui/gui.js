@@ -310,31 +310,32 @@ function imginit(){
 
 
 function CD_reset() {
-    console.log("Node3 reset");
-    document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDown.png";
-    var CD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+
+    var CD = document.getElementById("CD");
+    CD.style.display="none";
+    CD="";
     localStorage.setItem("CD", CD);
 }
 
 function CU_reset() {
-    console.log("Node 1 reset");
-    document.getElementById("CU").src="http://142.156.193.130:50000/gui/img/CallButtonUp.png";
-    var CU = "http://142.156.193.130:50000/gui/img/CallButtonUp.png";
-    localStorage.setItem("CU", CU);
+    var CUP = document.getElementById("CUP");
+    CUP.style.display="none";
+    CUP="";
+    localStorage.setItem("CUP", CUP);
 }
 
 function CUD_U_reset() {
-    console.log("Node 2 U reset");
-    document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
-    var CUU = "http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
-    localStorage.setItem("CUU", CUU);
+    var CUD = document.getElementById("CUD_U");
+    CUD.style.display="none";
+    CUD="";
+    localStorage.setItem("CUD_U", CUD);
 }
 
 function CUD_D_reset() {
-    console.log("Node 2 D reset");
-    document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
-    var CDD = "http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
-    localStorage.setItem("CDD", CDD);
+    var CDD = document.getElementById("CUD_D");
+    CDD.style.display="none";
+    CDD="";
+    localStorage.setItem("CUD_D", CDD);
 }
 
 
