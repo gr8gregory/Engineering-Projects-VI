@@ -1,4 +1,17 @@
-/*
+function myFunction_CD() {
+
+    var CD;
+    document.getElementById("CD").src == 'http://142.156.193.130:50000/gui/img/CallButtonDownLit.png';
+    if(document.getElementById("CD").src == 'http://142.156.193.130:50000/gui/img/CallButtonDownLit.png'){
+        document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        CD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    else{
+        document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";
+	    CD = "http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";    
+	}
+	localStorage.setItem("CD", CD);
+}
 function myFunction_CUD_U() {
     var CUD;
     if(document.getElementById("CUD").src == "http://142.156.193.130:50000/gui/img/call_button_lit_up.png"){
@@ -12,56 +25,69 @@ function myFunction_CUD_U() {
     }
     localStorage.setItem("CUD", CUD);
 }
-*/
-
-function myFunction_CD() {
-
-    document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";
-    var CD = "http://142.156.193.130:50000/gui/img/CallButtonDownLit.png"; 
-	localStorage.setItem("CD", CD);
-}
-
-function myFunction_CUD_U() {
-
-    document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/call_button_lit_up.png";
-    var CUD="http://142.156.193.130:50000/gui/img/call_button_lit_up.png"
-
-    localStorage.setItem("CUD", CUD);
-}
 function myFunction_CUD_D() {
-    
-    document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/call_button_lit_down.png";
-    var CDD="http://142.156.193.130:50000/gui/img/call_button_lit_down.png"
-
+    var CDD;
+    if(document.getElementById("CUD").src == "http://142.156.193.130:50000/gui/img/call_button_lit_down.png"){
+        document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
+        CDD="http://142.156.193.130:50000/gui/img/CallButtonUpDown.png"
+    }
+    else{
+        document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/call_button_lit_down.png";
+        CDD="http://142.156.193.130:50000/gui/img/call_button_lit_down.png"
+        document.getElementById("down").play();
+    }
     localStorage.setItem("CUD", CDD);
 }
 function myFunction_CU() {
-    
+    var CU;
+    if(document.getElementById("CU").src == "http://142.156.193.130:50000/gui/img/CallButtonLitUp.png"){
+        document.getElementById("CU").src="http://142.156.193.130:50000/gui/img/CallButtonUp.png";
+        CU="http://142.156.193.130:50000/gui/img/CallButtonUp.png";
+    }
+    else{
         document.getElementById("CU").src="http://142.156.193.130:50000/gui/img/CallButtonLitUp.png";
-        var CU="http://142.156.193.130:50000/gui/img/CallButtonLitUp.png";
-        
+        CU="http://142.156.193.130:50000/gui/img/CallButtonLitUp.png";
+        document.getElementById("up").play();
+    }
     localStorage.setItem("CU", CU);
 }
 function myFunction_I3() {
-    var I3 = document.getElementById("three");
-    I3.style.display="block";
-	var I3=document.getElementById("three");
-    
+	var I3 = document.getElementById("three");
+
+    if(I3.style.display === "none"){
+        I3.style.display="block";
+	    I3=document.getElementById("three");
+    }
+    else{
+        I3.style.display="none";
+        I3="";
+	}
     localStorage.setItem("I3", I3);
 }
 function myFunction_I2() {
     var I2 = document.getElementById("two");
-    I2.style.display="block";
-	I2=document.getElementById("two");
-
+    
+    if(I2.style.display === "none"){
+        I2.style.display="block";
+	    I2=document.getElementById("two");
+    }
+    else{
+        I2.style.display="none";
+        I2="";
+	}
     localStorage.setItem("I2", I2);
 }
 function myFunction_I1() {
     var I1 = document.getElementById("one");
     
-    I1.style.display="block";
-	I1=document.getElementById("one");
-
+    if(I1.style.display === "none"){
+        I1.style.display="block";
+	    I1=document.getElementById("one");
+    }
+    else{
+        I1.style.display="none";
+        I1="";
+	}
     localStorage.setItem("I1", I1);
 }
 function myFunction_IC() {
