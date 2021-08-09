@@ -435,7 +435,31 @@ function IndcStatus(){
 			</map>
 
 			<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>?>
-				<?php
+				
+
+		</form>
+	</h2>
+	<script type="text/javascript">
+				imginit();
+			</script>
+
+			<audio id='down'>
+				<source src="./audio/down.mp3">
+			</audio>
+			<audio id='up'>
+				<source src="./audio/up.mp3">
+			</audio>
+			<audio id='first'>
+				<source src="./audio/first.mp3">
+			</audio>
+			<audio id='second'>
+				<source src="./audio/second.mp3">
+			</audio>
+			<audio id='third'>
+				<source src="./audio/third.mp3">
+			</audio>
+
+			<?php
 
 $stat = IndcStatus();
 
@@ -513,30 +537,6 @@ if(isset($_GET['id'])){
 }
 
 ?>
-
-		</form>
-	</h2>
-	<script type="text/javascript">
-				imginit();
-			</script>
-
-			<audio id='down'>
-				<source src="./audio/down.mp3">
-			</audio>
-			<audio id='up'>
-				<source src="./audio/up.mp3">
-			</audio>
-			<audio id='first'>
-				<source src="./audio/first.mp3">
-			</audio>
-			<audio id='second'>
-				<source src="./audio/second.mp3">
-			</audio>
-			<audio id='third'>
-				<source src="./audio/third.mp3">
-			</audio>
-
-
 
 	
 			
