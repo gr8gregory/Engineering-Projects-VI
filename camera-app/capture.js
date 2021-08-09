@@ -19,19 +19,48 @@
     var photo = null;
     var startbutton = null;
     var faceimage = null;
+    var view = null;
+    var loading = null;
+    var xmlhttp = new XMLHttpRequest()
+
 
     function buttonSubmit()
     {
-      var xmlhttp = new XMLHttpRequest()
 
       if (faceimage != null)
       {
         var fd = new FormData;
         fd.append('picture',faceimage);
         xmlhttp.open("POST", "ajaxpost.php");
-        xmlhttp.send(fd)
+        xmlhttp.responseType = "arraybuffer";
+        xmlhttp.send(fd);
+        view.style.display = "none";
+        loading.style.display = "block";
       }
     }
+   
+      xmlhttp.onload = function () {
+          var arrayBuffer = xmlhttp.response;
+          if (arrayBuffer)
+          {
+            var str =  String.fromCharCode.apply(null, new Uint8Array(arrayBuffer));
+            var error = parseInt(str);
+
+            if (error  == -1)
+            {
+              console.log("There are no faces in the picture");
+            }
+            else if (error == -2)
+            {
+              console.log("There are multiple faces in the picture");
+            }
+
+          }
+
+          loading.style.display = "none";
+          success.style.display = "block";
+
+      };
   
     function startup() {
       video = document.getElementById('video');
@@ -39,12 +68,21 @@
       photo = document.getElementById('photo');
       startbutton = document.getElementById('startbutton');
       submitbutton = document.getElementById('submitbutton');
+      view = document.getElementById('border');
+      loading = document.getElementById('loading');
+      success = document.getElementById('success');
+
+
+        
 
 
       video.setAttribute('width', width);
       video.setAttribute('height', height);
 
-      submitbutton.style.display = "none"
+      submitbutton.style.display = "none";
+      loading.style.display = "none";
+      success.style.display = "none";
+
 
       submitbutton.addEventListener("click", buttonSubmit);
 

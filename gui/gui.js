@@ -1,4 +1,17 @@
-/*
+/*function myFunction_CD() {
+
+    var CD;
+    document.getElementById("CD").src == 'http://142.156.193.130:50000/gui/img/CallButtonDownLit.png';
+    if(document.getElementById("CD").src == 'http://142.156.193.130:50000/gui/img/CallButtonDownLit.png'){
+        document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        CD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    }
+    else{
+        document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";
+	    CD = "http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";    
+	}
+	localStorage.setItem("CD", CD);
+}
 function myFunction_CUD_U() {
     var CUD;
     if(document.getElementById("CUD").src == "http://142.156.193.130:50000/gui/img/call_button_lit_up.png"){
@@ -12,56 +25,141 @@ function myFunction_CUD_U() {
     }
     localStorage.setItem("CUD", CUD);
 }
-*/
-
-function myFunction_CD() {
-
-    document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDownLit.png";
-    var CD = "http://142.156.193.130:50000/gui/img/CallButtonDownLit.png"; 
-	localStorage.setItem("CD", CD);
-}
-
-function myFunction_CUD_U() {
-
-    document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/call_button_lit_up.png";
-    var CUD="http://142.156.193.130:50000/gui/img/call_button_lit_up.png"
-
-    localStorage.setItem("CUD", CUD);
-}
 function myFunction_CUD_D() {
-    
-    document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/call_button_lit_down.png";
-    var CDD="http://142.156.193.130:50000/gui/img/call_button_lit_down.png"
-
+    var CDD;
+    if(document.getElementById("CUD").src == "http://142.156.193.130:50000/gui/img/call_button_lit_down.png"){
+        document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
+        CDD="http://142.156.193.130:50000/gui/img/CallButtonUpDown.png"
+    }
+    else{
+        document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/call_button_lit_down.png";
+        CDD="http://142.156.193.130:50000/gui/img/call_button_lit_down.png"
+        document.getElementById("down").play();
+    }
     localStorage.setItem("CUD", CDD);
 }
 function myFunction_CU() {
-    
+    var CU;
+    if(document.getElementById("CU").src == "http://142.156.193.130:50000/gui/img/CallButtonLitUp.png"){
+        document.getElementById("CU").src="http://142.156.193.130:50000/gui/img/CallButtonUp.png";
+        CU="http://142.156.193.130:50000/gui/img/CallButtonUp.png";
+    }
+    else{
         document.getElementById("CU").src="http://142.156.193.130:50000/gui/img/CallButtonLitUp.png";
-        var CU="http://142.156.193.130:50000/gui/img/CallButtonLitUp.png";
-        
+        CU="http://142.156.193.130:50000/gui/img/CallButtonLitUp.png";
+        document.getElementById("up").play();
+    }
     localStorage.setItem("CU", CU);
-}
-function myFunction_I3() {
-    var I3 = document.getElementById("three");
-    I3.style.display="block";
-	var I3=document.getElementById("three");
+}*/
+
+
+
+
+function myFunction_CD() {
+
+    var CD = document.getElementById("CD");
     
+    if(CD.style.display === "none"){
+        CD.style.display="block";
+	    CD=document.getElementById("CD");
+        console.log("True");
+    }
+    else{
+        CD.style.display="none";
+        CD="";
+        console.log("False");
+	}
+    localStorage.setItem("CD", CD);
+   
+}
+function myFunction_CUD_U() {
+    var CUD = document.getElementById("CUD_U");
+    
+    if(CUD.style.display === "none"){
+        CUD.style.display="block";
+	    CUD=document.getElementById("CUD_U");
+        console.log("True");
+    }
+    else{
+        CUD.style.display="none";
+        CUD="";
+        console.log("False");
+	}
+    localStorage.setItem("CUD_U", CUD);
+}
+function myFunction_CUD_D() {
+
+    var CDD = document.getElementById("CUD_D");
+    
+    if(CDD.style.display === "none"){
+        CDD.style.display="block";
+	    CDD=document.getElementById("CUD_D");
+        console.log("True");
+    }
+    else{
+        CDD.style.display="none";
+        CDD="";
+        console.log("False");
+	}
+    localStorage.setItem("CUD_D", CDD);
+}
+function myFunction_CU() {
+    var CU = document.getElementById("CUP");
+    
+    if(CU.style.display === "none"){
+        CU.style.display="block";
+	    CU=document.getElementById("CUP");
+        console.log("True");
+    }
+    else{
+        CU.style.display="none";
+        CU="";
+        console.log("False");
+	}
+    localStorage.setItem("CUP", CU);
+}
+
+
+
+
+
+function myFunction_I3() {
+	var I3 = document.getElementById("three");
+
+    if(I3.style.display === "none"){
+        I3.style.display="block";
+	    I3=document.getElementById("three");
+    }
+    else{
+        I3.style.display="none";
+        I3="";
+	}
     localStorage.setItem("I3", I3);
 }
 function myFunction_I2() {
     var I2 = document.getElementById("two");
-    I2.style.display="block";
-	I2=document.getElementById("two");
-
+    
+    if(I2.style.display === "none"){
+        I2.style.display="block";
+	    I2=document.getElementById("two");
+    }
+    else{
+        I2.style.display="none";
+        I2="";
+	}
     localStorage.setItem("I2", I2);
 }
 function myFunction_I1() {
     var I1 = document.getElementById("one");
     
-    I1.style.display="block";
-	I1=document.getElementById("one");
-
+    if(I1.style.display === "none"){
+        I1.style.display="block";
+	    I1=document.getElementById("one");
+    }
+    else{
+        I1.style.display="none";
+        I1="";
+	}
     localStorage.setItem("I1", I1);
 }
 function myFunction_IC() {
@@ -119,32 +217,42 @@ function myFunction_IB() {
 }
 
 function imginit(){
-    var IB, IF, IO, IC, I1, I2, I3, CU, CDD, CUD, CD;
 
     if ( localStorage.getItem('CD')) {
-        CD = localStorage.getItem('CD');
+        document.getElementById("CD").style.display="block";
+        console.log("block CD");
     }
     else {
-        CD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+        document.getElementById("CD").style.display="none";
+        console.log("none CD");
     }
-    document.getElementById("CD").src= CD;
 
-    if ( localStorage.getItem('CUD')) {
-        CUD = localStorage.getItem('CUD');
+    if ( localStorage.getItem('CUD_D')) {
+        document.getElementById("CUD_D").style.display="block";
+        console.log("block CUDD");
     }
     else {
-        CUD = "http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
+        document.getElementById("CUD_D").style.display="none";
+        console.log("none CUDD");
     }
-    document.getElementById("CUD").src= CUD;
 
-    if ( localStorage.getItem('CU')) {
-        CU = localStorage.getItem('CU');
+    if ( localStorage.getItem('CUD_U')) {
+        document.getElementById("CUD_U").style.display="block";
+        console.log("block CUDU");
     }
     else {
-        CU="http://142.156.193.130:50000/gui/img/CallButtonUp.png";
+        document.getElementById("CUD_U").style.display="none";
+        console.log("none CUDU");
     }
-    document.getElementById("CU").src= CU;
-    console.log(document.getElementById("CU").src);
+
+    if ( localStorage.getItem('CUP')) {
+        document.getElementById("CUP").style.display="block";
+        console.log("block CUP");
+    }
+    else {
+        document.getElementById("CUP").style.display="none";
+        console.log("none CUP");
+    }
 
 
     if ( localStorage.getItem('I3')) {
@@ -202,43 +310,53 @@ function imginit(){
 
 
 function CD_reset() {
-    document.getElementById("CD").src="http://142.156.193.130:50000/gui/img/CallButtonDown.png";
-    var CD = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
+    console.log("Node3 reset");
+    CD = document.getElementById("CD");
+    CD.style.display="none";
+    CD="";
     localStorage.setItem("CD", CD);
 }
 
 function CU_reset() {
-    document.getElementById("CU").src="http://142.156.193.130:50000/gui/img/CallButtonDown.png";
-    var CU = "http://142.156.193.130:50000/gui/img/CallButtonDown.png";
-    localStorage.setItem("CU", CU);
+    console.log("Node 1 reset");
+    CU = document.getElementById("CUP");
+    CU.style.display="none";
+    CU="";
+    localStorage.setItem("CUP", CU);
 }
 
 function CUD_U_reset() {
-    document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
-    var CUU = "http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
-    localStorage.setItem("CUU", CUU);
+    console.log("Node 2 U reset");
+    CUU = document.getElementById("CUD_U");
+    CUU.style.display="none";
+    CUU="";
+    localStorage.setItem("CUD_U", CUU);
 }
 
 function CUD_D_reset() {
-
-    document.getElementById("CUD").src="http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
-    var CDD = "http://142.156.193.130:50000/gui/img/CallButtonUpDown.png";
-    localStorage.setItem("CDD", CDD);
+    console.log("Node 2 D reset");
+    CDD = document.getElementById("CUD_D");
+    CDD.style.display="none";
+    CDD="";
+    localStorage.setItem("CUD_D", CDD);
 }
 
 
 
 function I3_reset() {
+    var I3 = document.getElementById("three");
     I3.style.display="none";
     I3="";
     localStorage.setItem("I3", I3);
 }
 function I2_reset() {
+    var I2 = document.getElementById("two");
     I2.style.display="none";
     I2="";
     localStorage.setItem("I2", I2);
 }
 function I1_reset() {
+    var I1 = document.getElementById("one");
     I1.style.display="none";
     I1="";
     localStorage.setItem("I1", I1);
