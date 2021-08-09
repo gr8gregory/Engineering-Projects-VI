@@ -319,10 +319,10 @@ function CD_reset() {
 
 function CU_reset() {
     console.log("Node 1 reset");
-    CU = document.getElementById("CU");
+    CU = document.getElementById("CUP");
     CU.style.display="none";
     CU="";
-    localStorage.setItem("CU", CU);
+    localStorage.setItem("CUP", CU);
 }
 
 function CUD_U_reset() {
