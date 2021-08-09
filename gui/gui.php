@@ -348,41 +348,7 @@ function IndcStatus(){
 
 		
 	
-	function audio(int $flag, int $floor){
-		if($flag == 1){
-			echo "<script> 
-			var audio = new Audio('./audio/up.mp3');
-			 audio.play();
-			 </script>";
-		}
-		if($flag == 2){
-			echo "<script>
-			var audio = new Audio('./audio/down.mp3');
-			audio.play();
-			</script>";
-		}
-		if($flag == 3){
-			echo "<script>
-			var audio = new Audio('./audio/first.mp3');
-			audio.play();
-			</script>";
-			updateAudioState(0, $floor);
-		}
-		if($flag == 4){
-			echo "<script>
-			var audio = new Audio('./audio/second.mp3');
-			audio.play();
-			</script>";
-			updateAudioState(0, $floor);
-		}
-		if($flag == 5){
-			echo "<script>
-			var audio = new Audio('./audio/third.mp3');
-			audio.play();
-			</script>";
-			updateAudioState(0, $floor);
-		}
-	}
+	
 
 	?>		
 	
@@ -521,6 +487,41 @@ if(isset($_GET['id'])){
 			default:
 				echo "";
 		}
+	}
+}
+function audio(int $flag, int $floor){
+	if($flag == 1){
+		echo "<script> 
+		var audio = new Audio('./audio/up.mp3');
+		 audio.play();
+		 </script>";
+	}
+	if($flag == 2){
+		echo "<script>
+		var audio = new Audio('./audio/down.mp3');
+		audio.play();
+		</script>";
+	}
+	if($flag == 3){
+		echo "<script>
+		var audio = new Audio('./audio/first.mp3');
+		audio.play();
+		</script>";
+		updateAudioState(0, $floor);
+	}
+	if($flag == 4){
+		echo "<script>
+		var audio = new Audio('./audio/second.mp3');
+		audio.play();
+		</script>";
+		updateAudioState(0, $floor);
+	}
+	if($flag == 5){
+		echo "<script>
+		var audio = new Audio('./audio/third.mp3');
+		audio.play();
+		</script>";
+		updateAudioState(0, $floor);
 	}
 }
 
