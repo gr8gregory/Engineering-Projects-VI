@@ -439,9 +439,7 @@ function IndcStatus(){
 
 		</form>
 	</h2>
-	<script type="text/javascript">
-				imginit();
-			</script>
+	
 
 			<audio id='down'>
 				<source src="./audio/down.mp3">
@@ -466,28 +464,35 @@ $stat = IndcStatus();
 $oneStat = $U2Stat = $D2Stat = $threeStat = 1;
 
 if($stat['1'] == '0'){
+	echo $stat['1'];
 	echo '<script type="text/javascript">CU_reset();</script>';
 	$oneStat = 0;
 }
 if($stat['2'] == '0'){
+	echo $stat['2'];
 	echo '<script type="text/javascript">CUD_D_reset();</script>';
 	$D2Stat = 0;
 }
 if($stat['3'] == '0'){
+	echo $stat['3'];
 	echo '<script type="text/javascript">CUD_U_reset();</script>';
 	$U2Stat = 0;
 }
 if($stat['4'] == '0'){
+	echo $stat['4'];
 	echo '<script type="text/javascript">CD_reset();</script>';
 	$threeStat = 0;
 }
 if($stat['5'] == '0'){
+	echo $stat['5'];
 	echo '<script type="text/javascript">I1_reset();</script>';
 }
 if($stat['6'] == '0'){
+	echo $stat['6'];
 	echo '<script type="text/javascript">I2_reset();</script>';
 }
 if($stat['7'] == '0'){
+	echo $stat['7'];
 	echo '<script type="text/javascript">I3_reset();</script>';
 }
 
@@ -537,7 +542,9 @@ if(isset($_GET['id'])){
 }
 
 ?>
-
+<script type="text/javascript">
+				imginit();
+			</script>
 	
 			
 </body>
