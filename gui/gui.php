@@ -439,7 +439,28 @@ function IndcStatus(){
 
 		</form>
 	</h2>
-	
+	<script type="text/javascript">
+				imginit();
+			</script>
+
+			<audio id='down'>
+				<source src="./audio/down.mp3">
+			</audio>
+			<audio id='up'>
+				<source src="./audio/up.mp3">
+			</audio>
+			<audio id='first'>
+				<source src="./audio/first.mp3">
+			</audio>
+			<audio id='second'>
+				<source src="./audio/second.mp3">
+			</audio>
+			<audio id='third'>
+				<source src="./audio/third.mp3">
+			</audio>
+
+
+
 	<?php
 
 				$stat = IndcStatus();
@@ -518,28 +539,7 @@ function IndcStatus(){
 				}
 
 			?>
-			<script type="text/javascript">
-				imginit();
-			</script>
-
-			<audio id='down'>
-				<source src="./audio/down.mp3">
-			</audio>
-			<audio id='up'>
-				<source src="./audio/up.mp3">
-			</audio>
-			<audio id='first'>
-				<source src="./audio/first.mp3">
-			</audio>
-			<audio id='second'>
-				<source src="./audio/second.mp3">
-			</audio>
-			<audio id='third'>
-				<source src="./audio/third.mp3">
-			</audio>
-
-
-
+			
 </body>
 	
 </html>
