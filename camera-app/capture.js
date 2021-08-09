@@ -49,16 +49,27 @@
             if (error  == -1)
             {
               console.log("There are no faces in the picture");
+              loading.style.display = "none";
+              failure.style.display = "block";
+
             }
             else if (error == -2)
             {
               console.log("There are multiple faces in the picture");
+              loading.style.display = "none";
+              failure1.style.display = "block";
+
+
             }
-
+            else
+            {
+              loading.style.display = "none";
+              success.style.display = "block";
+            }
+  
           }
-
-          loading.style.display = "none";
-          success.style.display = "block";
+      
+       
 
       };
   
@@ -71,6 +82,9 @@
       view = document.getElementById('border');
       loading = document.getElementById('loading');
       success = document.getElementById('success');
+      failure = document.getElementById('failure');
+      failure1 = document.getElementById('failure1');
+
 
 
         
@@ -82,6 +96,9 @@
       submitbutton.style.display = "none";
       loading.style.display = "none";
       success.style.display = "none";
+      failure.style.display = "none";
+      failure1.style.display = "none";
+
 
 
       submitbutton.addEventListener("click", buttonSubmit);
@@ -123,7 +140,7 @@
         ev.preventDefault();
       }, false);
       
-      photo.setAttribute('src', "placeholder.PNG")
+      photo.setAttribute('src', "/camera-app/placeholder.png")
     }
   
     // Fill the photo with an indication that none has been

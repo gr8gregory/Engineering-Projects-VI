@@ -1,6 +1,7 @@
 <?php
 
-
+include 'faceCompare.php';
+$jsonDB = "face_encoding.json";
 $photo_location = $_POST['picture'];
 //Conver to a readable format 
 $img = str_replace(' ','+',$photo_location);
@@ -10,12 +11,7 @@ $decodedData = base64_decode($imgData);
 //$decodedData = str_replace(' ','+',$decodedData);
 
 
-
-$file = "face.png";
-
-//file_put_contents($file, $decodedData);
-
-$host = "76.71.52.14";
+$host = "127.0.0.1";
 $port = 65432;
 $BUFSIZ = 1024 * 3;
 // No Timeout 
@@ -39,29 +35,70 @@ $result = socket_connect($socket, $host, $port) or die("Could not connect to ser
 socket_write($socket, $decodedData, $len);
 
 
-for ($i = 0; $i < 1; $i++)
+
+
+$file = fopen("face_encoding.json", "w");
+
+
+for ($i = 0; $i < 3; $i++)
 {
+  
   $read = socket_read($socket, 1024);
-  if ($read[0] == '#')
-  {
-    //Error condition has been recieved 
-    if($read[2] == '1')
+  fwrite($file,$read,1024);
+  echo $read;
+
+    if($i == 0)
     {
-      echo "-1";
-      //No Faces where detected in the photo
+      if ($read[0] == '#')
+      {
+        //Error condition has been recieved 
+        if($read[2] == '1')
+        {
+          echo "-1";
+          socket_close($socket);
+          exit();
+          //No Faces where detected in the photo
 
+        }
+
+        if($read[2] == '2')
+        {
+          echo "-2";
+          socket_close($socket);
+          exit();
+          //There were multiple faces detected in the picture
+
+        }
+      }
     }
-
-    if($read[2] == '2')
-    {
-      echo "-2";
-      //There were multiple faces detected in the picture
-
-    }
-  }
 }
 
+//Grab the facial encdoings from the JSON file
+$buffer = json_decode(file_get_contents($jsonDB),TRUE);
 
+//Init an array to store all the face encodings
+$enc = (array) null;
+
+//Move all the encdings to a new 1D array
+for($x = 0; $x < 127; $x++)
+{
+echo $buffer[0][$x] . "<br>";
+$enc[$x] = $buffer[0][$x];
+}
+
+//create a faceCompare class to add to databasae
+$facecompare = new faceCompare();
+$facecompare->connectToDatabase();
+$result = $facecompare->inDatabase($enc, 0.6);
+//$facecompare->addToDatabase("bob", $enc);
+
+
+
+
+
+
+
+fclose($file);
 socket_close($socket);
 ?>
 
