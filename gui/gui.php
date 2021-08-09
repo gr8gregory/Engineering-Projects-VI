@@ -71,7 +71,7 @@ function get_Floor(): int {
 }
 
 
-function getAudioState(): int {
+function getAudioState() {
 	try{
 		$db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
 	
@@ -81,8 +81,8 @@ function getAudioState(): int {
 		$result = $stmt->FetchAll(PDO::FETCH_ASSOC);
 
 		foreach( $result as $row){
-			$audioState[0] = $row[0]; 	// State 
-			$audioState[1] = $row[1];	// Floor
+			$audioState[0] = $row['flag']; 	// State 
+			$audioState[1] = $row['floor'];	// Floor
 		}
 		return $audioState; // Either a 1 or a 0
 	}
@@ -261,7 +261,7 @@ function IndcStatus(){
 		$state = getAudioState();
 		if($state[0] == 0 && $state[1] != $flr){ // If the flag is not set and the two floors are different 
 			updateAudioState(1, $flr);
-			audio($flr + 2);
+			audio($flr + 2, $flr);
 		}
 		
 		$move = get_move_Floor();
@@ -348,7 +348,7 @@ function IndcStatus(){
 
 		
 	
-	function audio(int $flag){
+	function audio(int $flag, int $floor){
 		if($flag == 1){
 			echo "<script> 
 			var audio = new Audio('./audio/up.mp3');
@@ -366,21 +366,21 @@ function IndcStatus(){
 			var audio = new Audio('./audio/first.mp3');
 			audio.play();
 			</script>";
-			updateAudioState(0);
+			updateAudioState(0, $floor);
 		}
 		if($flag == 4){
 			echo "<script>
 			var audio = new Audio('./audio/second.mp3');
 			audio.play();
 			</script>";
-			updateAudioState(0);
+			updateAudioState(0, $floor);
 		}
 		if($flag == 5){
 			echo "<script>
 			var audio = new Audio('./audio/third.mp3');
 			audio.play();
 			</script>";
-			updateAudioState(0);
+			updateAudioState(0, $floor);
 		}
 	}
 
