@@ -459,94 +459,94 @@ function IndcStatus(){
 
 			<?php
 
-$stat = IndcStatus();
+			$stat = IndcStatus();
 
-$oneStat = $U2Stat = $D2Stat = $threeStat = 1;
+			$oneStat = $U2Stat = $D2Stat = $threeStat = 1;
 
-if($stat['1'] == '0'){
-	echo $stat['1'];
-	echo '<script type="text/javascript">CU_reset();</script>';
-	$oneStat = 0;
-}
-if($stat['2'] == '0'){
-	echo $stat['2'];
-	echo '<script type="text/javascript">CUD_D_reset();</script>';
-	$D2Stat = 0;
-}
-if($stat['3'] == '0'){
-	echo $stat['3'];
-	echo '<script type="text/javascript">CUD_U_reset();</script>';
-	$U2Stat = 0;
-}
-if($stat['4'] == '0'){
-	echo $stat['4'];
-	echo '<script type="text/javascript">CD_reset();</script>';
-	$threeStat = 0;
-}
-if($stat['5'] == '0'){
-	echo $stat['5'];
-	echo '<script type="text/javascript">I1_reset();</script>';
-}
-if($stat['6'] == '0'){
-	echo $stat['6'];
-	echo '<script type="text/javascript">I2_reset();</script>';
-}
-if($stat['7'] == '0'){
-	echo $stat['7'];
-	echo '<script type="text/javascript">I3_reset();</script>';
-}
+			/*if($stat['1'] == '0'){
+				echo $stat['1'];
+				echo '<script type="text/javascript">CU_reset();</script>';
+				$oneStat = 0;
+			}
+			if($stat['2'] == '0'){
+				echo $stat['2'];
+				echo '<script type="text/javascript">CUD_D_reset();</script>';
+				$D2Stat = 0;
+			}
+			if($stat['3'] == '0'){
+				echo $stat['3'];
+				echo '<script type="text/javascript">CUD_U_reset();</script>';
+				$U2Stat = 0;
+			}
+			if($stat['4'] == '0'){
+				echo $stat['4'];
+				echo '<script type="text/javascript">CD_reset();</script>';
+				$threeStat = 0;
+			}*/
+			if($stat['5'] == '0'){
+				echo $stat['5'];
+				echo '<script type="text/javascript">I1_reset();</script>';
+			}
+			if($stat['6'] == '0'){
+				echo $stat['6'];
+				echo '<script type="text/javascript">I2_reset();</script>';
+			}
+			if($stat['7'] == '0'){
+				echo $stat['7'];
+				echo '<script type="text/javascript">I3_reset();</script>';
+			}
 
-if(isset($_GET['id'])){
-	if($_GET['id']=='D'){
-		switch($_GET['value']){
-			case "1":
-				echo "1 Calling To go Up";
-				$insert = insert_elevatorNetwork_webreq(1, 0, 5); 
-				
-				if($oneStat == 0){ // Meaning the indicator is off. 
-					audio(1);
+			if(isset($_GET['id'])){
+				if($_GET['id']=='D'){
+					switch($_GET['value']){
+						case "1":
+							echo "1 Calling To go Up";
+							$insert = insert_elevatorNetwork_webreq(1, 0, 5); 
+							
+							if($oneStat == 0){ // Meaning the indicator is off. 
+								audio(1);
+							}
+							
+							break;
+						case "2U":
+							echo "2 Calling To go Up";
+							$insert = insert_elevatorNetwork_webreq(2, 0, 5); 
+							
+							if($U2Stat == 0){
+								audio(1);
+							}
+
+							break;
+						case "2D":
+							echo "2 Calling To go Down";
+							$insert = insert_elevatorNetwork_webreq(2, 0, 4); 
+							
+							if($D2Stat == 0){
+								audio(2);
+							}
+
+							break;
+						case "3":
+							echo "3 Calling To go Down";
+							$insert = insert_elevatorNetwork_webreq(3, 0, 4); 
+							
+							if($threeStat == 0){
+								audio(2);
+							}
+
+							break;
+						default:
+							echo "";
+					}
 				}
-				
-				break;
-			case "2U":
-				echo "2 Calling To go Up";
-				$insert = insert_elevatorNetwork_webreq(2, 0, 5); 
-				
-				if($U2Stat == 0){
-					audio(1);
-				}
+			}
 
-				break;
-			case "2D":
-				echo "2 Calling To go Down";
-				$insert = insert_elevatorNetwork_webreq(2, 0, 4); 
+	?>
+	<script type="text/javascript">
+					imginit();
+	</script>
+		
 				
-				if($D2Stat == 0){
-					audio(2);
-				}
-
-				break;
-			case "3":
-				echo "3 Calling To go Down";
-				$insert = insert_elevatorNetwork_webreq(3, 0, 4); 
-				
-				if($threeStat == 0){
-					audio(2);
-				}
-
-				break;
-			default:
-				echo "";
-		}
-	}
-}
-
-?>
-<script type="text/javascript">
-				imginit();
-			</script>
-	
-			
-</body>
+	</body>
 	
 </html>
