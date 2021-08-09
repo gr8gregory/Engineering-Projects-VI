@@ -76,6 +76,7 @@
 			<li><a href='#vid1'>Verification of HTTP and SSH to Remote Raspberry Pi</a></li>
 			<li><a href='#greg2'>Greg's Demo of CAN working on STM32F303</a></li>
 			<li><a href='#canHalDemo'>Local Verification of CAN Interface</a></li>
+			<li><a href='#cppBackendDemo'>Local Verification of Elevator C++</a></li>
 		</ul>
 
 		<h2 id='vid1'>Project Demo's</h2>
@@ -92,9 +93,14 @@
 		<p>In this video, we set the recieve filter for values between 0x100 and 0x103. First, we send a message with ID
 			0x104 which is transmitted but not received. Then we send a message with ID 0x103 which is transmitted and
 			received (hits a breakpoint between transmit and receive so the LED cycles are distinct).</p>
+		
+		<h2 id='cppBackendDemo'>Local Verification of Elevator C++</h2>
+		<iframe src="https://www.youtube.com/embed/qtLhNeXHs3s" height="345" width="420" frameborder=0 allowfullscreen
+			ng-show="showvideo"></iframe>
+		<p>In this video, we demo the elevator C++ code. The 'web_sub' program populates the database and the 'db_can' (full elevator code) responds as expected.</p>
 
 
-
+		
 
 		<aside></aside>
 		<footer>
