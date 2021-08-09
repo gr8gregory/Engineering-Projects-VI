@@ -220,38 +220,38 @@ function imginit(){
 
     if ( localStorage.getItem('CD')) {
         document.getElementById("CD").style.display="block";
-        console.log("block");
+        console.log("block CD");
     }
     else {
         document.getElementById("CD").style.display="none";
-        console.log("none");
+        console.log("none CD");
     }
 
     if ( localStorage.getItem('CUD_D')) {
         document.getElementById("CUD_D").style.display="block";
-        console.log("block");
+        console.log("block CUDD");
     }
     else {
         document.getElementById("CUD_D").style.display="none";
-        console.log("none");
+        console.log("none CUDD");
     }
 
     if ( localStorage.getItem('CUD_U')) {
         document.getElementById("CUD_U").style.display="block";
-        console.log("block");
+        console.log("block CUDU");
     }
     else {
         document.getElementById("CUD_U").style.display="none";
-        console.log("none");
+        console.log("none CUDU");
     }
 
     if ( localStorage.getItem('CUP')) {
         document.getElementById("CUP").style.display="block";
-        console.log("block");
+        console.log("block CUP");
     }
     else {
         document.getElementById("CUP").style.display="none";
-        console.log("none");
+        console.log("none CUP");
     }
 
 
