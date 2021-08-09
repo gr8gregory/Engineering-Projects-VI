@@ -220,38 +220,38 @@ function imginit(){
 
     if ( localStorage.getItem('CD')) {
         document.getElementById("CD").style.display="block";
-        console.log("block");
+        console.log("block CD");
     }
     else {
         document.getElementById("CD").style.display="none";
-        console.log("none");
+        console.log("none CD");
     }
 
     if ( localStorage.getItem('CUD_D')) {
         document.getElementById("CUD_D").style.display="block";
-        console.log("block");
+        console.log("block CUDD");
     }
     else {
         document.getElementById("CUD_D").style.display="none";
-        console.log("none");
+        console.log("none CUDD");
     }
 
     if ( localStorage.getItem('CUD_U')) {
         document.getElementById("CUD_U").style.display="block";
-        console.log("block");
+        console.log("block CUDU");
     }
     else {
         document.getElementById("CUD_U").style.display="none";
-        console.log("none");
+        console.log("none CUDU");
     }
 
     if ( localStorage.getItem('CUP')) {
         document.getElementById("CUP").style.display="block";
-        console.log("block");
+        console.log("block CUP");
     }
     else {
         document.getElementById("CUP").style.display="none";
-        console.log("none");
+        console.log("none CUP");
     }
 
 
@@ -310,29 +310,32 @@ function imginit(){
 
 
 function CD_reset() {
-
-    var CD = document.getElementById("CD");
+    console.log("Node3 reset");
+    CD = document.getElementById("CD");
     CD.style.display="none";
     CD="";
     localStorage.setItem("CD", CD);
 }
 
 function CU_reset() {
-    var CUP = document.getElementById("CUP");
-    CUP.style.display="none";
-    CUP="";
-    localStorage.setItem("CUP", CUP);
+    console.log("Node 1 reset");
+    CU = document.getElementById("CUP");
+    CU.style.display="none";
+    CU="";
+    localStorage.setItem("CUP", CU);
 }
 
 function CUD_U_reset() {
-    var CUD = document.getElementById("CUD_U");
-    CUD.style.display="none";
-    CUD="";
-    localStorage.setItem("CUD_U", CUD);
+    console.log("Node 2 U reset");
+    CUU = document.getElementById("CUD_U");
+    CUU.style.display="none";
+    CUU="";
+    localStorage.setItem("CUD_U", CUU);
 }
 
 function CUD_D_reset() {
-    var CDD = document.getElementById("CUD_D");
+    console.log("Node 2 D reset");
+    CDD = document.getElementById("CUD_D");
     CDD.style.display="none";
     CDD="";
     localStorage.setItem("CUD_D", CDD);
