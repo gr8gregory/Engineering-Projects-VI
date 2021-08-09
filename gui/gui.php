@@ -435,8 +435,12 @@ function IndcStatus(){
 			</map>
 
 			<?php //<iframe class='stream' src="http://192.168.0.201:5080/" ></iframe>?>
-			<?php
+			
 
+		</form>
+	</h2>
+	
+	<?php
 
 				$stat = IndcStatus();
 		
@@ -534,8 +538,8 @@ function IndcStatus(){
 				<source src="./audio/third.mp3">
 			</audio>
 
-		</form>
-	</h2> 
+
+
 </body>
 	
 </html>
