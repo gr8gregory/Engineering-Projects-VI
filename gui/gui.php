@@ -410,9 +410,9 @@ function IndcStatus(){
 
 $stat = IndcStatus();
 
-$oneStat = $U2Stat = $D2Stat = $threeStat = 1;
+$oneStat = $U2Stat = $D2Stat = $threeStat = 0;
 
-if($stat['1'] == '0'){
+/*if($stat['1'] == '0'){
 	echo $stat['1'];
 	echo '<script type="text/javascript">CU_reset();</script>';
 	$oneStat = 0;
@@ -431,7 +431,7 @@ if($stat['4'] == '0'){
 	echo $stat['4'];
 	echo '<script type="text/javascript">CD_reset();</script>';
 	$threeStat = 0;
-}
+}*/
 if($stat['5'] == '0'){
 	echo $stat['5'];
 	echo '<script type="text/javascript">I1_reset();</script>';
