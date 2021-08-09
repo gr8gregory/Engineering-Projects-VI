@@ -23,6 +23,8 @@
 		<li><a href="#week7">Week 7</a></li>
 		<li><a href="#week8">Week 8</a></li>
 		<li><a href="#week9">Week 9</a></li>
+		<li><a href="#week10">Week 10</a></li>
+		<li><a href="#week11">Week 11</a></li>
 
 
 
@@ -160,6 +162,33 @@ restart database, push and display information from the database at will)</li>
 			<li>Need to send back response from the facial recognition server veryifying a users identity</li>
 			<li>Experinceing windows tcp sockets being destroyed very quickly, need to look into what is happening, server should remain open for requests</li>
 			<li>Need to find a way to possibly encrypt-media while being sent</li>
+			</ul>
+
+			
+				<h2 id='week10'>Week 10</h2>
+			<h3>Tasks:</h3>
+			<ul>
+			<li>Debugged TCP transmission issues, when img was being sent from the school packets were being lost</li>
+			<li>Moved the python server to Linux to better debug issues with TCP packt transmission</li>
+			<li>Created a port forwarding script for WSL, to allow packe transmission to server</li>
+			<li>Made more tweaks to the GUI</li>
+			<li>Analyzed ICMP messages for TCP issues using wireshark to debug the issue</li>
+			<li>Added exception handling for the TCP server so it would stop randomly crashing</li>
+			</ul>
+
+			<h2 id='week11'>Week 10</h2>
+			<h3>Tasks:</h3>
+			<ul>
+				<li>Fixed the TCP packet transmission issue by first sending the img size, and using a samll recv buffer</li>
+				<li>Finsihed working on my facial recognition API for python, and started to bring the functionality into the server</li>
+				<li>Worked on new HTML views for the server, to allow user to know if there picture was valid or invalid at the time of submission</li>
+				<li>Researched the JS XMLHTttpRequest readstatechanges to make a dyamic layout for the camera-app, based on what stage the request was at</li>
+				<li>Created the mySQL database to hold the facial encodings of each user</li>
+				<li>Created a php function that check the database for a matching a user and then returns</li>
+				<li>Reworked the server to send the facial encodings as a .json so they can easily be extracted and covnerted to an array</li>
+				<li>Working on a function to compute the euclidean distance of two arrays</li>
+				<li>Debugging floating point math operations in php to see if it is can properly computer vector norm of the facial encodings</li>
+
 			</ul>
 
 	<p><a href="/about.html">Return</a></p>
